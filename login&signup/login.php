@@ -1,32 +1,7 @@
 <?php
 
-// $cookieParams = session_get_cookie_params();
-// session_set_cookie_params(
-//     $cookieParams["lifetime"],  // Lifetime (in seconds)
-//     $cookieParams["path"],      // Path on the server
-//     $cookieParams["domain"],    // Domain of the cookie
-//     true,                       // Secure (true if using HTTPS)
-//     true                        // HTTP only (prevents JavaScript access)
-// );
-
-// session_start();
-
 include 'config.php';
-
-// Redirect if the user is already logged in
-// if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
-//     header("Location: ../index.php");
-//     exit();
-// }
-
 $msg = "";
-$dashboardUrls = [
-    'admin' => '../Dash_functions/view_profile.php',
-    'user' => '../index.php',
-    'premium' => '../index.php',
-    'instructor' => '../Dash_functions/view_profile.php',
-
-];
 
 if (isset($_GET['verification'])) {
     $verificationCode = $_GET['verification'];
@@ -37,7 +12,6 @@ if (isset($_GET['verification'])) {
         $query = mysqli_query($conn, "UPDATE  SET code='' WHERE code='$verificationCode'");
 
         if ($query) {
-            // User is successfully verified, store verification in session
             $_SESSION['verification_done'] = true;
             $_SESSION['verification_user_id'] = $row['id'];
             header("Location: login.php");
@@ -57,7 +31,7 @@ if (isset($_POST['submit'])) {
         $msg = "<div class='alert alert-danger'>Email and Password are required.</div>";
     } else {
         // Use parameterized query to prevent SQL injection
-        $sql = "SELECT * FROM candidate_registration WHERE email=?";
+        $sql = "SELECT * FROM candidate_registration WHERE candidate_email=?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
@@ -69,8 +43,8 @@ if (isset($_POST['submit'])) {
             // Verify the entered password with the stored hashed password
             if (password_verify($password, $row['password'])) {
                 $_SESSION['id'] = $row['id'];
-                $_SESSION['mail_id'] = $email;
-                header("Location: ../index.php");
+                $_SESSION['email'] = $email;
+                header("Location: welcome.php");
                 exit();
             } else {
                 $msg = "<div class='alert alert-danger'>Incorrect Email or Password. Try again.</div>";
@@ -96,13 +70,6 @@ function validateInput($data)
 <html lang="zxx">
     
     <head>
-        <?php
-    include  dirname(__DIR__).'/includes/head1.php';
-    ?>
-    <!-- Meta tag Keywords -->
-    <meta name="keywords" content="Login Form" />
-    <!-- //Meta tag Keywords -->
-    
     <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!--/Style-CSS -->
@@ -110,15 +77,6 @@ function validateInput($data)
     <!--//Style-CSS -->
     
     <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
-    <!-- Add this script to the <head> or <body> of your HTML -->
-        <script>
-            window.addEventListener('beforeunload', function(event) {
-                // Send an AJAX request to a PHP script to destroy the session
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', 'logout.php', false);  // Synchronous request
-                xhr.send(null);
-            });
-        </script>
 
 </head>
 

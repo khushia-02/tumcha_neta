@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (mysqli_num_rows($result) > 0) {
             $msg = "<div class='alert alert-danger'>This email address is invalid or already exists.</div>";
         } else {
-            $insertUserQuery = "INSERT INTO candidate_registration(candidate_username_available, candidate_fullname, candidate_email, candidate_contact, password_generation) VALUES (?, ?, ?, ?, ?)";
+            $insertUserQuery = "INSERT INTO candidate_registration(candidate_username_available, candidate_fullname, candidate_email, candidate_contact, password) VALUES (?, ?, ?, ?, ?)";
             $insertUserStmt = mysqli_prepare($conn, $insertUserQuery);
             mysqli_stmt_bind_param($insertUserStmt, "sssss", $username, $name, $email, $ph, $hashedPassword);
             $insertResult = mysqli_stmt_execute($insertUserStmt);
