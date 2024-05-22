@@ -26,7 +26,7 @@ function validateInput($data)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = validateInput($_POST['username']);
     $name = validateInput($_POST['full_name']);
-    $email = validateInput($_POST['email']);
+    $email = validateInput($_POST['candidate_email']);
     $ph = validateInput($_POST['phone_no']);
     $password = validateInput($_POST['password']);
 
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
         $code = md5(rand());
 
-        $checkEmailQuery = "SELECT * FROM candidate_registration WHERE email=?";
+        $checkEmailQuery = "SELECT * FROM candidate_registration WHERE candidate_email=?";
         $checkEmailStmt = mysqli_prepare($conn, $checkEmailQuery);
         mysqli_stmt_bind_param($checkEmailStmt, "s", $email);
         mysqli_stmt_execute($checkEmailStmt);
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (mysqli_num_rows($result) > 0) {
             $msg = "<div class='alert alert-danger'>This email address is invalid or already exists.</div>";
         } else {
-            $insertUserQuery = "INSERT INTO candidate_registration (candidate_username_available, candidate_fullname, email, candidate_contact, password_generation) VALUES (?, ?, ?, ?, ?)";
+            $insertUserQuery = "INSERT INTO candidate_registration(candidate_username_available, candidate_fullname, candidate_email, candidate_contact, password_generation) VALUES (?, ?, ?, ?, ?)";
             $insertUserStmt = mysqli_prepare($conn, $insertUserQuery);
             mysqli_stmt_bind_param($insertUserStmt, "sssss", $username, $name, $email, $ph, $hashedPassword);
             $insertResult = mysqli_stmt_execute($insertUserStmt);
@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <form action="" method="post">
                             <input type="text" class="username" name="username" placeholder="Enter Your User name" required>
                             <input type="text" class="full_name" name="full_name" placeholder="Enter Your Full name" required>
-                            <input type="email" class="email" name="email" placeholder="Enter Your Email" required>
+                            <input type="email" class="email" name="candidate_email" placeholder="Enter Your Email" required>
                             <input type="phone_no" class="username" name="phone_no" placeholder="Enter Your Phone number" required>
                             <input type="password" id="password" class="password" name="password" placeholder="Enter Your Password" required>
                             <button type="button" style="width:50px;" id="togglePassword" aria-label="Toggle Password Visibility">
