@@ -1,0 +1,121 @@
+/** main-header **/
+
+.main-header{
+    position:relative;
+    left:0px;
+    top:0px;
+    z-index:999;
+    width:100%;
+    transition:all 500ms ease;
+    -moz-transition:all 500ms ease;
+    -webkit-transition:all 500ms ease;
+    -ms-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+  }
+  
+  .sticky-header{
+    position:fixed;
+    opacity:0;
+    visibility:hidden;
+    background: #fff;
+    left:0px;
+    top:0px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width:100%;
+    z-index:0;
+    transition:all 500ms ease;
+    -moz-transition:all 500ms ease;
+    -webkit-transition:all 500ms ease;
+    -ms-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+  }
+  
+  .fixed-header .sticky-header{
+    z-index:999;
+    opacity:1;
+    visibility:visible;
+    -ms-animation-name: fadeInDown;
+    -moz-animation-name: fadeInDown;
+    -op-animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -ms-animation-duration: 500ms;
+    -moz-animation-duration: 500ms;
+    -op-animation-duration: 500ms;
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+    -ms-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -op-animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -ms-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -op-animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+  
+  .main-header.style-one{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+  }
+  
+  .main-header.style-one .header-top{
+    position: relative;
+    display: block;
+    background: rgba(24, 24, 24, 0.8);
+    padding: 8.5px 0px;
+  }
+  
+  .main-header.style-one .header-top ul li{
+    position: relative;
+    display: inline-block;
+  }
+  
+  .main-header.style-one .header-top .top-left li{
+    font-size: 14px;
+    color: #fff;
+    margin-right: 25px;
+  }
+  
+  .main-header.style-one .header-top .top-left li:last-child{
+    margin-right: 0px;
+  }
+  
+  .main-header.style-one .header-top .top-left li a{
+    color: #fff;
+  }
+  
+  .main-header.style-one .header-top .top-left li a:hover{
+    
+  }
+  
+  .main-header.style-one .header-top .top-left li i{
+    position: relative;
+    margin-right: 10px;
+  }
+  
+  .main-header.style-one .header-top .top-right li{
+    margin-right: 15px;
+  }
+  
+  .main-header.style-one .header-top .top-right li:last-child{
+    margin-right: 0px;
+  }
+  
+  .main-header.style-one .header-top .top-right li a{
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    color: #fff;
+  }
+  
+  .main-header.style-one .header-top .top-right li a:hover{
+    
+  }
+  
+  /** header-lower **/
