@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="list clearfix">
-                                        <li><a href="index.html">About Us</a></li>
+                                        <li><a href="about-1.php">About Us</a></li>
                                         <li><a href="index.html">What We Offers</a></li>
                                         <li><a href="index.html">Testimonials</a></li>
                                         <li><a href="index.html">Our Projectss</a></li>
