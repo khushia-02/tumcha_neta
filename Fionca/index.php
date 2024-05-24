@@ -1,38 +1,21 @@
+<<<<<<< Updated upstream
+=======
+<?php
+session_start();
+?>
+<?php include './includes/header.php'; ?>
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 
 <!-- Mirrored from azim.commonsupport.com/Fionca/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 May 2024 09:17:06 GMT -->
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
-<title>Fionca - HTML 5 Template Preview</title>
-
-<!-- Fav Icon -->
-<link rel="icon" href="assets/images/favicon-2.ico" type="image/x-icon">
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i&amp;display=swap" rel="stylesheet">
-
-<!-- Stylesheets -->
-<link href="assets/css/font-awesome-all.css" rel="stylesheet">
-<link href="assets/css/flaticon.css" rel="stylesheet">
-<link href="assets/css/owl.css" rel="stylesheet">
-<link href="assets/css/bootstrap.css" rel="stylesheet">
-<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
-<link href="assets/css/animate.css" rel="stylesheet">
-<link href="assets/css/nice-select.css" rel="stylesheet">
-<link href="assets/css/color.css" rel="stylesheet">
-<link href="assets/css/rtl.css" rel="stylesheet">
-<link href="assets/css/style.css" rel="stylesheet">
-<link href="assets/css/responsive.css" rel="stylesheet">
-
+<title>Tumcha neta home page</title>
 </head>
-
 
 <!-- page wrapper -->
 <body class="boxed_wrapper ltr">
+<<<<<<< Updated upstream
 
     <!-- Preloader -->
     <div class="loader-wrap">
@@ -279,6 +262,8 @@
     </header>
     <!-- main-header end -->
 
+=======
+>>>>>>> Stashed changes
     <!-- Mobile Menu  -->
     <div class="mobile-menu">
         <div class="menu-backdrop"></div>
@@ -1334,6 +1319,7 @@
         </div>
     </section>
     <!-- clients-section end -->
+<<<<<<< Updated upstream
 
 
     <!-- main-footer -->
@@ -1522,8 +1508,15 @@
 
 <!-- main-js -->
 <script src="assets/js/script.js"></script>
+=======
+    <?php include './includes/footer.php'; ?>
+<script>
+        function popupFn() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("popupDialog").style.display = "block";
+        }
+>>>>>>> Stashed changes
 
 </body><!-- End of .page_wrapper -->
 
-<!-- Mirrored from azim.commonsupport.com/Fionca/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 May 2024 09:17:17 GMT -->
 </html>
