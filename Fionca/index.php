@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +36,47 @@
 
 <!-- page wrapper -->
 <body class="boxed_wrapper ltr">
-
+<!-- login  form start-->
+<div id="overlay"></div>
+    <div id="popupDialog">
+        <div id="loginForm" class="form-container">
+            <h2>Login</h2>
+            <form action="login_data.php" method="post" class="login">
+                <label for="email">Email:</label>
+                <input type="email" name="candidate_email" placeholder="Enter your email">
+                <label for="password">Password:</label>
+                <input type="password" name="password_generation" placeholder="Enter your password">
+                <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" style="position: absolute; top: 73%; right: 230px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                                    <i class="fas fa-eye" id="toggleIcon"></i>
+                                </button>
+                <button type="submit" class="button-login">Login</button>
+                <span class="toggle-link" onclick="toggleForm()">Don't have an account? Register</span>
+            </form>
+        </div>
+        <div id="registrationForm" class="form-container" style="display:none;">
+            <h2>Register</h2>
+            <form action="registration_data.php" method="post" class="register">
+                <label FOR="username">Username</label>
+                <input type="text" class="username" name="candidate_username" placeholder="Enter Your Username" required>
+                <label for="fullname">Fullname</label>
+                <input type="text" class="full_name" name="candidate_fullname" placeholder="Enter Your Full Name" required pattern="^[a-zA-Z\s]{1,50}$" title="Full Name should only contain letters and spaces, up to 50 characters.">
+                <label for="email">Email:</label>
+                <input type="email" class="email" name="candidate_email" placeholder="Enter Your Email" required>
+                <label for="contact">Contact:</label>
+                <input type="tel" class="contact" name="candidate_contact" placeholder="Enter Your Phone Number" required pattern="^\d{10}$" title="Phone number should be exactly 10 digits.">
+                <label for="password">Password:</label>
+                <input type="password" id="password" class="password" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters long and contain at least one uppercase letter, one symbol, and two numbers.">
+                <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" style="position: absolute; top: 73%; right: 230px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                                    <i class="fas fa-eye" id="toggleIcon"></i>
+                                </button>
+                <button type="submit" class="button-register">Register</button>
+                <span class="toggle-link" onclick="toggleForm()">Already have an account? Login</span>
+            </form>
+        </div>
+        <button onclick="closeFn()" class="close">Close</button>
+    </div>
+   
+<!-- login form end-->
     <!-- Preloader -->
     <div class="loader-wrap">
         <div class="preloader style-two"><div class="preloader-close">Preloader Close</div></div>
@@ -245,6 +288,17 @@
                                         </ul>
                                     </li>                              
                                     <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="#" onclick="popupFn(); return false;">Login</a></li>
+                                    <div class="content">
+        <?php if (isset($_SESSION['user'])): ?>
+            <p class="welcome-message">Welcome, <?php echo htmlspecialchars($_SESSION['user']['candidate_fullname']); ?>!</p>
+            <form action="logout.php" method="post">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        <?php else: ?>
+           
+        <?php endif; ?>
+    </div>
                                 </ul>
                             </div>
                         </nav>
@@ -252,8 +306,7 @@
                             <div class="search-btn">
                                 <button type="button" class="search-toggler"><i class="flaticon-search-1"></i></button>
                             </div>
-                            <div class="btn-box">
-                                <a href="index-2.html" class="theme-btn style-two">Get Free Quote</a>
+                           
                             </div>
                         </div>
                     </div>
@@ -1522,7 +1575,68 @@
 
 <!-- main-js -->
 <script src="assets/js/script.js"></script>
+<script>
+        function popupFn() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("popupDialog").style.display = "block";
+        }
 
+        function closeFn() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("popupDialog").style.display = "none";
+        }
+
+        function toggleForm() {
+            var loginForm = document.getElementById("loginForm");
+            var registrationForm = document.getElementById("registrationForm");
+            if (loginForm.style.display === "none") {
+                loginForm.style.display = "block";
+                registrationForm.style.display = "none";
+            } else {
+                loginForm.style.display = "none";
+                registrationForm.style.display = "block";
+            }
+        }
+    </script>
+    <script>
+         document.getElementById('togglePassword').addEventListener('click', function (e) {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggleIcon');
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            if (type === 'password') {
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            } else {
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            }
+        });
+
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            const fullname = document.querySelector('.full_name').value;
+            const email = document.querySelector('.email').value;
+            const contact = document.querySelector('.contact').value;
+            const password = document.querySelector('.password').value;
+
+            const fullnamePattern = /^[a-zA-Z\s]{1,50}$/;
+            const contactPattern = /^\d{10}$/;
+            const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+            if (!fullnamePattern.test(fullname)) {
+                alert('Full Name should only contain letters and spaces, up to 50 characters.');
+                e.preventDefault();
+            } else if (!contactPattern.test(contact)) {
+                alert('Phone number should be exactly 10 digits.');
+                e.preventDefault();
+            } else if (!passwordPattern.test(password)) {
+                alert('Password must be at least 8 characters long and contain at least one uppercase letter, one symbol, and two numbers.');
+                e.preventDefault();
+            }
+        });
+   
+    </script>
 </body><!-- End of .page_wrapper -->
 
 <!-- Mirrored from azim.commonsupport.com/Fionca/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 May 2024 09:17:17 GMT -->
