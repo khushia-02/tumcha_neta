@@ -289,16 +289,7 @@ session_start();
                                     </li>                              
                                     <li><a href="contact.html">Contact</a></li>
                            
-                                    <div class="content">
-        <?php if (isset($_SESSION['user'])): ?>
-            <p class="welcome-message">Welcome, <?php echo htmlspecialchars($_SESSION['user']['candidate_fullname']); ?>!</p>
-            <form action="logout.php" method="post">
-                <button type="submit" class="logout-button">Logout</button>
-            </form>
-        <?php else: ?>
-           
-        <?php endif; ?>
-    </div>
+
                                 </ul>
                             </div>
                         </nav>
