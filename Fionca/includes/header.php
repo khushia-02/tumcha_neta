@@ -46,15 +46,6 @@
         <div class="layer layer-three"><span class="overlay"></span></div>        
     </div>
 
-
-    <!-- page-direction -->
-    <div class="page_direction">
-        <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
-        <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
-    </div>
-    <!-- page-direction end -->
-
-
     <!-- search-popup -->
     <div id="search-popup" class="search-popup">
         <div class="close-search"><span>Close</span></div>
@@ -73,7 +64,6 @@
                 <ul class="recent-searches">
                     <li><a href="index.html">Finance</a></li>
                     <li><a href="index.html">Idea</a></li>
-                    <li><a href="index.html">Service</a></li>
                     <li><a href="index.html">Growth</a></li>
                     <li><a href="index.html">Plan</a></li>
                 </ul>
@@ -91,7 +81,6 @@
                     <ul class="info top-left pull-left">
                         <li><a href="index-2.html">About</a></li>
                         <li><a href="index-2.html">Careers</a></li>
-                        <li><a href="index-2.html">Services</a></li>
                         <li><a href="index-2.html">Agents</a></li>
                     </ul>
                     <div class="top-right pull-right">
@@ -165,7 +154,7 @@
                                     </li> 
                                     <li class="dropdown"><a href="about-1.php">About</a></li>
                                     <li class="dropdown"><a href="index-2.html">Services</a>
-                                        <ul>
+                                        <!-- <ul>
                                             <li><a href="service-1.html">Service Page 01</a></li>
                                             <li><a href="service-2.html">Service Page 02</a></li>
                                             <li><a href="financial-analysis.html">Financial Analysis</a></li>
@@ -173,9 +162,9 @@
                                             <li><a href="investment-trading.html">Investment Trading</a></li>
                                             <li><a href="wealth-marketing.html">Wealth Marketing</a></li>
                                             <li><a href="planning-strategies.html">Planning Strategies</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="index-2.html">Elements</a>
+                                        </ul> -->
+                                    </li> 
+                                    <!-- <li class="dropdown"><a href="index-2.html">Elements</a>
                                         <div class="megamenu">
                                             <div class="row clearfix">
                                                 <div class="col-lg-3 column">
@@ -232,7 +221,7 @@
                                                 </div>                                       
                                             </div>                                            
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li class="dropdown"><a href="index-2.html">Blog</a>
                                         <ul>
                                             <li><a href="blog-grid.html">Blog Grid</a></li>
@@ -277,15 +266,15 @@
     <!-- header end -->
 
     <!-- Mobile Menu  -->
-    <div class="mobile-menu">
+    <!-- <div class="mobile-menu">
         <div class="menu-backdrop"></div>
         <div class="close-btn"><i class="fas fa-times"></i></div>
         
         <nav class="menu-box">
             <div class="nav-logo"><a href="index.html"><img src="assets/images/mobile-logo.png" alt="" title=""></a></div>
-            <div class="menu-outer">
+            <div class="menu-outer">  -->
             <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header</div> -->
-             <div class="contact-info">
+             <!-- <div class="contact-info">
                 <h4>Contact Info</h4>
                 <ul>
                     <li>Chicago 12, Melborne City, USA</li>
@@ -303,7 +292,7 @@
                 </ul>
             </div>
         </nav>
-    </div> 
+    </div>  -->
     <!-- End Mobile Menu -->
 
 
