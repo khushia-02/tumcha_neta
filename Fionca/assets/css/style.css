@@ -51,7 +51,7 @@
 ====================================================================
 
  ***/
-* {
+ * {
   margin:0px;
   padding:0px;
   border:none;
@@ -79,6 +79,8 @@ body {
   background-repeat:no-repeat;
   background-position:center top;
   -webkit-font-smoothing: antialiased;
+  overflow: auto;
+  
 }
 
   @media (min-width:1200px) {
@@ -2135,6 +2137,7 @@ div#mCSB_1_container{
   top: 0px;
   right: 0px;
   z-index: 1;
+  overflow: hidden;
 }
 
 .banner-carousel .slide-item .image-layer{
@@ -12801,4 +12804,77 @@ h4 a{
   position: relative;
   display: block;
   height: 550px;
+}
+
+/*login form model */
+#popupDialog {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+ 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+h1 {
+  color: green;
+}
+
+.form-container {
+  position: relative;
+  background: #fff;
+  padding: 61px 220px 70px 220px;
+  margin-top: -42px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input[type="email"], .form-container input[type="password"], .form-container input[type="text"], .form-container input[type="tel"] {
+  border: 1px solid #cdd8e6;
+  width: 300px;
+  height: 30px;
+  padding: 20px;
+}
+
+.form-container input:focus {
+  border-color: #f8952c;
+}
+
+.button-login, .button-register {
+  width: 100px;
+  height: 30px;
+  background-color: #f8952c;
+  color: white;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.toggle-link {
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+  color: #f8952c;
+}
+#popupDialog .close{
+  width: 100px;
+  height: 30px;
+  background-color:orange;
+  color: white;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
 }

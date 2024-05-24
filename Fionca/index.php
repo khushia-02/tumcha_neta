@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +38,47 @@
 <!-- page wrapper -->
 
 <body class="boxed_wrapper ltr">
-
+<!-- login  form start-->
+<div id="overlay"></div>
+    <div id="popupDialog">
+        <div id="loginForm" class="form-container">
+            <h2>Login</h2>
+            <form action="./login&signup/login_data.php" method="post" class="login">
+                <label for="email">Email:</label>
+                <input type="email" name="candidate_email" placeholder="Enter your email">
+                <label for="password">Password:</label>
+                <input type="password" name="password_generation" placeholder="Enter your password">
+                <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" style="position: absolute; top: 73%; right: 230px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                                    <i class="fas fa-eye" id="toggleIcon"></i>
+                                </button>
+                <button type="submit" class="button-login">Login</button>
+                <span class="toggle-link" onclick="toggleForm()">Don't have an account? Register</span>
+            </form>
+        </div>
+        <div id="registrationForm" class="form-container" style="display:none;">
+            <h2>Register</h2>
+            <form action="registration_data.php" method="post" class="register">
+                <label FOR="username">Username</label>
+                <input type="text" class="username" name="candidate_username" placeholder="Enter Your Username" required>
+                <label for="fullname">Fullname</label>
+                <input type="text" class="full_name" name="candidate_fullname" placeholder="Enter Your Full Name" required pattern="^[a-zA-Z\s]{1,50}$" title="Full Name should only contain letters and spaces, up to 50 characters.">
+                <label for="email">Email:</label>
+                <input type="email" class="email" name="candidate_email" placeholder="Enter Your Email" required>
+                <label for="contact">Contact:</label>
+                <input type="tel" class="contact" name="candidate_contact" placeholder="Enter Your Phone Number" required pattern="^\d{10}$" title="Phone number should be exactly 10 digits.">
+                <label for="password">Password:</label>
+                <input type="password" id="password" class="password" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters long and contain at least one uppercase letter, one symbol, and two numbers.">
+                <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" style="position: absolute; top: 73%; right: 230px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                                    <i class="fas fa-eye" id="toggleIcon"></i>
+                                </button>
+                <button type="submit" class="button-register">Register</button>
+                <span class="toggle-link" onclick="toggleForm()">Already have an account? Login</span>
+            </form>
+        </div>
+        <button onclick="closeFn()" class="close">Close</button>
+    </div>
+   
+<!-- login form end-->
     <!-- Preloader -->
     <div class="loader-wrap">
         <div class="preloader style-two">
@@ -109,9 +152,9 @@
         <div class="header-upper">
             <div class="auto-container">
                 <div class="upper-inner clearfix">
-                    <!-- <div class="logo-box pull-left">
+                    <div class="logo-box pull-left">
                         <figure class="logo"><a href="index.html"><img src="assets/images/logo-2.png" alt=""></a></figure>
-                    </div> -->
+                    </div>
                     <div class="info-box pull-right">
                         <ul class="info-list clearfix">
                             <!-- <li>
@@ -124,7 +167,7 @@
                             </li>-->
                             <li>
                                 <i class="far fa-clock"></i>
-                                <p>Login<br /></p>
+                                <p>Our Working Hours <br />Mon - Sat: 8 am - 6 pm</p>
                             </li>
                         </ul>
                     </div>
@@ -257,6 +300,17 @@
                                         </ul>
                                     </li>
                                     <li><a href="contact.html">Contact</a></li>
+                           
+                                    <div class="content">
+        <?php if (isset($_SESSION['user'])): ?>
+            <p class="welcome-message">Welcome, <?php echo htmlspecialchars($_SESSION['user']['candidate_fullname']); ?>!</p>
+            <form action="logout.php" method="post">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        <?php else: ?>
+           
+        <?php endif; ?>
+    </div>
                                 </ul>
                             </div>
                         </nav>
@@ -264,8 +318,7 @@
                             <div class="search-btn">
                                 <button type="button" class="search-toggler"><i class="flaticon-search-1"></i></button>
                             </div>
-                            <div class="btn-box">
-                                <a href="index-2.html" class="theme-btn style-two">Get Free Quote</a>
+                           
                             </div>
                         </div>
                     </div>
@@ -1534,8 +1587,8 @@
     <script src="assets/js/circle-progress.js"></script>
     <script src="assets/js/jquery.nice-select.min.js"></script>
 
-    <!-- main-js -->
-    <script src="assets/js/script.js"></script>
+<!-- main-js -->
+<script src="assets/js/script.js"></script>
 
 </body><!-- End of .page_wrapper -->
 
