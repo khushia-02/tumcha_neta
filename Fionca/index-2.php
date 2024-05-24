@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from azim.commonsupport.com/Fionca/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 May 2024 09:17:06 GMT -->
+<!-- Mirrored from azim.commonsupport.com/Fionca/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 May 2024 09:16:14 GMT -->
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <title>Fionca - HTML 5 Template Preview</title>
 
 <!-- Fav Icon -->
-<link rel="icon" href="assets/images/favicon-2.ico" type="image/x-icon">
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i&amp;display=swap" rel="stylesheet">
@@ -22,7 +22,6 @@
 <link href="assets/css/bootstrap.css" rel="stylesheet">
 <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
 <link href="assets/css/animate.css" rel="stylesheet">
-<link href="assets/css/nice-select.css" rel="stylesheet">
 <link href="assets/css/color.css" rel="stylesheet">
 <link href="assets/css/rtl.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
@@ -36,7 +35,7 @@
 
     <!-- Preloader -->
     <div class="loader-wrap">
-        <div class="preloader style-two"><div class="preloader-close">Preloader Close</div></div>
+        <div class="preloader"><div class="preloader-close">Preloader Close</div></div>
         <div class="layer layer-one"><span class="overlay"></span></div>
         <div class="layer layer-two"><span class="overlay"></span></div>        
         <div class="layer layer-three"><span class="overlay"></span></div>        
@@ -80,20 +79,18 @@
 
 
     <!-- main header -->
-    <header class="main-header style-two">
+    <header class="main-header style-one">
         <div class="header-top">
             <div class="auto-container">
                 <div class="top-inner clearfix">
                     <ul class="info top-left pull-left">
-                        <li><a href="index-2.html">About</a></li>
-                        <li><a href="index-2.html">Careers</a></li>
-                        <li><a href="index-2.html">Services</a></li>
-                        <li><a href="index-2.html">Agents</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i>838 Andy Street, Madison, NJ 08003</li>
+                        <li><i class="fas fa-headphones"></i>Support <a href="tel:01005200369">0100 5200 369</a></li>
                     </ul>
                     <div class="top-right pull-right">
                         <ul class="social-links clearfix">
-                            <li>Connect Socially</li>
                             <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
                             <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
                             <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
@@ -102,35 +99,13 @@
                 </div>
             </div>
         </div>
-        <div class="header-upper">
-            <div class="auto-container">
-                <div class="upper-inner clearfix">
-                    <div class="logo-box pull-left">
-                        <figure class="logo"><a href="index.html"><img src="assets/images/logo-2.png" alt=""></a></figure>
-                    </div>
-                    <div class="info-box pull-right">
-                        <ul class="info-list clearfix">
-                            <li>
-                                <i class="fas fa-phone-volume"></i>
-                                <p>Call Our Support<br /><a href="tel:01005200369">0100 5200 369</a></p>
-                            </li>
-                            <li>
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p>838 Andy Street, Madison, <br />New Jersy 08003</p>
-                            </li>
-                            <li>
-                                <i class="far fa-clock"></i>
-                                <p>Our Working Hours <br />Mon - Sat: 8 am - 6 pm</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="header-lower">
-            <div class="outer-box">
-                <div class="auto-container">
-                    <div class="menu-area clearfix">
+            <div class="auto-container">
+                <div class="outer-box clearfix">
+                    <div class="logo-box pull-left">
+                        <figure class="logo"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
+                    </div>
+                    <div class="menu-area pull-right">
                         <!--Mobile Navigation Toggler-->
                         <div class="mobile-nav-toggler">
                             <i class="icon-bar"></i>
@@ -140,7 +115,7 @@
                         <nav class="main-menu navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li class="current dropdown"><a href="index-2.html">Home</a>
+                                    <li class="current dropdown"><a href="index.html">Home</a>
                                         <ul>
                                             <li><a href="index.html">Home Page One</a></li>
                                             <li><a href="index-2.html">Home Page Two</a></li>
@@ -148,7 +123,7 @@
                                             <li><a href="index-4.html">Home Page Four</a></li>
                                             <li><a href="index-5.html">Home Page Five</a></li>
                                             <li><a href="index-onepage.html">Home OnePage</a></li>
-                                            <li class="dropdown"><a href="index-2.html">Header Style</a>
+                                            <li class="dropdown"><a href="index.html">Header Style</a>
                                                 <ul>
                                                     <li><a href="index.html">Header Style One</a></li>
                                                     <li><a href="index-2.html">Header Style Two</a></li>
@@ -159,7 +134,7 @@
                                             </li>
                                         </ul>
                                     </li> 
-                                    <li class="dropdown"><a href="index-2.html">About</a>
+                                    <li class="dropdown"><a href="index.html">About</a>
                                         <ul>
                                             <li><a href="about-1.html">About Us 01</a></li>
                                             <li><a href="about-2.html">About Us 02</a></li>
@@ -168,7 +143,7 @@
                                             <li><a href="error.html">Error Page</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="index-2.html">Services</a>
+                                    <li class="dropdown"><a href="index.html">Services</a>
                                         <ul>
                                             <li><a href="service-1.html">Service Page 01</a></li>
                                             <li><a href="service-2.html">Service Page 02</a></li>
@@ -179,7 +154,7 @@
                                             <li><a href="planning-strategies.html">Planning Strategies</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="index-2.html">Elements</a>
+                                    <li class="dropdown"><a href="index.html">Elements</a>
                                         <div class="megamenu">
                                             <div class="row clearfix">
                                                 <div class="col-lg-3 column">
@@ -237,7 +212,7 @@
                                             </div>                                            
                                         </div>
                                     </li>
-                                    <li class="dropdown"><a href="index-2.html">Blog</a>
+                                    <li class="dropdown"><a href="index.html">Blog</a>
                                         <ul>
                                             <li><a href="blog-grid.html">Blog Grid</a></li>
                                             <li><a href="blog-classic.html">Blog Classic</a></li>
@@ -252,8 +227,11 @@
                             <div class="search-btn">
                                 <button type="button" class="search-toggler"><i class="flaticon-search-1"></i></button>
                             </div>
+                            <div class="nav-btn nav-toggler navSidebar-button clearfix">
+                                <i class="fas fa-align-right"></i>
+                            </div>
                             <div class="btn-box">
-                                <a href="index-2.html" class="theme-btn style-two">Get Free Quote</a>
+                                <a href="index.html" class="theme-btn style-one">Free Estimate</a>
                             </div>
                         </div>
                     </div>
@@ -266,7 +244,7 @@
             <div class="auto-container">
                 <div class="outer-box clearfix">
                     <div class="logo-box pull-left">
-                        <figure class="logo"><a href="index.html"><img src="assets/images/small-logo-2.png" alt=""></a></figure>
+                        <figure class="logo"><a href="index.html"><img src="assets/images/small-logo.png" alt=""></a></figure>
                     </div>
                     <div class="menu-area pull-right">
                         <nav class="main-menu clearfix">
@@ -309,43 +287,46 @@
 
 
     <!-- banner-section -->
-    <section class="banner-section style-two">
+    <section class="banner-section">
         <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
             <div class="slide-item">
-                <div class="image-layer" style="background-image:url(assets/images/banner/banner-4.jpg)"></div>
+                <div class="image-layer" style="background-image:url(assets/images/banner/banner-1.jpg)"></div>
                 <div class="auto-container">
                     <div class="content-box">
-                        <h5>towards a bright future </h5>
-                        <h1>Perfect Insurance <br />When it Matters</h1>
-                        <p>Beniam quis nostrud exercitation sed lamco laboris nis aliquip <br />repraderit luptate velit excepteur ocaan ipsum.</p>
+                        <h5>get on the right way</h5>
+                        <h1>Financial Assistance<br />With True Purpose</h1>
                         <div class="btn-box">
-                            <a href="index.html" class="theme-btn style-two"><i class="fas fa-atom"></i>How We Help</a>
-                            <a href="index-6.html" class="user-btn-two"><i class="far fa-user"></i>Find an Agent</a>
+                            <a href="index.html" class="theme-btn style-one">How Can We Help</a>
+                            <a href="index-6.html" class="user-btn"><i class="far fa-user"></i><span>Find a Consultant</span></a>
                         </div>
                     </div>  
                 </div>
             </div>
             <div class="slide-item">
-                <div class="image-layer" style="background-image:url(assets/images/banner/banner-5.jpg)"></div>
+                <div class="image-layer" style="background-image:url(assets/images/banner/banner-2.jpg)"></div>
                 <div class="auto-container">
                     <div class="content-box centred">
-                        <h1>We Provide Not Just <br />Coverage, But Advice</h1>
-                        <p>Beniam quis nostrud exercitation sed lamco laboris nis aliquip <br />repraderit luptate velit excepteur ocaan ipsum.</p>
+                        <ul class="list-item clearfix">
+                            <li>.&nbsp;<a href="index.html">Experienced</a>&nbsp;.&nbsp;</li>
+                            <li><a href="index.html">Specialized</a>&nbsp;.&nbsp;</li>
+                            <li><a href="index.html">Professional</a>&nbsp;.&nbsp;</li>
+                        </ul>
+                        <h1>International Network To <br />Provide Assistance</h1>
                         <div class="btn-box">
-                            <a href="index.html" class="theme-btn style-two"><i class="fas fa-atom"></i>How We Help</a>
-                            <a href="index-6.html" class="user-btn-two"><i class="far fa-user"></i>Find an Agent</a>
+                            <a href="index.html" class="theme-btn style-one mar-0">How Can We Help</a>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
             <div class="slide-item">
-                <div class="image-layer" style="background-image:url(assets/images/banner/banner-6.jpg)"></div>
+                <div class="image-layer" style="background-image:url(assets/images/banner/banner-3.jpg)"></div>
                 <div class="auto-container">
                     <div class="content-box">
-                        <h1>The Right Caring <br />For Whole Family</h1>
-                        <p>Beniam quis nostrud exercitation sed lamco laboris <br />repraderit luptate velit excepteur ocaan.</p>
+                        <h5>get on the right way</h5>
+                        <h1>Boosting Relations & <br />Loyalty, Anytime</h1>
                         <div class="btn-box">
-                            <a href="index.html" class="theme-btn style-two mar-0"><i class="fas fa-atom"></i>How We Help</a>
+                            <a href="index.html" class="theme-btn style-one mr-10">How Can We Help</a>
+                            <a href="index.html" class="banner-btn-two">Find a Consultant</a>
                         </div>
                     </div>  
                 </div>
@@ -355,65 +336,72 @@
     <!-- banner-section end -->
 
 
-    <!-- feature-style-two -->
-    <section class="feature-style-two">
+    <!-- info-section -->
+    <section class="info-section">
         <div class="auto-container">
             <div class="row clearfix">
-                <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
-                    <div class="feature-block-two wow fadeInUp animated animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                <div class="col-lg-7 col-md-12 col-sm-12 title-column">
+                    <div class="title-inner">
+                        <div class="year-box">
+                            <figure class="image-box"><img src="assets/images/icons/year-icon.png" alt=""></figure>
+                            <h2>35</h2>
+                            <h3>FIONCA</h3>
+                        </div>
+                        <div class="title">
+                            <h2>Years of Struggle <span>—</span> Better Strategy With Quality Business</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>Beniam quis nostrud exercitation sed lamco laboris nis aliquip sed conseqa sed rure repreh derit luptate velit excepteur ocaan dcats ipsum aliquip eduis aute irure reprehy enderit dui voluptate ipsum velit esse cillum dolore ipsum.</p>
+                        <a href="index.html"><i class="fas fa-arrow-right"></i><span>Who We Are</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- info-section end -->
+
+
+    <!-- feature-section -->
+    <section class="feature-section">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                    <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                         <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/resource/feature-4.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <p>Exercy tation ullamco laboris nisit aliquip dolor esse cillum dolore tau fugiat nulla</p>
-                            </div>
+                            <figure class="image-box"><img src="assets/images/resource/feature-1.jpg" alt=""></figure>
                             <div class="lower-content">
                                 <div class="inner">
-                                    <h4><a href="index-2.html">For Individuals</a></h4>
+                                    <h3>Financial Analysis</h3>
+                                    <a href="index.html"><span>Read more</span><i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
-                    <div class="feature-block-two wow fadeInUp animated animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                    <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                         <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/resource/feature-5.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <p>Exercy tation ullamco laboris nisit aliquip dolor esse cillum dolore tau fugiat nulla</p>
-                            </div>
+                            <figure class="image-box"><img src="assets/images/resource/feature-2.jpg" alt=""></figure>
                             <div class="lower-content">
                                 <div class="inner">
-                                    <h4><a href="index-2.html">For Business</a></h4>
+                                    <h3>Taxation Planning</h3>
+                                    <a href="index.html"><span>Read more</span><i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
-                    <div class="feature-block-two wow fadeInUp animated animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                    <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                         <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/resource/feature-6.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <p>Exercy tation ullamco laboris nisit aliquip dolor esse cillum dolore tau fugiat nulla</p>
-                            </div>
+                            <figure class="image-box"><img src="assets/images/resource/feature-3.jpg" alt=""></figure>
                             <div class="lower-content">
                                 <div class="inner">
-                                    <h4><a href="index-2.html">Claim Center</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
-                    <div class="feature-block-two wow fadeInUp animated animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/resource/feature-7.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <p>Exercy tation ullamco laboris nisit aliquip dolor esse cillum dolore tau fugiat nulla</p>
-                            </div>
-                            <div class="lower-content">
-                                <div class="inner">
-                                    <h4><a href="index-2.html">Fully Committed</a></h4>
+                                    <h3>Investment Trading</h3>
+                                    <a href="index.html"><span>Read more</span><i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -422,67 +410,147 @@
             </div>
         </div>
     </section>
-    <!-- feature-style-two end -->
+    <!-- feature-section end -->
 
 
-    <!-- about-style-two -->
-    <section class="about-style-two">
-        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-4.png);"></div>
+    <!-- about-section -->
+    <section class="about-section bg-color-1"> 
         <div class="auto-container">
             <div class="row clearfix">
-                <div class="col-lg-7 col-md-12 col-sm-12 content-column">
-                    <div id="content_block_three">
+                <div class="col-lg-6 col-md-12 col-sm-12 video-column">
+                    <div class="video-inner">
+                        <figure class="image-box"><img src="assets/images/resource/about-1.jpg" alt=""></figure>
+                        <div class="video-btn">
+                            <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption="" style="background-image: url(assets/images/resource/btn-bg.png);"><i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div id="content_block_one">
                         <div class="content-box">
-                            <div class="sec-title style-two">
+                            <div class="sec-title left">
                                 <h5>About fionca</h5>
-                                <h2>We Care About Your Life’s Important Things</h2>
+                                <h2>Largest Demand Partnership Buidling Financial Experts</h2>
                             </div>
                             <div class="text">
-                                <p>Exercitation llamco laboris nis aliquip sed conseqrure dolorn repreh deris voluptate velit excepteur duis aute irure dolor voluptate voluptatem accusa ntium dolor lemq laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis ent quas sed ipsum dui architecto beatae.</p>
+                                <p>Exercitation llamco laboris nis aliquip sed conseqrure dolorn repreh deris luptate velit excepteur duis aute irure dolor voluptate.</p>
                             </div>
                             <div class="inner-box">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 single-column">
-                                        <div class="single-item">
-                                            <div class="icon-box"><i class="flaticon-shield-1"></i></div>
-                                            <h5><a href="index-2.html">Deeper Experience</a></h5>
-                                            <p>Conseqrue dolorn repreh deris velit excepteur duis aute.</p>
-                                        </div>
+                                <div class="single-item">
+                                    <div class="icon-box">
+                                        <span class="bg-box"></span>
+                                        <i class="flaticon-computer-1"></i>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 single-column">
-                                        <div class="single-item">
-                                            <div class="icon-box"><i class="flaticon-broker"></i></div>
-                                            <h5><a href="index-2.html">Thoughtful Solutions</a></h5>
-                                            <p>Conseqrue dolorn repreh deris velit excepteur duis aute.</p>
-                                        </div>
+                                    <h4><a href="index.html">Support On Raising Funds</a></h4>
+                                    <p>Veniam quis nostrud exercitason ullamco ipsum laboris sed ut perspiciatis unde omnis iste natus.</p>
+                                </div>
+                                <div class="single-item">
+                                    <div class="icon-box">
+                                        <span class="bg-box"></span>
+                                        <i class="flaticon-browser-1"></i>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 single-column">
-                                        <div class="single-item">
-                                            <div class="icon-box"><i class="flaticon-safe-5"></i></div>
-                                            <h5><a href="index-2.html">Safely Investments</a></h5>
-                                            <p>Conseqrue dolorn repreh deris velit excepteur duis aute.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 single-column">
-                                        <div class="single-item">
-                                            <div class="icon-box"><i class="flaticon-briefcase"></i></div>
-                                            <h5><a href="index-2.html">Growing Succes</a></h5>
-                                            <p>Conseqrue dolorn repreh deris velit excepteur duis aute.</p>
-                                        </div>
-                                    </div>
+                                    <h4><a href="index.html">Outsourced Consulting Business</a></h4>
+                                    <p>Ad mini veniam quis nostrud exercitas tion ullamco ipsum sed ut perspiciatis unde omnis iste natus.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-12 col-sm-12 image-column">
-                    <div id="image_block_two">
-                        <div class="image-box">
-                            <figure class="image"><img src="assets/images/resource/about-2.jpg" alt=""></figure>
-                            <div class="content-box">
-                                <i class="fas fa-headphones-alt"></i>
-                                <h4>Save Money, Save Life!</h4>
-                                <h5>Any questions? Call <a href="tel:01005200369">0100 5200 369</a></h5>
+            </div>
+        </div>
+    </section>
+    <!-- about-section end -->
+
+
+    <!-- service-section -->
+    <section class="service-section">
+        <div class="auto-container">
+            <div class="title-box">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 title-column">
+                        <div class="sec-title right">
+                            <h5>What we provides</h5>
+                            <h2>Get Exceptional <br />Service For Growth</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 text-column">
+                        <div class="text">
+                            <p>Tempor incididunt ut labore et dolore magna aliquat enim veniam quis nostrud exercitation ullamco laboris nis aliquip consequat duis aute irure dolor voluptate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-content">
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h4><a href="planning-strategies.html">Planning Strategies</a></h4>
+                                <div class="inner">
+                                    <div class="icon-box"><i class="flaticon-rocket"></i></div>
+                                    <p>Acepteur sintas haecat sed non dui proident sunt culpa sed ipsum tempor.</p>
+                                    <a href="planning-strategies.html"><i class="fas fa-arrow-right"></i><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h4><a href="financial-analysis.html">Financial Advices</a></h4>
+                                <div class="inner">
+                                    <div class="icon-box"><i class="flaticon-innovation-1"></i></div>
+                                    <p>Acepteur sintas haecat sed non dui proident sunt culpa sed ipsum tempor.</p>
+                                    <a href="financial-analysis.html"><i class="fas fa-arrow-right"></i><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h4><a href="investment-trading.html">Manage Investment</a></h4>
+                                <div class="inner">
+                                    <div class="icon-box"><i class="flaticon-presentation"></i></div>
+                                    <p>Acepteur sintas haecat sed non dui proident sunt culpa sed ipsum tempor.</p>
+                                    <a href="investment-trading.html"><i class="fas fa-arrow-right"></i><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h4><a href="investment-trading.html">Process Development</a></h4>
+                                <div class="inner">
+                                    <div class="icon-box"><i class="flaticon-target"></i></div>
+                                    <p>Acepteur sintas haecat sed non dui proident sunt culpa sed ipsum tempor.</p>
+                                    <a href="investment-trading.html"><i class="fas fa-arrow-right"></i><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h4><a href="wealth-marketing.html">Wealth Marketing</a></h4>
+                                <div class="inner">
+                                    <div class="icon-box"><i class="flaticon-idea"></i></div>
+                                    <p>Acepteur sintas haecat sed non dui proident sunt culpa sed ipsum tempor.</p>
+                                    <a href="wealth-marketing.html"><i class="fas fa-arrow-right"></i><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h4><a href="taxation-planning.html">Business Tax Reforms</a></h4>
+                                <div class="inner">
+                                    <div class="icon-box"><i class="flaticon-search"></i></div>
+                                    <p>Acepteur sintas haecat sed non dui proident sunt culpa sed ipsum tempor.</p>
+                                    <a href="taxation-planning.html"><i class="fas fa-arrow-right"></i><span>Read More</span></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -490,201 +558,93 @@
             </div>
         </div>
     </section>
-    <!-- about-style-two end -->
+    <!-- service-section end -->
 
 
-    <!-- stats-section -->
-    <section class="stats-section centred">
-        <div class="auto-container">
-            <div class="row clearfix">
-                <div class="col-lg-3 col-md-6 col-sm-12 single-column">
-                    <div class="single-item">
-                        <figure class="icon-box"><img src="assets/images/icons/icon-3.png" alt=""></figure>
-                        <h3>540+ Policies Completed</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 single-column">
-                    <div class="single-item">
-                        <figure class="icon-box"><img src="assets/images/icons/icon-4.png" alt=""></figure>
-                        <h3>630+ Trusted Customers</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 single-column">
-                    <div class="single-item">
-                        <figure class="icon-box"><img src="assets/images/icons/icon-5.png" alt=""></figure>
-                        <h3>125+ Opened Locations</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 single-column">
-                    <div class="single-item">
-                        <figure class="icon-box"><img src="assets/images/icons/icon-6.png" alt=""></figure>
-                        <h3>100% Client Satisfaction</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- stats-section end -->
-
-
-    <!-- service-style-two -->
-    <section class="service-style-two bg-color-2">
-        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-5.png);"></div>
-        <div class="auto-container">
-            <div class="sec-title light centred">
-                <h5>our PRODUCTS</h5>
-                <h2>Insurance Areas You <br />Can Fully Trust</h2>
-                <p>Exercitation llamco laboris nis aliquip sed conseqrure dolorn repreh velit <br />excepteur duis aute irure dolor voluptate voluptatem accusa</p>
-            </div>
-            <div class="row clearfix">
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-company"></i></div>
-                            <h4><a href="index-2.html">Home Insurance</a></h4>
-                            <p>Acepteur sintas haecat sed non dui proident sunt culpas sed ipsum tempor.</p>
-                            <div class="link"><a href="index-2.html"><i class="fas fa-arrow-right"></i><span>Read More</span></a></div>
+    <!-- project-section -->
+    <section class="project-section">
+        <div class="fluid-container">
+            <div class="project-carousel theme-carousel owl-theme owl-carousel owl-dots-none owl-nav-none">
+                <div class="project-block-one">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="assets/images/gallery/project-1.jpg" alt=""></figure>
+                        <div class="lower-content">
+                            <p>Corporate Management</p>
+                            <h2><a href="index.html">Global Management Apps</a></h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-car-1"></i></div>
-                            <h4><a href="index-2.html">Auto Insurance</a></h4>
-                            <p>Acepteur sintas haecat sed non dui proident sunt culpas sed ipsum tempor.</p>
-                            <div class="link"><a href="index-2.html"><i class="fas fa-arrow-right"></i><span>Read More</span></a></div>
+                <div class="project-block-one">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="assets/images/gallery/project-2.jpg" alt=""></figure>
+                        <div class="lower-content">
+                            <p>Financial Initiatives</p>
+                            <h2><a href="index.html">Planning & Task Completion</a></h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-airport"></i></div>
-                            <h4><a href="index-2.html">Travel Insurance</a></h4>
-                            <p>Acepteur sintas haecat sed non dui proident sunt culpas sed ipsum tempor.</p>
-                            <div class="link"><a href="index-2.html"><i class="fas fa-arrow-right"></i><span>Read More</span></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-umbrella-2"></i></div>
-                            <h4><a href="index-2.html">Small Business</a></h4>
-                            <p>Acepteur sintas haecat sed non dui proident sunt culpas sed ipsum tempor.</p>
-                            <div class="link"><a href="index-2.html"><i class="fas fa-arrow-right"></i><span>Read More</span></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-broker"></i></div>
-                            <h4><a href="index-2.html">Life Insurance</a></h4>
-                            <p>Acepteur sintas haecat sed non dui proident sunt culpas sed ipsum tempor.</p>
-                            <div class="link"><a href="index-2.html"><i class="fas fa-arrow-right"></i><span>Read More</span></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-cardiogram"></i></div>
-                            <h4><a href="index-2.html">Health Insurance</a></h4>
-                            <p>Acepteur sintas haecat sed non dui proident sunt culpas sed ipsum tempor.</p>
-                            <div class="link"><a href="index-2.html"><i class="fas fa-arrow-right"></i><span>Read More</span></a></div>
+                <div class="project-block-one">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="assets/images/gallery/project-3.jpg" alt=""></figure>
+                        <div class="lower-content">
+                            <p>Corporate Management</p>
+                            <h2><a href="index.html">Private Workshop Assistant</a></h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- service-style-two end -->
+    <!-- project-section end -->
 
 
-    <!-- protect-form -->
-    <section class="protect-form centred">
-        <div class="auto-container">
-            <div class="inner-box">
-                <h2>Coverage That Protect Your World!</h2>
-                <h3>Not sure which policy suits you the best? Find our agent</h3>
-                <form action="https://azim.commonsupport.com/Fionca/index-2.html" method="post" class="zip-form">
-                    <div class="form-group clearfix">
-                        <input type="text" name="zip" placeholder="Enter ZipCode" required="">
-                        <button class="theme-btn style-two" type="submit"><i class="far fa-user"></i>Find an Agent</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-    <!-- protect-form end -->
-
-
-    <!-- our-mission -->
-    <section class="our-mission bg-color-1">
-        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-6.png);"></div>
+    <!-- annual-stats -->
+    <section class="annual-stats">
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                    <div id="content_block_four">
+                    <div id="content_block_two">
                         <div class="content-box">
-                            <div class="tabs-box">
-                                <div class="tab-btn-box">
-                                    <ul class="tab-btns tab-buttons clearfix">
-                                        <li class="tab-btn active-btn" data-tab="#tab-1">Vision</li>
-                                        <li class="tab-btn" data-tab="#tab-2">Mission</li>
-                                        <li class="tab-btn" data-tab="#tab-3">Strategy</li>
-                                    </ul>
+                            <div class="sec-title left">
+                                <h5>annual Stats</h5>
+                                <h2>Graph Shows Net Value Profit Assembling</h2>
+                            </div>
+                            <div class="text">
+                                <p>Exercitation llamco laboris nis aliquip sed conseqrure dolorn repreh deris luptate velit excepteur duis aute irure dolor voluptate labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea reprehenderit in voluptate.</p>
+                            </div>
+                            <div class="inner-box clearfix">
+                                <div class="single-progress-box">
+                                    <div class="box">
+                                        <div class="piechart"  data-fg-color="#204669" data-value=".75">
+                                            <span>.75</span>
+                                        </div>
+                                        <h5>Global Flexibility <br />Investment</h5>
+                                        <h3>Upto 75% Asests</h3>
+                                    </div>
                                 </div>
-                                <div class="tabs-content">
-                                    <div class="tab active-tab" id="tab-1">
-                                        <div class="content-inner">
-                                            <h3>Living a Confident Life</h3>
-                                            <p>Exercitation llamco laboris nis aliquip sed conseqrure dolorn repreh deris luptate velit excepteur duis aute irure dolor voluptate voluptatem accusa ntium doloremque laudantium totam rem.</p>
-                                            <ul class="list-item clearfix">
-                                                <li>Aliquip ex ea consequat sed duis</li>
-                                                <li>Irure dolor voluptate velit esse</li>
-                                                <li>Cillum dolore eu fugiat nulla pariatur</li>
-                                                <li>Excepteur sint occaecat cupidatat non</li>
-                                            </ul>
+                                <div class="single-progress-box">
+                                    <div class="box">
+                                        <div class="piechart"  data-fg-color="#da2c46" data-value=".25">
+                                            <span>.25</span>
                                         </div>
-                                    </div>
-                                    <div class="tab" id="tab-2">
-                                        <div class="content-inner">
-                                            <h3>Living a Confident Life</h3>
-                                            <p>Exercitation llamco laboris nis aliquip sed conseqrure dolorn repreh deris luptate velit excepteur duis aute irure dolor voluptate voluptatem accusa ntium doloremque laudantium totam rem.</p>
-                                            <ul class="list-item clearfix">
-                                                <li>Aliquip ex ea consequat sed duis</li>
-                                                <li>Irure dolor voluptate velit esse</li>
-                                                <li>Cillum dolore eu fugiat nulla pariatur</li>
-                                                <li>Excepteur sint occaecat cupidatat non</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="tab" id="tab-3">
-                                        <div class="content-inner">
-                                            <h3>Living a Confident Life</h3>
-                                            <p>Exercitation llamco laboris nis aliquip sed conseqrure dolorn repreh deris luptate velit excepteur duis aute irure dolor voluptate voluptatem accusa ntium doloremque laudantium totam rem.</p>
-                                            <ul class="list-item clearfix">
-                                                <li>Aliquip ex ea consequat sed duis</li>
-                                                <li>Irure dolor voluptate velit esse</li>
-                                                <li>Cillum dolore eu fugiat nulla pariatur</li>
-                                                <li>Excepteur sint occaecat cupidatat non</li>
-                                            </ul>
-                                        </div>
+                                        <h5>Security Financial <br />Solutions</h5>
+                                        <h3>Upto 25% Efficient</h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 video-column">
-                    <div id="video_block_one">
-                        <div class="video-inner">
-                            <figure class="image-box"><img src="assets/images/resource/mission-1.jpg" alt=""></figure>
-                            <div class="video-btn">
-                                <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="fas fa-play"></i></a>
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div id="image_block_one">
+                        <div class="image-box">
+                            <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-1.png);"></div>
+                            <figure class="image"><img src="assets/images/resource/state-1.jpg" alt=""></figure>
+                            <div class="award-box">
+                                <div class="box">
+                                    <figure class="icon-box"><img src="assets/images/icons/icon-1.png" alt=""></figure>
+                                    <span>Financial & Consulting Award 2019-2020</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -692,563 +652,118 @@
             </div>
         </div>
     </section>
-    <!-- our-mission end -->
+    <!-- annual-stats end -->
 
 
-    <!-- team-section -->
-    <section class="team-section">
-        <div class="auto-container">
-            <div class="upper-box clearfix">
-                <div class="sec-title style-two pull-left">
-                    <h5>insurance team</h5>
-                    <h2>Our Expert Agents</h2>
-                </div>
-                <div class="btn-box pull-right">
-                    <a href="index-2.html"><i class="fas fa-user"></i>view all persons</a>
-                </div>
-            </div>
-            <div class="four-item-carousel owl-carousel owl-theme owl-nav-none owl-dot-style-one">
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-1.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Christina Roy</a></h3>
-                                <span class="designation">Founder CEO</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Christina Roy</a></h3>
-                                <span class="designation">Founder CEO</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-2.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Paul Wilson</a></h3>
-                                <span class="designation">Senior Manager</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Paul Wilson</a></h3>
-                                <span class="designation">Senior Manager</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-3.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Amanda Tim</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Amanda Tim</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-4.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Jasmine Olgin</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Jasmine Olgin</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-1.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Christina Roy</a></h3>
-                                <span class="designation">Founder CEO</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Christina Roy</a></h3>
-                                <span class="designation">Founder CEO</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-2.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Paul Wilson</a></h3>
-                                <span class="designation">Senior Manager</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Paul Wilson</a></h3>
-                                <span class="designation">Senior Manager</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-3.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Amanda Tim</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Amanda Tim</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-4.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Jasmine Olgin</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Jasmine Olgin</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-1.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Christina Roy</a></h3>
-                                <span class="designation">Founder CEO</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Christina Roy</a></h3>
-                                <span class="designation">Founder CEO</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-2.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Paul Wilson</a></h3>
-                                <span class="designation">Senior Manager</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Paul Wilson</a></h3>
-                                <span class="designation">Senior Manager</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-3.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Amanda Tim</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Amanda Tim</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-4.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Jasmine Olgin</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Jasmine Olgin</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- team-section end -->
-
-
-    <!-- view-plans -->
-    <section class="view-plans">
-        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-8.png);"></div>
-        <div class="auto-container">
-            <div class="inner-container clearfix">
-                <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-7.png);"></div>
-                <div class="text pull-left">
-                    <h5>Let’s get started</h5>
-                    <h2>Not sure about the right insurance for you?</h2>
-                    <h3>We have got some best insurance plans and solutions</h3>
-                </div>
-                <div class="btn-box pull-right">
-                    <a href="index-2.html" class="theme-btn style-one">View All Plans</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- view-plans end -->
-
-
-    <!-- testimonial-style-two -->
-    <section class="testimonial-style-two">
+    <!-- world-cyber -->
+    <section class="world-cyber bg-color-1">
+        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
         <div class="auto-container">
             <div class="sec-title centred">
-                <h5>testimonials</h5>
-                <h2>What Client’s Saying</h2>
+                <h5>Globaly renowned & trusted</h5>
+                <h2>Fionca’s Working Everywhere</h2>
             </div>
-            <div class="three-item-carousel owl-carousel owl-theme owl-nav-none owl-dot-style-one">
-                <div class="testimonial-content">
-                    <div class="inner-box">
-                        <div class="text">
-                            <i class="fas fa-quote-right"></i>
-                            <p>Fugiat nulla pariatur excepteur sint sed cupidatat non proident, sunt in culp quip deserunt mollit animy est laborum sed perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="author-info">
-                            <figure class="image-box"><img src="assets/images/resource/testimonial-6.png" alt=""></figure>
-                            <h5>Nelson Edward</h5>
-                            <span class="designation">Insurance Group</span>
+            <div class="office-location">
+                <div class="location-area">
+                    <div class="location-box">
+                        <div class="address-box">
+                            <figure class="icon-box"><img src="assets/images/icons/icon-2.png" alt=""></figure>
+                            <p>Serve you to reach best profits and goals.</p>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-content">
-                    <div class="inner-box">
-                        <div class="text">
-                            <i class="fas fa-quote-right"></i>
-                            <p>Fugiat nulla pariatur excepteur sint sed cupidatat non proident, sunt in culp quip deserunt mollit animy est laborum sed perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="author-info">
-                            <figure class="image-box"><img src="assets/images/resource/testimonial-7.png" alt=""></figure>
-                            <h5>Thomas Saleh</h5>
-                            <span class="designation">Insurance Group</span>
+                    <div class="location-box">
+                        <div class="address-box">
+                            <figure class="icon-box"><img src="assets/images/icons/icon-2.png" alt=""></figure>
+                            <p>Serve you to reach best profits and goals.</p>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-content">
-                    <div class="inner-box">
-                        <div class="text">
-                            <i class="fas fa-quote-right"></i>
-                            <p>Fugiat nulla pariatur excepteur sint sed cupidatat non proident, sunt in culp quip deserunt mollit animy est laborum sed perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="author-info">
-                            <figure class="image-box"><img src="assets/images/resource/testimonial-8.png" alt=""></figure>
-                            <h5>Nelson Edward</h5>
-                            <span class="designation">Insurance Group</span>
+                    <div class="location-box">
+                        <div class="address-box">
+                            <figure class="icon-box"><img src="assets/images/icons/icon-2.png" alt=""></figure>
+                            <p>Serve you to reach best profits and goals.</p>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-content">
-                    <div class="inner-box">
-                        <div class="text">
-                            <i class="fas fa-quote-right"></i>
-                            <p>Fugiat nulla pariatur excepteur sint sed cupidatat non proident, sunt in culp quip deserunt mollit animy est laborum sed perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="author-info">
-                            <figure class="image-box"><img src="assets/images/resource/testimonial-6.png" alt=""></figure>
-                            <h5>Nelson Edward</h5>
-                            <span class="designation">Insurance Group</span>
+                    <div class="location-box">
+                        <div class="address-box">
+                            <figure class="icon-box"><img src="assets/images/icons/icon-2.png" alt=""></figure>
+                            <p>Serve you to reach best profits and goals.</p>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-content">
-                    <div class="inner-box">
-                        <div class="text">
-                            <i class="fas fa-quote-right"></i>
-                            <p>Fugiat nulla pariatur excepteur sint sed cupidatat non proident, sunt in culp quip deserunt mollit animy est laborum sed perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="author-info">
-                            <figure class="image-box"><img src="assets/images/resource/testimonial-7.png" alt=""></figure>
-                            <h5>Thomas Saleh</h5>
-                            <span class="designation">Insurance Group</span>
+                    <div class="location-box">
+                        <div class="address-box">
+                            <figure class="icon-box"><img src="assets/images/icons/icon-2.png" alt=""></figure>
+                            <p>Serve you to reach best profits and goals.</p>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-content">
-                    <div class="inner-box">
-                        <div class="text">
-                            <i class="fas fa-quote-right"></i>
-                            <p>Fugiat nulla pariatur excepteur sint sed cupidatat non proident, sunt in culp quip deserunt mollit animy est laborum sed perspiciatis unde omnis iste.</p>
+                    <div class="location-box">
+                        <div class="address-box">
+                            <figure class="icon-box"><img src="assets/images/icons/icon-2.png" alt=""></figure>
+                            <p>Serve you to reach best profits and goals.</p>
                         </div>
-                        <div class="author-info">
-                            <figure class="image-box"><img src="assets/images/resource/testimonial-8.png" alt=""></figure>
-                            <h5>Nelson Edward</h5>
-                            <span class="designation">Insurance Group</span>
+                    </div>
+                    <div class="location-box">
+                        <div class="address-box">
+                            <figure class="icon-box"><img src="assets/images/icons/icon-2.png" alt=""></figure>
+                            <p>Serve you to reach best profits and goals.</p>
+                        </div>
+                    </div>
+                    <div class="location-box">
+                        <div class="address-box">
+                            <figure class="icon-box"><img src="assets/images/icons/icon-2.png" alt=""></figure>
+                            <p>Serve you to reach best profits and goals.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- testimonial-style-two end -->
+    <!-- world-cyber end -->
 
 
-    <!-- policy-section -->
-    <section class="policy-section bg-color-2">
-        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-9.png);"></div>
+    <!-- support-section -->
+    <section class="support-section">
         <div class="auto-container">
-            <div class="row clearfix">
-                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                    <div id="content_block_five">
-                        <div class="content-box">
+            <div class="inner-container">
+                <div class="row clearfix">
+                    <div class="col-lg-7 col-md-12 col-sm-12 inner-column">
+                        <div class="inner-box">
                             <div class="sec-title light left">
-                                <h5>try a policy</h5>
+                                <h5>try our service</h5>
                                 <h2>Get Free Quote</h2>
-                                <p>Et mini veniam quis nostrud ipsum exercitastion ullamco ipsum laboris sed ipsum ut perspiciatis unde.</p>
+                                <p>Ad mini veniam quis nostrud ipsum exercitas tion ullamco ipsum laboris sed ut perspiciatis unde.</p>
                             </div>
-                            <ul class="info-list clearfix">
-                                <li>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <h4>Company Head Office</h4>
-                                    <p>838 Andy Street, Madison, New Jersy 08003</p>
-                                </li>
-                                <li>
-                                    <i class="fas fa-phone-volume"></i>
-                                    <h4>Request a Callback</h4>
-                                    <p><a href="tel:01005200369">0 (100) 5200 369</a> / <a href="tel:01005200123">0 (100) 5200 123</a></p>
-                                </li>
-                                <li>
-                                    <i class="fas fa-envelope-open"></i>
-                                    <h4>Email Support</h4>
-                                    <p><a href="mailto:info@my-domain.com">info@my-domain.com </a> / <a href="mailto:support@info.com">support@info.com</a></p>
-                                </li>
-                            </ul>
+                            <form action="https://azim.commonsupport.com/Fionca/contact.html" method="post" class="submit-form">
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Your Name" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email address" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="phone" placeholder="Phone" required="">
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" placeholder="Message"></textarea>
+                                </div>
+                                <div class="form-group message-btn">
+                                    <button type="submit" class="theme-btn style-one">request estimate</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 inner-column">
-                    <div id="content_block_six">
-                        <div class="content-box">
-                            <div class="tabs-box">
-                                <div class="tab-btn-box">
-                                    <ul class="tab-btns tab-buttons clearfix">
-                                        <li class="tab-btn active-btn" data-tab="#tab-4">Life</li>
-                                        <li class="tab-btn" data-tab="#tab-5">Home</li>
-                                        <li class="tab-btn" data-tab="#tab-6">Car</li>
-                                        <li class="tab-btn" data-tab="#tab-7">Health</li>
-                                    </ul>
-                                </div>
-                                <div class="tabs-content">
-                                    <div class="tab active-tab" id="tab-4">
-                                        <div class="content-inner">
-                                            <p>Select a product to start a quote. Or call us at <a href="tel:01005200369">0100-5200-369</a></p>
-                                            <form action="https://azim.commonsupport.com/Fionca/index-2.html" method="post">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user"></i>
-                                                    <input type="text" name="name" placeholder="Name" required="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <i class="fas fa-envelope-open"></i>
-                                                    <input type="email" name="email" placeholder="Email" required="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <i class="fas fa-chess-knight"></i>
-                                                    <div class="select-box">
-                                                        <select class="wide">
-                                                           <option data-display="Select">Select a plan</option>
-                                                           <option value="1">Life Insurance</option>
-                                                           <option value="2">Home Insurance</option>
-                                                           <option value="3" disabled>A disabled option</option>
-                                                           <option value="4">Car Insurance</option>
-                                                           <option value="5">Health Insurance</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group message-btn">
-                                                    <button type="submit" class="theme-btn style-two">start my insurance plan</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="tab" id="tab-5">
-                                        <div class="content-inner">
-                                            <p>Select a product to start a quote. Or call us at <a href="tel:01005200369">0100-5200-369</a></p>
-                                            <form action="https://azim.commonsupport.com/Fionca/index-2.html" method="post">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user"></i>
-                                                    <input type="text" name="name" placeholder="Name" required="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <i class="fas fa-envelope-open"></i>
-                                                    <input type="email" name="email" placeholder="Email" required="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <i class="fas fa-chess-knight"></i>
-                                                    <div class="select-box">
-                                                        <select class="wide">
-                                                           <option data-display="Select">Select a plan</option>
-                                                           <option value="1">Life Insurance</option>
-                                                           <option value="2">Home Insurance</option>
-                                                           <option value="3" disabled>A disabled option</option>
-                                                           <option value="4">Car Insurance</option>
-                                                           <option value="5">Health Insurance</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group message-btn">
-                                                    <button type="submit" class="theme-btn style-two">start my insurance plan</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="tab" id="tab-6">
-                                        <div class="content-inner">
-                                            <p>Select a product to start a quote. Or call us at <a href="tel:01005200369">0100-5200-369</a></p>
-                                            <form action="https://azim.commonsupport.com/Fionca/index-2.html" method="post">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user"></i>
-                                                    <input type="text" name="name" placeholder="Name" required="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <i class="fas fa-envelope-open"></i>
-                                                    <input type="email" name="email" placeholder="Email" required="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <i class="fas fa-chess-knight"></i>
-                                                    <div class="select-box">
-                                                        <select class="wide">
-                                                           <option data-display="Select">Select a plan</option>
-                                                           <option value="1">Life Insurance</option>
-                                                           <option value="2">Home Insurance</option>
-                                                           <option value="3" disabled>A disabled option</option>
-                                                           <option value="4">Car Insurance</option>
-                                                           <option value="5">Health Insurance</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group message-btn">
-                                                    <button type="submit" class="theme-btn style-two">start my insurance plan</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="tab" id="tab-7">
-                                        <div class="content-inner">
-                                            <p>Select a product to start a quote. Or call us at <a href="tel:01005200369">0100-5200-369</a></p>
-                                            <form action="https://azim.commonsupport.com/Fionca/index-2.html" method="post">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user"></i>
-                                                    <input type="text" name="name" placeholder="Name" required="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <i class="fas fa-envelope-open"></i>
-                                                    <input type="email" name="email" placeholder="Email" required="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <i class="fas fa-chess-knight"></i>
-                                                    <div class="select-box">
-                                                        <select class="wide">
-                                                           <option data-display="Select">Select a plan</option>
-                                                           <option value="1">Life Insurance</option>
-                                                           <option value="2">Home Insurance</option>
-                                                           <option value="3" disabled>A disabled option</option>
-                                                           <option value="4">Car Insurance</option>
-                                                           <option value="5">Health Insurance</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group message-btn">
-                                                    <button type="submit" class="theme-btn style-two">start my insurance plan</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="col-lg-5 col-md-12 col-sm-12 info-column">
+                        <div class="info-inner">
+                            <figure class="image-box"><img src="assets/images/resource/info-1.jpg" alt=""></figure>
+                            <div class="info-box">
+                                <figure class="info-logo"><img src="assets/images/icons/info-logo.png" alt=""></figure>
+                                <div class="icon-box"><i class="fas fa-phone"></i></div>
+                                <h2><a href="tel:18003698527">1-800-369-8527</a></h2>
+                                <div class="email"><a href="mailto:support@my-domain.net">support@my-domain.net</a></div>
+                                <ul class="list-item clearfix">
+                                    <li>.&nbsp;<a href="index.html">Experienced</a>&nbsp;.</li>
+                                    <li><a href="index.html">Specialized</a>&nbsp;.</li>
+                                    <li><a href="index.html">Professional</a>&nbsp;.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -1256,11 +771,162 @@
             </div>
         </div>
     </section>
-    <!-- policy-section end -->
+    <!-- support-section end -->
+
+
+    <!-- testimonial-section -->
+    <section class="testimonial-section" style="background-image: url(assets/images/background/testimonial-bg.jpg);">
+        <div class="auto-container">
+            <div class="title-box">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 title-column">
+                        <div class="sec-title right">
+                            <h5>testimonials</h5>
+                            <h2>What Our Loving <br />Clients Saying</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 text-column">
+                        <div class="text">
+                            <p>Tempor incididunt ut labore et dolore magna aliquat enim veniam quis nostrud exercitation ullamco laboris nis aliquip consequat duis aute irure dolor voluptate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-inner">
+                <div class="client-testimonial-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
+                    <div class="testimonial-block">
+                        <div class="text">
+                            <p>Aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam estm qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam sd ipsum quaerat voluptatem.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block">
+                        <div class="text">
+                            <p>Aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam estm qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam sd ipsum quaerat voluptatem.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block">
+                        <div class="text">
+                            <p>Aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam estm qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam sd ipsum quaerat voluptatem.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block">
+                        <div class="text">
+                            <p>Aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam estm qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam sd ipsum quaerat voluptatem.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block">
+                        <div class="text">
+                            <p>Aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam estm qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam sd ipsum quaerat voluptatem.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block">
+                        <div class="text">
+                            <p>Aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam estm qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam sd ipsum quaerat voluptatem.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block">
+                        <div class="text">
+                            <p>Aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam estm qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam sd ipsum quaerat voluptatem.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block">
+                        <div class="text">
+                            <p>Aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam estm qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam sd ipsum quaerat voluptatem.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block">
+                        <div class="text">
+                            <p>Aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam estm qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam sd ipsum quaerat voluptatem.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block">
+                        <div class="text">
+                            <p>Aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam estm qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam sd ipsum quaerat voluptatem.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="client-thumb-outer">
+                    <div class="client-thumbs-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-1.png" alt=""></figure>
+                            <div class="info-box">
+                                <h5>Robert Smith</h5>
+                                <span class="designation">Senior Manager</span>
+                            </div>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-2.png" alt=""></figure>
+                            <div class="info-box">
+                                <h5>Christine Eva</h5>
+                                <span class="designation">Senior Manager</span>
+                            </div>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-3.png" alt=""></figure>
+                            <div class="info-box">
+                                <h5>Jhon Doe</h5>
+                                <span class="designation">Senior Manager</span>
+                            </div>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-4.png" alt=""></figure>
+                            <div class="info-box">
+                                <h5>Robert</h5>
+                                <span class="designation">Senior Manager</span>
+                            </div>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-5.png" alt=""></figure>
+                            <div class="info-box">
+                                <h5>Tomas Tom</h5>
+                                <span class="designation">Senior Manager</span>
+                            </div>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-1.png" alt=""></figure>
+                            <div class="info-box">
+                                <h5>Robert Smith</h5>
+                                <span class="designation">Senior Manager</span>
+                            </div>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-2.png" alt=""></figure>
+                            <div class="info-box">
+                                <h5>Christine Eva</h5>
+                                <span class="designation">Senior Manager</span>
+                            </div>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-3.png" alt=""></figure>
+                            <div class="info-box">
+                                <h5>Jhon Doe</h5>
+                                <span class="designation">Senior Manager</span>
+                            </div>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-4.png" alt=""></figure>
+                            <div class="info-box">
+                                <h5>Robert</h5>
+                                <span class="designation">Senior Manager</span>
+                            </div>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-5.png" alt=""></figure>
+                            <div class="info-box">
+                                <h5>Tomas Tom</h5>
+                                <span class="designation">Senior Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- testimonial-section end -->
 
 
     <!-- news-section -->
-    <section class="news-section style-two">
+    <section class="news-section bg-color-1">
         <div class="auto-container">
             <div class="sec-title centred">
                 <h5>Read the articles</h5>
@@ -1275,6 +941,15 @@
                                 <ul class="post-info">
                                     <li>By <a href="index.html">Fionca</a></li>
                                     <li>January 31, 2020</li>
+                                    <li class="share">
+                                        <a href="#"><i class="fas fa-share-alt"></i></a>
+                                        <ul class="social-links">
+                                            <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="index.html"><i class="fab fa-vimeo-v"></i></a></li>
+                                            <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                                 <h3><a href="blog-details.html">Take Action For Benefits Of Your Business</a></h3>
                                 <p>Exea conse quat duis irurey dolor sed reprehen derit volupta velit cilum lorem incididunt labore sed magna exceptur aliqua.</p>
@@ -1291,6 +966,15 @@
                                 <ul class="post-info">
                                     <li>By <a href="index.html">Fionca</a></li>
                                     <li>January 30, 2020</li>
+                                    <li class="share">
+                                        <a href="#"><i class="fas fa-share-alt"></i></a>
+                                        <ul class="social-links">
+                                            <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="index.html"><i class="fab fa-vimeo-v"></i></a></li>
+                                            <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                                 <h3><a href="blog-details.html">Improve Your Investment Through Money</a></h3>
                                 <p>Exea conse quat duis irurey dolor sed reprehen derit volupta velit cilum lorem incididunt labore sed magna exceptur aliqua.</p>
@@ -1307,6 +991,15 @@
                                 <ul class="post-info">
                                     <li>By <a href="index.html">Fionca</a></li>
                                     <li>January 29, 2020</li>
+                                    <li class="share">
+                                        <a href="#"><i class="fas fa-share-alt"></i></a>
+                                        <ul class="social-links">
+                                            <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="index.html"><i class="fab fa-vimeo-v"></i></a></li>
+                                            <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                                 <h3><a href="blog-details.html">Isolate & Reframe Beliefs For The Future</a></h3>
                                 <p>Exea conse quat duis irurey dolor sed reprehen derit volupta velit cilum lorem incididunt labore sed magna exceptur aliqua.</p>
@@ -1336,15 +1029,74 @@
     <!-- clients-section end -->
 
 
+    <!-- cta-section -->
+    <section class="cta-section">
+        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-3.png);"></div>
+        <div class="auto-container">
+            <div class="inner-container clearfix">
+                <div class="title pull-left">
+                    <h2>We help you to unlock & unleash the power within.</h2>
+                </div>
+                <div class="btn-box pull-right">
+                    <a href="index.html">get in touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- cta-section end -->
+
+
+    <!-- fun-fact -->
+    <section class="fun-fact centred">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-6 col-sm-12 counter-column">
+                    <div class="counter-block-one wow slideInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="count-outer count-box">
+                            <span class="count-text" data-speed="1500" data-stop="254">0</span>
+                        </div>
+                        <p>Expert Consultants</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 counter-column">
+                    <div class="counter-block-one wow slideInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="count-outer count-box">
+                            <span class="count-text" data-speed="1500" data-stop="930">0</span>
+                        </div>
+                        <p>Our Trusted Clients</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 counter-column">
+                    <div class="counter-block-one wow slideInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="count-outer count-box">
+                            <span class="count-text" data-speed="1500" data-stop="826">0</span>
+                        </div>
+                        <p>Orders in Queue</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 counter-column">
+                    <div class="counter-block-one wow slideInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="count-outer count-box">
+                            <span class="count-text" data-speed="1500" data-stop="720">0</span>
+                        </div>
+                        <p>Projects Delivered</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- fun-fact end -->
+
+
     <!-- main-footer -->
-    <footer class="main-footer alternet-2">
+    <footer class="main-footer">
         <div class="footer-top">
             <div class="auto-container">
                 <div class="widget-section">
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget logo-widget">
-                                <figure class="footer-logo"><a href="index.html"><img src="assets/images/footer-logo-2.png" alt=""></a></figure>
+                                <figure class="footer-logo"><a href="index.html"><img src="assets/images/footer-logo.png" alt=""></a></figure>
                                 <div class="text">
                                     <p>Tempor incididunt ut labore eut dolore veniam quis nostrud exercitation ullamc consequat. Duis aute irure.</p>
                                 </div>
@@ -1417,7 +1169,7 @@
                                             <input type="email" name="email" placeholder="Email address" required="">
                                         </div>
                                         <div class="form-group message-btn">
-                                            <button class="theme-btn style-two" type="submit">subscribe</button>
+                                            <button class="theme-btn style-one" type="submit">subscribe</button>
                                         </div>
                                     </form>
                                 </div>
@@ -1438,7 +1190,7 @@
 
 
     <!--Scroll to top-->
-    <button class="scroll-top style-two scroll-to-target" data-target="html">
+    <button class="scroll-top scroll-to-target" data-target="html">
         <span class="fa fa-arrow-up"></span>
     </button>
 
@@ -1525,5 +1277,5 @@
 
 </body><!-- End of .page_wrapper -->
 
-<!-- Mirrored from azim.commonsupport.com/Fionca/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 May 2024 09:17:17 GMT -->
+<!-- Mirrored from azim.commonsupport.com/Fionca/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 May 2024 09:16:55 GMT -->
 </html>
