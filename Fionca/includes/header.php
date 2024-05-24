@@ -123,7 +123,7 @@
                                 <p>838 Andy Street, Madison, <br />New Jersy 08003</p>
                             </li>
                             <li>
-                                <i class="far fa-clock"></i>
+                            <i class="far fa-user"></i>
                                 <p><a href="#" onclick="popupFn(); return false;">Login/<br>SignUp</a></p>
                             </li>
                         </ul>
