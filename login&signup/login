@@ -1,0 +1,280 @@
+<?php
+
+
+session_start();
+
+include 'config.php';
+
+// Redirect if the user is already logged in
+if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+    header("Location: ../home.php");
+    die();
+}
+
+$msg = "";
+$dashboardUrls = [
+    'admin' => '../home.php',
+    'user' => '../home.php',
+    'premium' => '../home.php',
+];
+
+if (isset($_GET['verification'])) {
+    $verificationCode = $_GET['verification'];
+    $result = mysqli_query($conn, "SELECT * FROM users WHERE code='$verificationCode'");
+
+    if (mysqli_num_rows($result) > 0) {
+        $query = mysqli_query($conn, "UPDATE users SET code='' WHERE code='$verificationCode'");
+
+        if ($query) {
+            $msg = "<div class='alert alert-success'>Account verification has been successfully completed.</div>";
+        }
+    } else {
+        header("Location: ../home.php");
+        exit();
+    }
+}
+
+if (isset($_POST['submit'])) {
+    $email = validateInput($_POST['email']);
+    $password = validateInput($_POST['password']);
+
+    if (empty($email) || empty($password)) {
+        $msg = "<div class='alert alert-danger'>Mail and Password are required.</div>";
+    } else {
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+        $sql = "SELECT * FROM users WHERE email='$email' AND password='$hashedPassword'";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) === 1) {
+            $row = mysqli_fetch_assoc($result);
+
+            $_SESSION['user_name'] = $row['user_name'];
+            $_SESSION['full_name'] = $row['full_name'];
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['user_type'] = $row['user_type'];
+            $_SESSION['email'] = $email;
+
+            $userType = $row['user_type'];
+
+            if (isset($dashboardUrls[$userType])) {
+                // Redirect the user to their dashboard
+                $dashboardUrl = $dashboardUrls[$userType];
+                header("Location: $dashboardUrl");
+                exit();
+            } else {
+                // Handle invalid user_type (optional)
+                echo "Invalid user_type";
+            }
+        } else {
+            $msg = "<div class='alert alert-danger'>Incorrect Mail ID or Password. Try again.</div>";
+        }
+    }
+}
+
+// Function to validate input
+function validateInput($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+<?php
+include  dirname(__DIR__).'/includes/head1.php';
+
+
+?>
+    <!-- Meta tag Keywords -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <meta charset="UTF-8" /> -->
+    <meta name="keywords"
+        content="Login Form" />
+    <!-- //Meta tag Keywords -->
+
+    <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!--/Style-CSS -->
+    
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+
+    <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- form section start -->
+    <section class="w3l-mockup-form" style=" background-image: url('images/background.png'); object-fit:contain;">
+        <div class="container" >
+            <!-- /form -->
+            <div class="workinghny-form-grid">
+                <div class="main-mockup">
+                    <div class="w3l_form align-self">
+                        <div class="left_grid_info">
+                            <img src="images/login.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="content-wthree">
+                        <h2>Login Now</h2>
+                        <p>Welcome To PrepPros </p>
+                        <?php echo $msg; ?>
+                        <form action="" method="post">
+                            <input type="email" class="email" name="email" placeholder="Enter Your Email" required>
+                            <input type="password" class="password" name="password" placeholder="Enter Your Password" style="margin-bottom: 2px;" required>
+                            <p><a href="forgot-password.php" style="margin-bottom: 15px; display: block; text-align: right;">Forgot Password?</a></p>
+                            <button name="submit" name="submit" style="background-color: purple;" class="btn" type="submit">Login</button>
+                        </form>
+                        <div class="social-icons">
+                            <p>Create Account! <a href="register.php">Register</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- //form -->
+        </div>
+    </section>
+    <!-- //form section start -->
+
+    <script src="js/jquery.min.js"></script>
+    <!-- <script>
+        $(document).ready(function (c) {
+            $('.alert-close').on('click', function (c) {
+                $('.main-mockup').fadeOut('slow', function (c) {
+                    $('.main-mockup').remove();
+                });
+            });
+        });
+    </script> -->
+    <script>
+    $(document).ready(function (c) {
+        $('.alert-close').on('click', function (c) {
+            $('.main-mockup').fadeOut(100, function (c) {
+                $('.main-mockup').remove();
+            });
+        });
+    });
+</script>
+
+</body>
+
+</html>
+
+
+
+
+<!-- 
+//     session_start();
+//     if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
+//         header("Location: ../home.php");
+//         die();
+//     }
+
+//     include 'config.php';
+//     $msg = "";
+
+//     $dashboardUrls = [
+//         'admin' => '../index.php',
+//         'user' => '../index.php',
+//         'premium' => '../index.php',
+//     ];
+
+//     if (isset($_GET['verification'])) {
+//         if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE code='{$_GET['verification']}'")) > 0) {
+//             $query = mysqli_query($conn, "UPDATE users SET code='' WHERE code='{$_GET['verification']}'");
+            
+//             if ($query) {
+//                 $msg = "<div class='alert alert-success'>Account verification has been successfully completed.</div>";
+//             }
+//         } else {
+//             header("Location: login.php");
+//         }
+//     }
+
+//     if (isset($_POST['submit'])) {
+//         $email = mysqli_real_escape_string($conn, $_POST['email']);
+//         $password = mysqli_real_escape_string($conn, md5($_POST['password']));
+
+//         function validate($data)
+// 	{
+// 		$data = trim($data);
+// 		$data = stripslashes($data);
+// 		$data = htmlspecialchars($data);
+// 		return $data;
+// 	}
+       
+// 	$email = validate($_POST['email']);
+// 	$password = validate($_POST['password']);
+
+// 	if (empty($email)) {
+// 		// header("Location: index.php?error=User Name is required");
+//         $msg = "<div class='alert alert-danger'>Mail is required.</div>";
+// 		exit();
+// 	} else if (empty($password)) {
+// 		// header("Location: index.php?error=Password is required");
+//         $msg = "<div class='alert alert-danger'>Password is required.</div>";
+// 		exit();
+// 	} else {
+// 		// hashing the password
+// 		// $password = md5($password);
+    
+
+//         $sql = "SELECT * FROM users WHERE email='{$email}' AND password='{$password}'";
+//         $result = mysqli_query($conn, $sql);
+
+//         if (mysqli_num_rows($result) === 1) {
+//             $row = mysqli_fetch_assoc($result);
+
+
+//             if ($row['email'] === $email && $row['password'] === $password) {
+// 				$_SESSION['user_name'] = $row['user_name'];
+
+// 				$_SESSION['full_name'] = $row['full_name'];
+// 				$_SESSION['id'] = $row['id'];
+// 				$_SESSION['user_type']=$user_type;
+
+// 				$usertype = $row['user_type'];
+                
+//             if (empty($row['code'])) {
+//                 $_SESSION['email'] = $email;
+//             } 
+				
+				
+// 				// Check if the user_type is valid and has a corresponding dashboard URL
+// 				if (isset($usertype) && array_key_exists($usertype, $dashboardUrls)) {
+// 					// Redirect the user to their dashboard
+// 					$dashboardUrl = $dashboardUrls[$usertype];
+// 					header("Location: $dashboardUrl");
+// 					exit();
+// 				} else {
+// 					// Handle invalid user_type (optional)
+// 					echo "Invalid user_type";
+// 				}
+// 				//header("Location: ../index.php");				
+// 			}		
+// 			else {
+// 				// header("Location: login.php?error=Incorect User name or password");
+//                 $msg = "<div class='alert alert-info'>Incorect User name or password try again.</div>";
+
+// 				exit();
+// 			}
+// 		} else {
+//             $msg = "<div class='alert alert-danger'>Email or password do not match.</div>";
+// 			exit();
+// 		}
+// 	}
+// } else {
+//     header("Location: ../home.php");
+// 	exit();
+// } -->
