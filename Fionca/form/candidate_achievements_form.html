@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Achievements Form</title>
+</head>
+<body>
+    <h2>Candidate Achievements Form</h2>
+    <form method="post" action="register_candidate_achievements.php" enctype="multipart/form-data">
+        <label for="year">Year:</label><br>
+        <input type="number" id="year" name="year" min="1900" max="2099" required><br><br>
+        
+        <label for="name_of_award">Name of Award:</label><br>
+        <input type="text" id="name_of_award" name="name_of_award" required><br><br>
+        
+        <label for="award_ceremony_img">Award Ceremony Image:</label><br>
+        <input type="file" id="award_ceremony_img" name="award_ceremony_img" accept="image/*" required><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
