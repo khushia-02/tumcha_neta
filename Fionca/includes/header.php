@@ -2,7 +2,7 @@
     <div id="popupDialog">
         <div id="loginForm" class="form-container">
             <h2>Login</h2>
-            <form action="./login&signup/login_data.php" method="post" class="login">
+            <form action="../login&signup/login_data.php" method="post" class="login">
                 <label for="email">Email:</label>
                 <input type="email" name="candidate_email" placeholder="Enter your email">
                 <label for="password">Password:</label>
