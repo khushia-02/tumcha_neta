@@ -2,48 +2,44 @@
 <html lang="en">
 
 <!-- Mirrored from azim.commonsupport.com/Fionca/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 May 2024 09:17:06 GMT -->
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    <title>Fionca - HTML 5 Template Preview</title>
+<title>Fionca - HTML 5 Template Preview</title>
 
-    <!-- Fav Icon -->
-    <link rel="icon" href="assets/images/favicon-2.ico" type="image/x-icon">
+<!-- Fav Icon -->
+<link rel="icon" href="assets/images/favicon-2.ico" type="image/x-icon">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i&amp;display=swap" rel="stylesheet">
 
-    <!-- Stylesheets -->
-    <link href="assets/css/font-awesome-all.css" rel="stylesheet">
-    <link href="assets/css/flaticon.css" rel="stylesheet">
-    <link href="assets/css/owl.css" rel="stylesheet">
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
-    <link href="assets/css/animate.css" rel="stylesheet">
-    <link href="assets/css/nice-select.css" rel="stylesheet">
-    <link href="assets/css/color.css" rel="stylesheet">
-    <link href="assets/css/rtl.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
+<!-- Stylesheets -->
+<link href="assets/css/font-awesome-all.css" rel="stylesheet">
+<link href="assets/css/flaticon.css" rel="stylesheet">
+<link href="assets/css/owl.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="assets/css/animate.css" rel="stylesheet">
+<link href="assets/css/nice-select.css" rel="stylesheet">
+<link href="assets/css/color.css" rel="stylesheet">
+<link href="assets/css/rtl.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/responsive.css" rel="stylesheet">
 
 </head>
 
 
 <!-- page wrapper -->
-
 <body class="boxed_wrapper ltr">
 
     <!-- Preloader -->
     <div class="loader-wrap">
-        <div class="preloader style-two">
-            <div class="preloader-close">Preloader Close</div>
-        </div>
+        <div class="preloader style-two"><div class="preloader-close">Preloader Close</div></div>
         <div class="layer layer-one"><span class="overlay"></span></div>
-        <div class="layer layer-two"><span class="overlay"></span></div>
-        <div class="layer layer-three"><span class="overlay"></span></div>
+        <div class="layer layer-two"><span class="overlay"></span></div>        
+        <div class="layer layer-three"><span class="overlay"></span></div>        
     </div>
 
 
@@ -64,7 +60,7 @@
                 <form method="post" action="https://azim.commonsupport.com/Fionca/index.html">
                     <div class="form-group">
                         <fieldset>
-                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required>
+                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
                             <input type="submit" value="Search Now!" class="theme-btn style-four">
                         </fieldset>
                     </div>
@@ -109,22 +105,22 @@
         <div class="header-upper">
             <div class="auto-container">
                 <div class="upper-inner clearfix">
-                    <!-- <div class="logo-box pull-left">
+                    <div class="logo-box pull-left">
                         <figure class="logo"><a href="index.html"><img src="assets/images/logo-2.png" alt=""></a></figure>
-                    </div> -->
+                    </div>
                     <div class="info-box pull-right">
                         <ul class="info-list clearfix">
-                            <!-- <li>
+                            <li>
                                 <i class="fas fa-phone-volume"></i>
                                 <p>Call Our Support<br /><a href="tel:01005200369">0100 5200 369</a></p>
                             </li>
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>
                                 <p>838 Andy Street, Madison, <br />New Jersy 08003</p>
-                            </li>-->
+                            </li>
                             <li>
                                 <i class="far fa-clock"></i>
-                                <p>Login<br /></p>
+                                <p>Our Working Hours <br />Mon - Sat: 8 am - 6 pm</p>
                             </li>
                         </ul>
                     </div>
@@ -162,7 +158,7 @@
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </li>
+                                    </li> 
                                     <li class="dropdown"><a href="index-2.html">About</a>
                                         <ul>
                                             <li><a href="about-1.html">About Us 01</a></li>
@@ -188,9 +184,7 @@
                                             <div class="row clearfix">
                                                 <div class="col-lg-3 column">
                                                     <ul>
-                                                        <li>
-                                                            <h4>Elements 1</h4>
-                                                        </li>
+                                                        <li><h4>Elements 1</h4></li>
                                                         <li><a href="feature-element-1.html">Feature 01</a></li>
                                                         <li><a href="feature-element-2.html">Feature 02</a></li>
                                                         <li><a href="feature-element-3.html">Feature 03</a></li>
@@ -203,9 +197,7 @@
                                                 </div>
                                                 <div class="col-lg-3 column">
                                                     <ul>
-                                                        <li>
-                                                            <h4>Elements 2</h4>
-                                                        </li>
+                                                        <li><h4>Elements 2</h4></li>
                                                         <li><a href="news-element-1.html">News 01</a></li>
                                                         <li><a href="news-element-2.html">News 02</a></li>
                                                         <li><a href="funfact-element-1.html">Fun Fact 01</a></li>
@@ -215,12 +207,10 @@
                                                         <li><a href="skills-element.html">Skills Element</a></li>
                                                         <li><a href="clients-element.html">Clients</a></li>
                                                     </ul>
-                                                </div>
+                                                </div> 
                                                 <div class="col-lg-3 column">
                                                     <ul>
-                                                        <li>
-                                                            <h4>Elements 3</h4>
-                                                        </li>
+                                                        <li><h4>Elements 3</h4></li>
                                                         <li><a href="team-element-1.html">Team 01</a></li>
                                                         <li><a href="team-element-2.html">Team 02</a></li>
                                                         <li><a href="pricing-element.html">Pricing</a></li>
@@ -230,12 +220,10 @@
                                                         <li><a href="work-element-1.html">Working 01</a></li>
                                                         <li><a href="work-element-2.html">Working 02</a></li>
                                                     </ul>
-                                                </div>
+                                                </div> 
                                                 <div class="col-lg-3 column">
                                                     <ul>
-                                                        <li>
-                                                            <h4>Elements 4</h4>
-                                                        </li>
+                                                        <li><h4>Elements 4</h4></li>
                                                         <li><a href="project-element-1.html">Project 01</a></li>
                                                         <li><a href="project-element-2.html">Project 02</a></li>
                                                         <li><a href="chart-element.html">Chart Element</a></li>
@@ -245,8 +233,8 @@
                                                         <li><a href="footer-element-4.html">Footer 04</a></li>
                                                         <li><a href="footer-element-5.html">Footer 05</a></li>
                                                     </ul>
-                                                </div>
-                                            </div>
+                                                </div>                                       
+                                            </div>                                            
                                         </div>
                                     </li>
                                     <li class="dropdown"><a href="index-2.html">Blog</a>
@@ -255,7 +243,7 @@
                                             <li><a href="blog-classic.html">Blog Classic</a></li>
                                             <li><a href="blog-details.html">Blog Details</a></li>
                                         </ul>
-                                    </li>
+                                    </li>                              
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
@@ -295,7 +283,7 @@
     <div class="mobile-menu">
         <div class="menu-backdrop"></div>
         <div class="close-btn"><i class="fas fa-times"></i></div>
-
+        
         <nav class="menu-box">
             <div class="nav-logo"><a href="index.html"><img src="assets/images/mobile-logo.png" alt="" title=""></a></div>
             <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
@@ -334,7 +322,7 @@
                             <a href="index.html" class="theme-btn style-two"><i class="fas fa-atom"></i>How We Help</a>
                             <a href="index-6.html" class="user-btn-two"><i class="far fa-user"></i>Find an Agent</a>
                         </div>
-                    </div>
+                    </div>  
                 </div>
             </div>
             <div class="slide-item">
@@ -359,7 +347,7 @@
                         <div class="btn-box">
                             <a href="index.html" class="theme-btn style-two mar-0"><i class="fas fa-atom"></i>How We Help</a>
                         </div>
-                    </div>
+                    </div>  
                 </div>
             </div>
         </div>
@@ -1152,12 +1140,12 @@
                                                     <i class="fas fa-chess-knight"></i>
                                                     <div class="select-box">
                                                         <select class="wide">
-                                                            <option data-display="Select">Select a plan</option>
-                                                            <option value="1">Life Insurance</option>
-                                                            <option value="2">Home Insurance</option>
-                                                            <option value="3" disabled>A disabled option</option>
-                                                            <option value="4">Car Insurance</option>
-                                                            <option value="5">Health Insurance</option>
+                                                           <option data-display="Select">Select a plan</option>
+                                                           <option value="1">Life Insurance</option>
+                                                           <option value="2">Home Insurance</option>
+                                                           <option value="3" disabled>A disabled option</option>
+                                                           <option value="4">Car Insurance</option>
+                                                           <option value="5">Health Insurance</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1183,12 +1171,12 @@
                                                     <i class="fas fa-chess-knight"></i>
                                                     <div class="select-box">
                                                         <select class="wide">
-                                                            <option data-display="Select">Select a plan</option>
-                                                            <option value="1">Life Insurance</option>
-                                                            <option value="2">Home Insurance</option>
-                                                            <option value="3" disabled>A disabled option</option>
-                                                            <option value="4">Car Insurance</option>
-                                                            <option value="5">Health Insurance</option>
+                                                           <option data-display="Select">Select a plan</option>
+                                                           <option value="1">Life Insurance</option>
+                                                           <option value="2">Home Insurance</option>
+                                                           <option value="3" disabled>A disabled option</option>
+                                                           <option value="4">Car Insurance</option>
+                                                           <option value="5">Health Insurance</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1214,12 +1202,12 @@
                                                     <i class="fas fa-chess-knight"></i>
                                                     <div class="select-box">
                                                         <select class="wide">
-                                                            <option data-display="Select">Select a plan</option>
-                                                            <option value="1">Life Insurance</option>
-                                                            <option value="2">Home Insurance</option>
-                                                            <option value="3" disabled>A disabled option</option>
-                                                            <option value="4">Car Insurance</option>
-                                                            <option value="5">Health Insurance</option>
+                                                           <option data-display="Select">Select a plan</option>
+                                                           <option value="1">Life Insurance</option>
+                                                           <option value="2">Home Insurance</option>
+                                                           <option value="3" disabled>A disabled option</option>
+                                                           <option value="4">Car Insurance</option>
+                                                           <option value="5">Health Insurance</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1245,12 +1233,12 @@
                                                     <i class="fas fa-chess-knight"></i>
                                                     <div class="select-box">
                                                         <select class="wide">
-                                                            <option data-display="Select">Select a plan</option>
-                                                            <option value="1">Life Insurance</option>
-                                                            <option value="2">Home Insurance</option>
-                                                            <option value="3" disabled>A disabled option</option>
-                                                            <option value="4">Car Insurance</option>
-                                                            <option value="5">Health Insurance</option>
+                                                           <option data-display="Select">Select a plan</option>
+                                                           <option value="1">Life Insurance</option>
+                                                           <option value="2">Home Insurance</option>
+                                                           <option value="3" disabled>A disabled option</option>
+                                                           <option value="4">Car Insurance</option>
+                                                           <option value="5">Health Insurance</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1441,9 +1429,7 @@
         </div>
         <div class="footer-bottom">
             <div class="auto-container">
-                <div class="copyright">
-                    <p>&copy; 2020 <a href="index.html">FIONCA</a> - Business & Consulting. All rights reserved.</p>
-                </div>
+                <div class="copyright"><p>&copy; 2020 <a href="index.html">FIONCA</a> - Business & Consulting. All rights reserved.</p></div>
             </div>
         </div>
     </footer>
@@ -1466,51 +1452,51 @@
                     <a href="#" class="close-side-widget">X</a>
                 </div>
                 <div class="sidebar-textwidget">
-                    <div class="sidebar-info-contents">
-                        <div class="content-inner">
-                            <div class="upper-box">
-                                <div class="logo">
-                                    <a href="index.html"><img src="assets/images/sidebar-logo.png" alt="" /></a>
-                                </div>
-                                <div class="text">
-                                    <p>Exercitation ullamco laboris nis aliquip sed conseqrure dolorn repreh deris ptate velit ecepteur duis.</p>
-                                </div>
+                <div class="sidebar-info-contents">
+                    <div class="content-inner">
+                        <div class="upper-box">
+                            <div class="logo">
+                                <a href="index.html"><img src="assets/images/sidebar-logo.png" alt="" /></a>
                             </div>
-                            <div class="side-menu-box">
-                                <div class="side-menu">
-                                    <nav class="menu-box">
-                                        <div class="menu-outer">
-
-                                        </div>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="info-box">
-                                <h3>Get in touch</h3>
-                                <ul class="info-list clearfix">
-                                    <li><i class="fas fa-map-marker-alt"></i>838 Andy Street, Madison, NJ</li>
-                                    <li><i class="fas fa-envelope"></i><a href="mailto:support@my-domain.com">support@my-domain.com</a></li>
-                                    <li><i class="fas fa-headphones-alt"></i><a href="tel:101005200369">+1 0100 5200 369</a></li>
-                                    <li><i class="far fa-clock"></i>Monday to Friday: 9am - 6pm</li>
-                                </ul>
-                                <form action="https://azim.commonsupport.com/Fionca/contact.html" method="post" class="subscribe-form">
-                                    <div class="form-group">
-                                        <input type="email" name="email" placeholder="Email address" required="">
-                                        <button type="submit" class="theme-btn style-one">subscribe now</button>
-                                    </div>
-                                </form>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-pinterest-p"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
+                            <div class="text">
+                                <p>Exercitation ullamco laboris nis aliquip sed conseqrure dolorn repreh deris ptate velit ecepteur duis.</p>
                             </div>
                         </div>
+                        <div class="side-menu-box">
+                            <div class="side-menu">
+                                <nav class="menu-box">
+                                    <div class="menu-outer">
+                                        
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <h3>Get in touch</h3>
+                            <ul class="info-list clearfix">
+                                <li><i class="fas fa-map-marker-alt"></i>838 Andy Street, Madison, NJ</li>
+                                <li><i class="fas fa-envelope"></i><a href="mailto:support@my-domain.com">support@my-domain.com</a></li>
+                                <li><i class="fas fa-headphones-alt"></i><a href="tel:101005200369">+1  0100 5200 369</a></li>
+                                <li><i class="far fa-clock"></i>Monday to Friday: 9am - 6pm</li>
+                            </ul>
+                            <form action="https://azim.commonsupport.com/Fionca/contact.html" method="post" class="subscribe-form">
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email address" required="">
+                                    <button type="submit" class="theme-btn style-one">subscribe now</button>
+                                </div>
+                            </form>
+                            <ul class="social-links clearfix">
+                                <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="index.html"><i class="fab fa-pinterest-p"></i></a></li>
+                                <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
-
+                </div>
+                    
                 </div>
             </div>
         </div>
@@ -1518,27 +1504,26 @@
     <!-- END sidebar widget item -->
 
 
-    <!-- jequery plugins -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/validation.js"></script>
-    <script src="assets/js/jquery.fancybox.js"></script>
-    <script src="assets/js/appear.js"></script>
-    <script src="assets/js/jquery.countTo.js"></script>
-    <script src="assets/js/scrollbar.js"></script>
-    <script src="assets/js/nav-tool.js"></script>
-    <script src="assets/js/TweenMax.min.js"></script>
-    <script src="assets/js/circle-progress.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
+<!-- jequery plugins -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/validation.js"></script>
+<script src="assets/js/jquery.fancybox.js"></script>
+<script src="assets/js/appear.js"></script>
+<script src="assets/js/jquery.countTo.js"></script>
+<script src="assets/js/scrollbar.js"></script>
+<script src="assets/js/nav-tool.js"></script>
+<script src="assets/js/TweenMax.min.js"></script>
+<script src="assets/js/circle-progress.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
 
-    <!-- main-js -->
-    <script src="assets/js/script.js"></script>
+<!-- main-js -->
+<script src="assets/js/script.js"></script>
 
 </body><!-- End of .page_wrapper -->
 
 <!-- Mirrored from azim.commonsupport.com/Fionca/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 May 2024 09:17:17 GMT -->
-
 </html>
