@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($pass_word, $row["password_generation"])) {
             // Password is correct, start session and redirect
             $_SESSION['user'] = $row;
-            echo "<script>alert('Welcome, " . $row['candidate_fullname'] . "!'); window.location.href = 'index-2.php';</script>";
+            echo "<script>alert('Welcome, " . $row['candidate_fullname'] . "!'); window.location.href = './Fionca/index.php';</script>";
         } else {
             // Password is incorrect, show error message in popup
             echo "<script>alert('Incorrect password!'); window.history.back();</script>";

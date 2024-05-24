@@ -41,7 +41,7 @@ session_start();
     <div id="popupDialog">
         <div id="loginForm" class="form-container">
             <h2>Login</h2>
-            <form action="login_data.php" method="post" class="login">
+            <form action="./login&signup/login_data.php" method="post" class="login">
                 <label for="email">Email:</label>
                 <input type="email" name="candidate_email" placeholder="Enter your email">
                 <label for="password">Password:</label>
@@ -149,7 +149,7 @@ session_start();
             <div class="auto-container">
                 <div class="upper-inner clearfix">
                     <div class="logo-box pull-left">
-                        <figure class="logo"><a href="index.html"><img src="assets/images/logo-2.png" alt=""></a></figure>
+                        <!-- <figure class="logo"><a href="index.html"><img src="assets/images/logo-2.png" alt=""></a></figure> -->
                     </div>
                     <div class="info-box pull-right">
                         <ul class="info-list clearfix">
@@ -163,7 +163,7 @@ session_start();
                             </li>
                             <li>
                                 <i class="far fa-clock"></i>
-                                <p>Our Working Hours <br />Mon - Sat: 8 am - 6 pm</p>
+                                <p><a href="#" onclick="popupFn(); return false;">Login/<br>SignUp</a></p>
                             </li>
                         </ul>
                     </div>
@@ -288,7 +288,7 @@ session_start();
                                         </ul>
                                     </li>                              
                                     <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="#" onclick="popupFn(); return false;">Login</a></li>
+                           
                                     <div class="content">
         <?php if (isset($_SESSION['user'])): ?>
             <p class="welcome-message">Welcome, <?php echo htmlspecialchars($_SESSION['user']['candidate_fullname']); ?>!</p>
