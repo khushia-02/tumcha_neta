@@ -9,7 +9,6 @@ session_start();
 
 <!-- page wrapper -->
 <body class="boxed_wrapper ltr">
-
     <!-- Mobile Menu  -->
     <div class="mobile-menu">
         <div class="menu-backdrop"></div>
