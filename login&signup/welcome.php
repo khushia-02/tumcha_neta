@@ -7,11 +7,11 @@
 
     include 'config.php';
 
-    $query = mysqli_query($conn, "SELECT * FROM users WHERE email='{$_SESSION['email']}'");
+    $query = mysqli_query($conn, "SELECT * FROM candidate_registration WHERE candidate_email='{$_SESSION['candidate_email']}'");
 
     if (mysqli_num_rows($query) > 0) {
         $row = mysqli_fetch_assoc($query);
 
-        echo "Welcome " . $row['full_name'] . " <a href='logout.php'>Logout</a>";
+        echo "Welcome  <a href='logout.php'>Logout</a>";
     }
 ?>
