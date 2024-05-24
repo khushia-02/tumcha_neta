@@ -144,8 +144,8 @@
                         <nav class="main-menu navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li class="current dropdown"><a href="index-2.html">Home</a>
-                                        <ul>
+                                    <li class="current dropdown"><a href="index.php">Home</a>
+                                        <!-- <ul>
                                             <li><a href="index.html">Home Page One</a></li>
                                             <li><a href="index-2.html">Home Page Two</a></li>
                                             <li><a href="index-3.html">Home Page Three</a></li>
@@ -161,17 +161,9 @@
                                                     <li><a href="index-5.html">Header Style Five</a></li>
                                                 </ul>
                                             </li>
-                                        </ul>
+                                        </ul> -->
                                     </li> 
-                                    <li class="dropdown"><a href="index-2.html">About</a>
-                                        <ul>
-                                            <li><a href="about-1.html">About Us 01</a></li>
-                                            <li><a href="about-2.html">About Us 02</a></li>
-                                            <li><a href="team.html">Experts Team</a></li>
-                                            <li><a href="pricing.html">Our Pricing</a></li>
-                                            <li><a href="error.html">Error Page</a></li>
-                                        </ul>
-                                    </li>
+                                    <li class="dropdown"><a href="about-1.php">About</a></li>
                                     <li class="dropdown"><a href="index-2.html">Services</a>
                                         <ul>
                                             <li><a href="service-1.html">Service Page 01</a></li>
