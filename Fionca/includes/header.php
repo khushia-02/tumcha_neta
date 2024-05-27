@@ -19,7 +19,7 @@
     </div>
     <div id="registrationForm" class="form-container" style="display:none;">
         <h2>Register</h2>
-        <form action="registration_data.php" method="post" class="register">
+        <form action="registration_data.php" method="post" class="register" enctype="multipart/form-data">
             <label FOR="username">Username</label>
             <input type="text" class="username" name="candidate_username" placeholder="Enter Your Username" required>
             <label for="fullname">Fullname</label>
