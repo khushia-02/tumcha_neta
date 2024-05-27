@@ -13,7 +13,7 @@ if (isset($_GET['verification'])) {
 
         if ($query) {
             $_SESSION['verification_done'] = true;
-            $_SESSION['verification_user_id'] = $row['id'];
+            $_SESSION['verification_user_id'] = $row['id']; 
             header("Location: login.php");
             exit();
         }

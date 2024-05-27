@@ -1,140 +1,147 @@
 <div id="overlay"></div>
-    <div id="popupDialog">
-        <div id="loginForm" class="form-container">
-            <h2>Login</h2>
-            <form action="./login&signup/login_data.php" method="post" class="login">
-                <label for="email">Email:</label>
-                <input type="email" name="candidate_email" placeholder="Enter your email">
-                <label for="password">Password:</label>
-                <input type="password" name="password_generation" placeholder="Enter your password">
-                <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" style="position: absolute; top: 73%; right: 230px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
-                                    <i class="fas fa-eye" id="toggleIcon"></i>
-                                </button>
-                <button type="submit" class="button-login">Login</button>
-                <span class="toggle-link" onclick="toggleForm()">Don't have an account? Register</span>
-            </form>
-        </div>
-        <div id="registrationForm" class="form-container" style="display:none;">
-            <h2>Register</h2>
-            <form action="registration_data.php" method="post" class="register">
-                <label FOR="username">Username</label>
-                <input type="text" class="username" name="candidate_username" placeholder="Enter Your Username" required>
-                <label for="fullname">Fullname</label>
-                <input type="text" class="full_name" name="candidate_fullname" placeholder="Enter Your Full Name" required pattern="^[a-zA-Z\s]{1,50}$" title="Full Name should only contain letters and spaces, up to 50 characters.">
-                <label for="email">Email:</label>
-                <input type="email" class="email" name="candidate_email" placeholder="Enter Your Email" required>
-                <label for="contact">Contact:</label>
-                <input type="tel" class="contact" name="candidate_contact" placeholder="Enter Your Phone Number" required pattern="^\d{10}$" title="Phone number should be exactly 10 digits.">
-                <label for="password">Password:</label>
-                <input type="password" id="password" class="password" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters long and contain at least one uppercase letter, one symbol, and two numbers.">
-                <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" style="position: absolute; top: 73%; right: 230px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
-                                    <i class="fas fa-eye" id="toggleIcon"></i>
-                                </button>
-                <button type="submit" class="button-register">Register</button>
-                <span class="toggle-link" onclick="toggleForm()">Already have an account? Login</span>
-            </form>
-        </div>
-        <button onclick="closeFn()" class="close">Close</button>
+<div id="popupDialog">
+    <div id="loginForm" class="form-container">
+        <h2>Login</h2>
+        <form action="./login&signup/login_data.php" method="post" class="login">
+            <label for="email">Email:</label>
+            <input type="email" name="candidate_email" placeholder="Enter your email">
+            <label for="password">Password:</label>
+            <input type="password" name="password_generation" placeholder="Enter your password">
+            <!-- <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" style="position: absolute; top: 73%; right: 230px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                <i class="fas fa-eye" id="toggleIcon"></i>
+            </button> -->
+            <button type="button" class="toggle-password" aria-label="Toggle Password Visibility">
+                <i class="fas fa-eye"></i>
+            </button>
+            <button type="submit" class="button-login">Login</button>
+            <span class="toggle-link" onclick="toggleForm()">Don't have an account? Register</span>
+        </form>
     </div>
-   
+    <div id="registrationForm" class="form-container" style="display:none;">
+        <h2>Register</h2>
+        <form action="registration_data.php" method="post" class="register">
+            <label FOR="username">Username</label>
+            <input type="text" class="username" name="candidate_username" placeholder="Enter Your Username" required>
+            <label for="fullname">Fullname</label>
+            <input type="text" class="full_name" name="candidate_fullname" placeholder="Enter Your Full Name" required pattern="^[a-zA-Z\s]{1,50}$" title="Full Name should only contain letters and spaces, up to 50 characters.">
+            <label for="email">Email:</label>
+            <input type="email" class="email" name="candidate_email" placeholder="Enter Your Email" required>
+            <label for="contact">Contact:</label>
+            <input type="tel" class="contact" name="candidate_contact" placeholder="Enter Your Phone Number" required pattern="^\d{10}$" title="Phone number should be exactly 10 digits.">
+            <label for="password">Password:</label>
+            <input type="password" id="password" class="password" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters long and contain at least one uppercase letter, one symbol, and two numbers.">
+            <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" style="position: absolute; top: 73%; right: 230px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                <i class="fas fa-eye" id="toggleIcon"></i>
+            </button>
+
+            <button type="submit" class="button-register">Register</button>
+            <span class="toggle-link" onclick="toggleForm()">Already have an account? Login</span>
+        </form>
+    </div>
+    <!-- <button onclick="closeFn()" class="close">Close</button> -->
+    <button onclick="closeFn()" class="close"><i class="fas fa-times"></i></button>
+</div>
+
 <!-- login form end-->
-    <!-- Preloader -->
-    <div class="loader-wrap">
-        <div class="preloader style-two"><div class="preloader-close">Preloader Close</div></div>
-        <div class="layer layer-one"><span class="overlay"></span></div>
-        <div class="layer layer-two"><span class="overlay"></span></div>        
-        <div class="layer layer-three"><span class="overlay"></span></div>        
+<!-- Preloader -->
+<div class="loader-wrap">
+    <div class="preloader style-two">
+        <div class="preloader-close">Preloader Close</div>
     </div>
+    <div class="layer layer-one"><span class="overlay"></span></div>
+    <div class="layer layer-two"><span class="overlay"></span></div>
+    <div class="layer layer-three"><span class="overlay"></span></div>
+</div>
 
-    <!-- search-popup -->
-    <div id="search-popup" class="search-popup">
-        <div class="close-search"><span>Close</span></div>
-        <div class="popup-inner">
-            <div class="overlay-layer"></div>
-            <div class="search-form">
-                <form method="post" action="https://azim.commonsupport.com/Fionca/index.html">
-                    <div class="form-group">
-                        <fieldset>
-                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
-                            <input type="submit" value="Search Now!" class="theme-btn style-four">
-                        </fieldset>
-                    </div>
-                </form>
-                <h3>Recent Search Keywords</h3>
-                <ul class="recent-searches">
-                    <li><a href="index.html">Finance</a></li>
-                    <li><a href="index.html">Idea</a></li>
-                    <li><a href="index.html">Growth</a></li>
-                    <li><a href="index.html">Plan</a></li>
+<!-- search-popup -->
+<div id="search-popup" class="search-popup">
+    <div class="close-search"><span>Close</span></div>
+    <div class="popup-inner">
+        <div class="overlay-layer"></div>
+        <div class="search-form">
+            <form method="post" action="https://azim.commonsupport.com/Fionca/index.html">
+                <div class="form-group">
+                    <fieldset>
+                        <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required>
+                        <input type="submit" value="Search Now!" class="theme-btn style-four">
+                    </fieldset>
+                </div>
+            </form>
+            <h3>Recent Search Keywords</h3>
+            <ul class="recent-searches">
+                <li><a href="index.html">Finance</a></li>
+                <li><a href="index.html">Idea</a></li>
+                <li><a href="index.html">Growth</a></li>
+                <li><a href="index.html">Plan</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- search-popup end -->
+
+
+<!-- main header -->
+<header class="main-header style-two">
+    <div class="header-top">
+        <div class="auto-container">
+            <div class="top-inner clearfix">
+                <ul class="info top-left pull-left">
+                    <li><a href="index-2.html">About</a></li>
+                    <li><a href="index-2.html">Careers</a></li>
+                    <li><a href="index-2.html">Agents</a></li>
                 </ul>
+                <div class="top-right pull-right">
+                    <ul class="social-links clearfix">
+                        <li>Connect Socially</li>
+                        <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-    <!-- search-popup end -->
-
-
-    <!-- main header -->
-    <header class="main-header style-two">
-        <div class="header-top">
-            <div class="auto-container">
-                <div class="top-inner clearfix">
-                    <ul class="info top-left pull-left">
-                        <li><a href="index-2.html">About</a></li>
-                        <li><a href="index-2.html">Careers</a></li>
-                        <li><a href="index-2.html">Agents</a></li>
-                    </ul>
-                    <div class="top-right pull-right">
-                        <ul class="social-links clearfix">
-                            <li>Connect Socially</li>
-                            <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
+    <div class="header-upper">
+        <div class="auto-container">
+            <div class="upper-inner clearfix">
+                <div class="logo-box pull-left">
+                    <!-- <figure class="logo"><a href="index.html"><img src="assets/images/logo-2.png" alt=""></a></figure> -->
                 </div>
-            </div>
-        </div>
-        <div class="header-upper">
-            <div class="auto-container">
-                <div class="upper-inner clearfix">
-                    <div class="logo-box pull-left">
-                        <!-- <figure class="logo"><a href="index.html"><img src="assets/images/logo-2.png" alt=""></a></figure> -->
-                    </div>
-                    <div class="info-box pull-right">
-                        <ul class="info-list clearfix">
-                            <li>
-                                <i class="fas fa-phone-volume"></i>
-                                <p>Call Our Support<br /><a href="tel:01005200369">0100 5200 369</a></p>
-                            </li>
-                            <li>
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p>838 Andy Street, Madison, <br />New Jersy 08003</p>
-                            </li>
-                            <li>
+                <div class="info-box pull-right">
+                    <ul class="info-list clearfix">
+                        <li>
+                            <i class="fas fa-phone-volume"></i>
+                            <p>Call Our Support<br /><a href="tel:01005200369">0100 5200 369</a></p>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>838 Andy Street, Madison, <br />New Jersy 08003</p>
+                        </li>
+                        <li>
                             <i class="far fa-user"></i>
-                                <p><a href="#" onclick="popupFn(); return false;">Login/<br>SignUp</a></p>
-                            </li>
-                        </ul>
-                    </div>
+                            <p><a href="#" onclick="popupFn(); return false;">Login/<br>SignUp</a></p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="header-lower">
-            <div class="outer-box">
-                <div class="auto-container">
-                    <div class="menu-area clearfix">
-                        <!--Mobile Navigation Toggler-->
-                        <div class="mobile-nav-toggler">
-                            <i class="icon-bar"></i>
-                            <i class="icon-bar"></i>
-                            <i class="icon-bar"></i>
-                        </div>
-                        <nav class="main-menu navbar-expand-md navbar-light">
-                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                <ul class="navigation clearfix">
-                                    <li class="current dropdown"><a href="index.php">Home</a>
-                                        <!-- <ul>
+    </div>
+    <div class="header-lower">
+        <div class="outer-box">
+            <div class="auto-container">
+                <div class="menu-area clearfix">
+                    <!--Mobile Navigation Toggler-->
+                    <div class="mobile-nav-toggler">
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                    </div>
+                    <nav class="main-menu navbar-expand-md navbar-light">
+                        <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                            <ul class="navigation clearfix">
+                                <li class="current dropdown"><a href="index.php">Home</a>
+                                    <!-- <ul>
                                             <li><a href="index.html">Home Page One</a></li>
                                             <li><a href="index-2.html">Home Page Two</a></li>
                                             <li><a href="index-3.html">Home Page Three</a></li>
@@ -151,10 +158,10 @@
                                                 </ul>
                                             </li>
                                         </ul> -->
-                                    </li> 
-                                    <li class="dropdown"><a href="about-1.php">About</a></li>
-                                    <li class="dropdown"><a href="index-2.html">Services</a>
-                                        <!-- <ul>
+                                </li>
+                                <li class="dropdown"><a href="about-1.php">About</a></li>
+                                <li class="dropdown"><a href="index-2.html">Services</a>
+                                    <!-- <ul>
                                             <li><a href="service-1.html">Service Page 01</a></li>
                                             <li><a href="service-2.html">Service Page 02</a></li>
                                             <li><a href="financial-analysis.html">Financial Analysis</a></li>
@@ -163,8 +170,8 @@
                                             <li><a href="wealth-marketing.html">Wealth Marketing</a></li>
                                             <li><a href="planning-strategies.html">Planning Strategies</a></li>
                                         </ul> -->
-                                    </li> 
-                                    <!-- <li class="dropdown"><a href="index-2.html">Elements</a>
+                                </li>
+                                <!-- <li class="dropdown"><a href="index-2.html">Elements</a>
                                         <div class="megamenu">
                                             <div class="row clearfix">
                                                 <div class="col-lg-3 column">
@@ -222,59 +229,60 @@
                                             </div>                                            
                                         </div>
                                     </li> -->
-                                    <li class="dropdown"><a href="index-2.html">Blog</a>
-                                        <ul>
-                                            <li><a href="blog-grid.html">Blog Grid</a></li>
-                                            <li><a href="blog-classic.html">Blog Classic</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>                              
-                                    <li><a href="contact.html">Contact</a></li>
-                           
+                                <li class="dropdown"><a href="index-2.html">Blog</a>
+                                    <ul>
+                                        <li><a href="blog-grid.html">Blog Grid</a></li>
+                                        <li><a href="blog-classic.html">Blog Classic</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
 
-                                </ul>
-                            </div>
-                        </nav>
-                        <div class="menu-right-content clearfix">
-                            <div class="search-btn">
-                                <button type="button" class="search-toggler"><i class="flaticon-search-1"></i></button>
-                            </div>
-                           
-                            </div>
+
+                            </ul>
                         </div>
+                    </nav>
+                    <div class="menu-right-content clearfix">
+                        <div class="search-btn">
+                            <button type="button" class="search-toggler"><i class="flaticon-search-1"></i></button>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
 
-        <!--sticky Header-->
-        <div class="sticky-header">
-            <div class="auto-container">
-                <div class="outer-box clearfix">
-                    <div class="logo-box pull-left">
-                        <figure class="logo"><a href="index.html"><img src="assets/images/small-logo-2.png" alt=""></a></figure>
-                    </div>
-                    <div class="menu-area pull-right">
-                        <nav class="main-menu clearfix">
-                            <!--Keep This Empty / Menu will come through Javascript-->
-                        </nav>
-                    </div>
+    <!--sticky Header-->
+    <div class="sticky-header">
+        <div class="auto-container">
+            <div class="outer-box clearfix">
+                <div class="logo-box pull-left">
+                    <figure class="logo"><a href="index.html"><img src="assets/images/small-logo-2.png" alt=""></a></figure>
+                </div>
+                <div class="menu-area pull-right">
+                    <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav>
                 </div>
             </div>
         </div>
-    </header>
-    <!-- header end -->
+    </div>
+</header>
+<!-- header end -->
 
-    <!-- Mobile Menu  -->
-    <!-- <div class="mobile-menu">
+<!-- Mobile Menu  -->
+<!-- <div class="mobile-menu">
+    
         <div class="menu-backdrop"></div>
         <div class="close-btn"><i class="fas fa-times"></i></div>
         
         <nav class="menu-box">
             <div class="nav-logo"><a href="index.html"><img src="assets/images/mobile-logo.png" alt="" title=""></a></div>
             <div class="menu-outer">  -->
-            <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header</div> -->
-             <!-- <div class="contact-info">
+<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header</div> -->
+<!-- <div class="contact-info">
                 <h4>Contact Info</h4>
                 <ul>
                     <li>Chicago 12, Melborne City, USA</li>
@@ -293,11 +301,10 @@
             </div>
         </nav>
     </div>  -->
-    <!-- End Mobile Menu -->
+<!-- End Mobile Menu -->
 
 
-
-    <!--Scroll to top-->
-    <button class="scroll-top scroll-to-target" data-target="html">
-        <span class="fa fa-arrow-up"></span>
-    </button>
+<!--Scroll to top-->
+<button class="scroll-top scroll-to-target" data-target="html">
+    <span class="fa fa-arrow-up"></span>
+</button>

@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 
 <?php include './includes/head.php'; ?>
-<?php include './includes/header.php'; ?>   
+<?php include './includes/header.php'; ?>
 
 <!-- page wrapper -->
 

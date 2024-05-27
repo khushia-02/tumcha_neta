@@ -15,3 +15,23 @@
 
 <!-- main-js -->
 <script src="assets/js/script.js"></script>
+
+<!-- Add FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!-- Your other scripts
+<script src="script.js"></script> -->
+
+<!-- login button Visibility -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const togglePasswordButton = document.querySelector('.toggle-password');
+
+        togglePasswordButton.addEventListener('click', function() {
+            const passwordField = this.previousElementSibling;
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+        });
+    });
+</script>
+<!-- login button Visibility ended-->
