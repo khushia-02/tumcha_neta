@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,12 +9,13 @@ session_start();
 <?php include './includes/header.php'; ?>
 
 <!-- page wrapper -->
+
 <body class="boxed_wrapper ltr">
     <!-- Mobile Menu  -->
     <div class="mobile-menu">
         <div class="menu-backdrop"></div>
         <div class="close-btn"><i class="fas fa-times"></i></div>
-        
+
         <nav class="menu-box">
             <div class="nav-logo"><a href="index.html"><img src="assets/images/mobile-logo.png" alt="" title=""></a></div>
             <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
@@ -52,7 +54,7 @@ session_start();
                             <a href="index.html" class="theme-btn style-two"><i class="fas fa-atom"></i>How We Help</a>
                             <a href="index-6.html" class="user-btn-two"><i class="far fa-user"></i>Find an Agent</a>
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
             <div class="slide-item">
@@ -77,7 +79,7 @@ session_start();
                         <div class="btn-box">
                             <a href="index.html" class="theme-btn style-two mar-0"><i class="fas fa-atom"></i>How We Help</a>
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </div>
@@ -870,12 +872,12 @@ session_start();
                                                     <i class="fas fa-chess-knight"></i>
                                                     <div class="select-box">
                                                         <select class="wide">
-                                                           <option data-display="Select">Select a plan</option>
-                                                           <option value="1">Life Insurance</option>
-                                                           <option value="2">Home Insurance</option>
-                                                           <option value="3" disabled>A disabled option</option>
-                                                           <option value="4">Car Insurance</option>
-                                                           <option value="5">Health Insurance</option>
+                                                            <option data-display="Select">Select a plan</option>
+                                                            <option value="1">Life Insurance</option>
+                                                            <option value="2">Home Insurance</option>
+                                                            <option value="3" disabled>A disabled option</option>
+                                                            <option value="4">Car Insurance</option>
+                                                            <option value="5">Health Insurance</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -901,12 +903,12 @@ session_start();
                                                     <i class="fas fa-chess-knight"></i>
                                                     <div class="select-box">
                                                         <select class="wide">
-                                                           <option data-display="Select">Select a plan</option>
-                                                           <option value="1">Life Insurance</option>
-                                                           <option value="2">Home Insurance</option>
-                                                           <option value="3" disabled>A disabled option</option>
-                                                           <option value="4">Car Insurance</option>
-                                                           <option value="5">Health Insurance</option>
+                                                            <option data-display="Select">Select a plan</option>
+                                                            <option value="1">Life Insurance</option>
+                                                            <option value="2">Home Insurance</option>
+                                                            <option value="3" disabled>A disabled option</option>
+                                                            <option value="4">Car Insurance</option>
+                                                            <option value="5">Health Insurance</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -932,12 +934,12 @@ session_start();
                                                     <i class="fas fa-chess-knight"></i>
                                                     <div class="select-box">
                                                         <select class="wide">
-                                                           <option data-display="Select">Select a plan</option>
-                                                           <option value="1">Life Insurance</option>
-                                                           <option value="2">Home Insurance</option>
-                                                           <option value="3" disabled>A disabled option</option>
-                                                           <option value="4">Car Insurance</option>
-                                                           <option value="5">Health Insurance</option>
+                                                            <option data-display="Select">Select a plan</option>
+                                                            <option value="1">Life Insurance</option>
+                                                            <option value="2">Home Insurance</option>
+                                                            <option value="3" disabled>A disabled option</option>
+                                                            <option value="4">Car Insurance</option>
+                                                            <option value="5">Health Insurance</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -963,12 +965,12 @@ session_start();
                                                     <i class="fas fa-chess-knight"></i>
                                                     <div class="select-box">
                                                         <select class="wide">
-                                                           <option data-display="Select">Select a plan</option>
-                                                           <option value="1">Life Insurance</option>
-                                                           <option value="2">Home Insurance</option>
-                                                           <option value="3" disabled>A disabled option</option>
-                                                           <option value="4">Car Insurance</option>
-                                                           <option value="5">Health Insurance</option>
+                                                            <option data-display="Select">Select a plan</option>
+                                                            <option value="1">Life Insurance</option>
+                                                            <option value="2">Home Insurance</option>
+                                                            <option value="3" disabled>A disabled option</option>
+                                                            <option value="4">Car Insurance</option>
+                                                            <option value="5">Health Insurance</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1135,7 +1137,7 @@ session_start();
 
     <?php include './includes/javascript.php'; ?>
 
-<script>
+    <script>
         function popupFn() {
             document.getElementById("overlay").style.display = "block";
             document.getElementById("popupDialog").style.display = "block";
@@ -1159,7 +1161,7 @@ session_start();
         }
     </script>
     <script>
-         document.getElementById('togglePassword').addEventListener('click', function (e) {
+        document.getElementById('togglePassword').addEventListener('click', function(e) {
             const passwordInput = document.getElementById('password');
             const toggleIcon = document.getElementById('toggleIcon');
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -1174,7 +1176,7 @@ session_start();
             }
         });
 
-        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
             const fullname = document.querySelector('.full_name').value;
             const email = document.querySelector('.email').value;
             const contact = document.querySelector('.contact').value;
@@ -1195,9 +1197,9 @@ session_start();
                 e.preventDefault();
             }
         });
-   
     </script>
 </body><!-- End of .page_wrapper -->
 
 <!-- Mirrored from azim.commonsupport.com/Fionca/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 May 2024 09:17:17 GMT -->
+
 </html>
