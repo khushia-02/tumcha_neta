@@ -29,8 +29,8 @@
             <label for="contact">Contact:</label>
             <input type="tel" class="contact" name="candidate_contact" placeholder="Enter Your Phone Number" required pattern="^\d{10}$" title="Phone number should be exactly 10 digits.">
             <label for="profile">Profile Img:</label>
-    <input type="file" name="candidate_profile_path" placeholder="Choose your profile" required>
-    
+            <input type="file" name="candidate_profile_path" placeholder="Choose your profile" required>
+
             <label for="password">Password:</label>
             <input type="password" id="password" class="password" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters long and contain at least one uppercase letter, one symbol, and two numbers.">
             <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" style="position: absolute; top: 73%; right: 230px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
@@ -125,50 +125,50 @@
                             <i class="far fa-user"></i><?php
 
 
-// Check if the user is logged in
-if(isset($_SESSION['username'])) {
-    // User is logged in, fetch user's full name and profile image path from the database
-    $username = $_SESSION['username'];
+                                                        // Check if the user is logged in
+                                                        if (isset($_SESSION['username'])) {
+                                                            // User is logged in, fetch user's full name and profile image path from the database
+                                                            $username = $_SESSION['username'];
 
-    // Database connection details
-    $servername = "localhost";
-    $username_db = "root";
-    $password_db = "";
-    $dbname = "tumcha_neta";
+                                                            // Database connection details
+                                                            $servername = "localhost";
+                                                            $username_db = "root";
+                                                            $password_db = "";
+                                                            $dbname = "tumcha_neta";
 
-    // Create connection
-    $conn = new mysqli($servername, $username_db, $password_db, $dbname);
+                                                            // Create connection
+                                                            $conn = new mysqli($servername, $username_db, $password_db, $dbname);
 
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+                                                            // Check connection
+                                                            if ($conn->connect_error) {
+                                                                die("Connection failed: " . $conn->connect_error);
+                                                            }
 
-    // Fetch user's full name and profile image path from the database
-    $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration WHERE candidate_username = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $stmt->bind_result($full_name, $profile_path);
-    $stmt->fetch();
-    $stmt->close();
+                                                            // Fetch user's full name and profile image path from the database
+                                                            $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration WHERE candidate_username = ?";
+                                                            $stmt = $conn->prepare($sql);
+                                                            $stmt->bind_param("s", $username);
+                                                            $stmt->execute();
+                                                            $stmt->bind_result($full_name, $profile_path);
+                                                            $stmt->fetch();
+                                                            $stmt->close();
 
-    // Display profile image and full name
-    echo "<p>Full Name: " . htmlspecialchars($full_name) . "</p>";
-    // echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture'>";
-    echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>";
+                                                            // Display profile image and full name
+                                                            echo "<p>" . htmlspecialchars($full_name) . "</p>";
+                                                            // echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture'>";
+                                                            echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>";
 
-    // Logout button
-    echo "<a href='logout.php'>Logout</a><br>";
+                                                            // Logout button
+                                                            echo "<a href='logout.php'>Logout</a><br>";
 
-    // Insert Your Info button
-    echo "<a href='./form/candidate_further_details.html'>Insert Your Info</a>";
-} else {
-    // User is not logged in, display Login/SignUp link
-    echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
-}
-?>
- 
+                                                            // Insert Your Info button
+                                                            echo "<a href='./form/candidate_further_details.html'></a>";
+                                                        } else {
+                                                            // User is not logged in, display Login/SignUp link
+                                                            echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
+                                                        }
+                                                        ?>
+
                         </li>
                     </ul>
                 </div>
