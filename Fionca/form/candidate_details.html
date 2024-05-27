@@ -4,73 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply for Internship</title>
+    <title>Update Profile</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        .process-line {
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        .process-step {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .step-icon {
-            font-size: 2rem;
-            color: #007bff;
-        }
-
-        .step-text {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .step-text.active {
-            color: #333;
-        }
-
-        .step-line {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #ccc;
-            z-index: -1;
-        }
-
-        .step-line.active {
-            background-color: #007bff;
-        }
-
-        .work-entry {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-            position: relative;
-        }
-
-        .remove-entry {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            cursor: pointer;
-            color: red;
-        }
-    </style>
 </head>
 
 <body>
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Apply for Internship</h1>
+        <h1 class="text-center mb-4">Update Profile</h1>
 
         <!-- Process Line -->
         <div class="process-line d-flex justify-content-between">
@@ -101,29 +44,75 @@
         </div>
 
         <!-- Basic Details Form Section -->
+        <!-- Basic Details Form Section -->
         <div id="basic-details" class="form-section">
             <h3>Basic Details</h3>
-            <form>
-            </form>
-            <div class="form-group">
-                <label for="how-hear">How Did You Hear About Us? *</label>
-                <select class="form-control" id="how-hear" required>
-                    <option value="">Select Option</option>
-                    <option value="friends">Friends</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="country">Country/Region *</label>
-                <input type="text" class="form-control" id="country" required>
-            </div>
-            <div class="form-group">
-                <label for="firstName">First Name *</label>
-                <input type="text" class="form-control" id="firstName" required>
-            </div>
-            <!-- Add other fields here -->
-            <button type="submit" class="btn btn-primary">Submit and Continue</button>
+            <form method="post" action="register_candidate.php">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="candidate_username">Username:</label>
+                        <input type="text" id="candidate_username" name="candidate_username" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="profile_photo_path">Profile Photo Path:</label>
+                        <input type="text" placeholder="Upload Image" accept="image/png, image/jpeg, image/jpg"
+                            onfocus="(this.type='file')" name="image" class="box" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="self_profession">Self Profession:</label>
+                        <input type="text" id="self_profession" name="self_profession">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="about_candidate">About Candidate:</label>
+                        <input type="text" id="about_candidate" name="about_candidate">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="candidate_area_pincode">Area Pincode:</label>
+                        <input type="text" id="candidate_area_pincode" name="candidate_area_pincode">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="candidate_city">City:</label>
+                        <input type="text" id="candidate_city" name="candidate_city">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="candidate_area_current">Current Area:</label>
+                        <input type="text" id="candidate_area_current" name="candidate_area_current">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="candidate_gender">Gender:</label>
+                        <input type="text" id="candidate_gender" name="candidate_gender">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="candidate_dob">Date of Birth:</label>
+                        <input type="date" id="candidate_dob" name="candidate_dob" onchange="calculateAge()" required><br><br>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="age">Age:</label>
+                        <input type="text" id="age" name="age" readonly>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="candidate_email">Email:</label>
+                        <input type="email" id="candidate_email" name="candidate_email">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="candidate_state">State:</label>
+                        <input type="text" id="candidate_state" name="candidate_state" value="Maharashtra" readonly>
+                    </div>
+                </div>
+
+                <input type="submit" value="Submit">
             </form>
         </div>
+
 
         <!-- Education Details Form Section -->
         <div id="education-details" class="form-section" style="display: none;">
@@ -147,36 +136,38 @@
         <div id="additional-details" class="form-section" style="display: none;">
             <h3>Work and Area of expertise</h3>
             <form action="submit_candidate_works.php" method="POST">
+<<<<<<< HEAD
                 <div class="form-group">
                     <label for="candidate_username_available">Username:</label>
                     <input type="text" id="candidate_username" name="candidate_username" required
                         maxlength="50"><br><br>
                 </div>
+=======
+                <label for="candidate_username_available">Username:</label>
+                <input type="text" id="candidate_username_available" name="candidate_username_available" required
+                    maxlength="50">
+>>>>>>> 8d96b9c51d59a8a6acc3d411dc8dbedbe2e1a26f
 
                 <div id="work-entries">
                     <div class="work-entry">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="year">Year:</label>
-                                <input type="number" id="year" name="year[]" class="form-control" required min="1900"
-                                    max="2100">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="district">District:</label>
-                                <input type="text" id="district" name="district[]" class="form-control" maxlength="100">
-                            </div>
+                        <div class="form-group col-md-4">
+                            <label for="year">Year:</label>
+                            <input type="number" id="year" name="year[]" class="form-control" required min="1900"
+                                max="2100">
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="area">Area:</label>
-                                <input type="text" id="area" name="area[]" class="form-control" maxlength="100">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="pincode">Pincode:</label>
-                                <input type="number" id="pincode" name="pincode[]" class="form-control">
-                            </div>
+                        <div class="form-group col-md-4">
+                            <label for="district">District:</label>
+                            <input type="text" id="district" name="district[]" class="form-control" maxlength="100">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group col-md-4">
+                            <label for="area">Area:</label>
+                            <input type="text" id="area" name="area[]" class="form-control" maxlength="100">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="pincode">Pincode:</label>
+                            <input type="number" id="pincode" name="pincode[]" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
                             <label for="candidate_areas_of_workingfor">Areas of Working For:</label>
                             <select id="candidate_areas_of_workingfor" name="candidate_areas_of_workingfor[]"
                                 class="form-control">
@@ -187,7 +178,7 @@
                                 <option value="Taxation">Taxation</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group col-md-4">
                             <label for="details_of_working">Details of Working:</label>
                             <textarea id="details_of_working" name="details_of_working[]"
                                 class="form-control"></textarea>
@@ -201,6 +192,7 @@
             </form>
         </div>
 
+
         <!-- Terms & Conditions Section -->
         <div id="terms-conditions" class="form-section" style="display: none;">
             <h3>Terms & Conditions</h3>
@@ -210,66 +202,63 @@
 
     </div>
 
+    <script src="date.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Form Section Visibility Toggle
-      $('.process-step').click(function() {
-        var stepIndex = $(this).index();
-        $('.form-section').hide();
-        $('#' + $('.form-section').eq(stepIndex).attr('id')).show();
-      });
+    <script>
+        $(document).ready(function () {
+            // Form Section Visibility Toggle
+            $('.process-step').click(function () {
+                var stepIndex = $(this).index();
+                $('.form-section').hide();
+                $('#' + $('.form-section').eq(stepIndex).attr('id')).show();
+            });
 
-      // Add more work entries
-      $('#add-work-entry').click(function() {
-        var newEntry = `
-          <div class="work-entry">
-            <div class="form-row">
-              <div class="form-group col-md-6">
+            // Add more work entries
+            $('#add-work-entry').click(function () {
+                var newEntry = `
+            <div class="work-entry">
+              <div class="form-group col-md-4">
                 <label for="year">Year:</label>
                 <input type="number" id="year" name="year[]" class="form-control" required min="1900" max="2100">
               </div>
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-4">
                 <label for="district">District:</label>
                 <input type="text" id="district" name="district[]" class="form-control" maxlength="100">
               </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-4">
                 <label for="area">Area:</label>
                 <input type="text" id="area" name="area[]" class="form-control" maxlength="100">
               </div>
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-4">
                 <label for="pincode">Pincode:</label>
                 <input type="number" id="pincode" name="pincode[]" class="form-control">
               </div>
-            </div>
-            <div class="form-group">
-              <label for="candidate_areas_of_workingfor">Areas of Working For:</label>
-              <select id="candidate_areas_of_workingfor" name="candidate_areas_of_workingfor[]" class="form-control">
+              <div class="form-group col-md-4">
+                <label for="candidate_areas_of_workingfor">Areas of Working For:</label>
+                <select id="candidate_areas_of_workingfor" name="candidate_areas_of_workingfor[]" class="form-control">
                 <option value="Engineering">Engineering</option>
                 <option value="Health">Health</option>
                 <option value="Education">Education</option>
                 <option value="Revenue">Revenue</option>
                 <option value="Taxation">Taxation</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="details_of_working">Details of Working:</label>
-              <textarea id="details_of_working" name="details_of_working[]" class="form-control"></textarea>
-            </div>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="details_of_working">Details of Working:</label>
+                <textarea id="details_of_working" name="details_of_working[]" class="form-control"></textarea>
+              </div>
             <div class="remove-entry"><i class="fas fa-minus-circle"></i></div>
           </div>
         `;
-        $('#work-entries').append(newEntry);
-      });
+                $('#work-entries').append(newEntry);
+            });
 
-      // Remove work entry
-      $(document).on('click', '.remove-entry', function() {
-        $(this).closest('.work-entry').remove();
-      });
-    });
-  </script>
+            // Remove work entry
+            $(document).on('click', '.remove-entry', function () {
+                $(this).closest('.work-entry').remove();
+            });
+        });
+    </script>
 </body>
 
 </html>
