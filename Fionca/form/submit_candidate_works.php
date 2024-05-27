@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Get form data
-$candidate_username_available = $_POST['candidate_username_available'];
+$candidate_username_available = $_POST['candidate_username'];
 $years = $_POST['year'];
 $districts = $_POST['district'];
 $areas = $_POST['area'];
@@ -22,7 +22,7 @@ $candidate_areas_of_workingfor = $_POST['candidate_areas_of_workingfor'];
 $details_of_working = $_POST['details_of_working'];
 
 // Prepare and bind
-$stmt = $conn->prepare("INSERT INTO candidate_works (candidate_username_available, year, district, area, pincode, candidate_areas_of_workingfor, details_of_working) VALUES (?, ?, ?, ?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO candidate_works (candidate_username, year, district, area, pincode, candidate_areas_of_workingfor, details_of_working) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
 // Loop through each entry and execute the prepared statement
 for ($i = 0; $i < count($years); $i++) {
