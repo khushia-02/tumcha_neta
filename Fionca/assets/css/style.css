@@ -4561,6 +4561,9 @@
    background: transparent;
    cursor: pointer;
    transition: all 500ms ease;
+   right:22px;
+   top:20px;
+   
  }
 
  .main-header.style-two .header-lower .menu-right-content .search-btn:before {
