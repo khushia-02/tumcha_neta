@@ -28,6 +28,9 @@
             <input type="email" class="email" name="candidate_email" placeholder="Enter Your Email" required>
             <label for="contact">Contact:</label>
             <input type="tel" class="contact" name="candidate_contact" placeholder="Enter Your Phone Number" required pattern="^\d{10}$" title="Phone number should be exactly 10 digits.">
+            <label for="profile">Profile Img:</label>
+    <input type="file" name="candidate_profile_path" placeholder="Choose your profile" required>
+    
             <label for="password">Password:</label>
             <input type="password" id="password" class="password" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters long and contain at least one uppercase letter, one symbol, and two numbers.">
             <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" style="position: absolute; top: 73%; right: 230px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
