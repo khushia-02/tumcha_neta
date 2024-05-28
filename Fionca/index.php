@@ -96,10 +96,7 @@
                         <label for="fullName">Full Name:</label>
                         <input type="text" id="fullName" name="fullName">
                     </li>
-                    <li>
-                        <label for="age">Age:</label>
-                        <input type="number" id="age" name="age">
-                    </li>
+                    
                     <li>
                         <label for="party">Party:</label>
                         <input type="text" id="party" name="party">
