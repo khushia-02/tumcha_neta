@@ -12709,9 +12709,9 @@
    font-weight: bold;
    transition: background-color 0.3s ease;
    align-self: flex-start;
-   top: 118%;
+   top: 44%;
    position: relative;
-   right: 470%
+   /* right: 470% */
      /* Aligns the button to the start of the flex container */
  }
 
