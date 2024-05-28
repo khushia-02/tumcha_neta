@@ -4561,9 +4561,9 @@
    background: transparent;
    cursor: pointer;
    transition: all 500ms ease;
-   right:22px;
-   top:20px;
-   
+   right: 22px;
+   top: 20px;
+
  }
 
  .main-header.style-two .header-lower .menu-right-content .search-btn:before {
@@ -12571,11 +12571,21 @@
  /* toggle btn login btn visiblity ended*/
 
  .avatar {
-   vertical-align: middle;
-   width: 50px;
-   height: 50px;
-   border-radius: 50%;
-   right: 64%;
-   position: relative;
-   top: -26px;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  right: 64%;
+  position: relative;
+  top: -25px;
  }
+
+ /* header logout */
+ .logout-header {
+   top: 34%;
+   position: absolute;
+   right: 31%;
+ }
+ 
+
+ /* header logout ended*/
