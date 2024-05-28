@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Candidate Goals</title>
+    <style>
+        .goal-form {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .delete-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function addForm() {
+            var container = document.getElementById("forms-container");
+
+            var form = document.createElement("form");
+            form.setAttribute("action", "submit_goals.php");
+            form.setAttribute("method", "post");
+            form.setAttribute("class", "goal-form");
+
+            var deleteButton = document.createElement("button");
+            deleteButton.setAttribute("type", "button");
+            deleteButton.setAttribute("class", "delete-button");
+            deleteButton.innerHTML = "Delete";
+            deleteButton.onclick = function() {
+                container.removeChild(form);
+            };
+            form.appendChild(deleteButton);
+
+            var yearLabel = document.createElement("label");
+            yearLabel.setAttribute("for", "year");
+            yearLabel.innerHTML = "Year:";
+            form.appendChild(yearLabel);
+            form.appendChild(document.createElement("br"));
+
+            var yearInput = document.createElement("input");
+            yearInput.setAttribute("type", "number");
+            yearInput.setAttribute("id", "year");
+            yearInput.setAttribute("name", "year");
+            yearInput.required = true;
+            form.appendChild(yearInput);
+            form.appendChild(document.createElement("br"));
+            form.appendChild(document.createElement("br"));
+
+            var deadlineLabel = document.createElement("label");
+            deadlineLabel.setAttribute("for", "dead_line");
+            deadlineLabel.innerHTML = "Deadline:";
+            form.appendChild(deadlineLabel);
+            form.appendChild(document.createElement("br"));
+
+            var deadlineInput = document.createElement("input");
+            deadlineInput.setAttribute("type", "date");
+            deadlineInput.setAttribute("id", "dead_line");
+            deadlineInput.setAttribute("name", "dead_line");
+            deadlineInput.required = true;
+            form.appendChild(deadlineInput);
+            form.appendChild(document.createElement("br"));
+            form.appendChild(document.createElement("br"));
+
+            var infoLabel = document.createElement("label");
+            infoLabel.setAttribute("for", "information");
+            infoLabel.innerHTML = "Information:";
+            form.appendChild(infoLabel);
+            form.appendChild(document.createElement("br"));
+
+            var infoTextarea = document.createElement("textarea");
+            infoTextarea.setAttribute("id", "information");
+            infoTextarea.setAttribute("name", "information");
+            infoTextarea.setAttribute("rows", "4");
+            infoTextarea.setAttribute("cols", "50");
+            form.appendChild(infoTextarea);
+            form.appendChild(document.createElement("br"));
+            form.appendChild(document.createElement("br"));
+
+            var submitButton = document.createElement("input");
+            submitButton.setAttribute("type", "submit");
+            submitButton.setAttribute("value", "Submit");
+            form.appendChild(submitButton);
+
+            container.appendChild(form);
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter Candidate Goals</h2>
+    <div id="forms-container">
+        <!-- Initial form -->
+        <form action="submit_goals.php" method="post" class="goal-form">
+            <label for="year">Year:</label><br>
+            <input type="number" id="year" name="year" required><br><br>
+            
+            <label for="dead_line">Deadline:</label><br>
+            <input type="date" id="dead_line" name="dead_line" required><br><br>
+            
+            <label for="information">Information:</label><br>
+            <textarea id="information" name="information" rows="4" cols="50"></textarea><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+        <hr>
+    </div>
+    <button type="button" onclick="addForm()">Add Another Goal</button>
+</body>
+</html>
