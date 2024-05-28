@@ -1,6 +1,6 @@
 <!-- <?php
-        session_start();
-        ?>
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -85,67 +85,7 @@
         </div>
     </section>
     <!-- banner-section end -->
-
-    <!-- filtre  -->
-    <div class="container">
-        <aside class="filters">
-            <div class="filter-category">
-                <h3 class="candi-search">Search your candidate</h3>
-                <ul>
-                    <li>
-                        <label for="fullName">Full Name:</label>
-                        <input type="text" id="fullName" name="fullName">
-                    </li>
-                    
-                    <li>
-                        <label for="party">Party:</label>
-                        <input type="text" id="party" name="party">
-                    </li>
-                    <li>
-                        <label for="karyaArea">Karya Area:</label>
-                        <input type="text" id="karyaArea" name="karyaArea">
-                    </li>
-                    <li>
-                        <label for="area">Area:</label>
-                        <select id="area" name="area">
-                            <option value="">Select Area</option>
-                            <option value="Shivajinagar">Shivajinagar</option>
-                            <option value="Kothrud">Kothrud</option>
-                            <option value="Baner">Baner</option>
-                            <option value="Aundh">Aundh</option>
-                            <option value="Pimple Saudagar">Pimple Saudagar</option>
-                            <option value="Wakad">Wakad</option>
-                            <option value="Hinjewadi">Hinjewadi</option>
-                            <option value="Kharadi">Kharadi</option>
-                            <option value="Viman Nagar">Viman Nagar</option>
-                            <option value="Hadapsar">Hadapsar</option>
-                            <option value="Magarpatta">Magarpatta</option>
-                            <option value="Kondhwa">Kondhwa</option>
-                            <option value="Bibwewadi">Bibwewadi</option>
-                            <option value="Swargate">Swargate</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label>Gender:</label>
-                        <div class="gender-options">
-                            <label><input type="radio" name="gender" value="Male"> Male</label>
-                            <label><input type="radio" name="gender" value="Female"> Female</label>
-                            <label><input type="radio" name="gender" value="Others"> Others</label>
-                            <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
-                        </div>
-                    </li>
-                    <li>
-                        <button type="submit" class="submit-btn">Submit</button>
-                    </li>
-                </ul>
-            </div>
-        </aside>
-        <!-- <main class="content">
-            <h1>Product List</h1>
-            Product items will go here
-        </main> -->
-    </div>
-    <!-- filtre ends -->
+    
 
     <!-- Candidate details list start -->
     <section class="team-section">
@@ -160,274 +100,60 @@
                 </div>
             </div>
             <div class="four-item-carousel owl-carousel owl-theme owl-nav-none owl-dot-style-one">
-
+               
                 <?php
-                // Database connection details
-                $servername = "localhost";
-                $username_db = "root";
-                $password_db = "";
-                $dbname = "tumcha_neta";
+                        // Database connection details
+                        $servername = "localhost";
+                        $username_db = "root";
+                        $password_db = "";
+                        $dbname = "tumcha_neta";
 
-                // Create connection
-                $conn = new mysqli($servername, $username_db, $password_db, $dbname);
+                        // Create connection
+                        $conn = new mysqli($servername, $username_db, $password_db, $dbname);
 
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
+                        // Check connection
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
 
-                // Fetch all candidates' full names and profile image paths from the database
-                $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration";
-                $result = $conn->query($sql);
+                        // Fetch all candidates' full names and profile image paths from the database
+                        $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration";
+                        $result = $conn->query($sql);
 
-                if ($result->num_rows > 0) {
-                    // Output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<div class='team-block-one'>";
-                        echo "<div class='inner-box'>";
-                        echo "<figure class='image-box'><img src='" . htmlspecialchars($row["candidate_profile_path"]) . "' alt=''></figure>";
-                        echo "<div class='lower-content'>";
-                        echo "<div class='content-box'>";
-                        echo "<h3><a href='index-2.html'>" . htmlspecialchars($row["candidate_fullname"]) . "</a></h3>";
-                        echo "<span class='designation'>Senior Manager</span>";
-                        echo "</div>";
-                        echo "<div class='ovellay-box'>";
-                        echo "<h3><a href='index-2.html'>" . htmlspecialchars($row["candidate_fullname"]) . "</a></h3>";
-                        echo "<span class='designation'>Senior Manager</span>";
-                        echo "<ul class='social-links clearfix'>";
-                        echo "<li><a href='index-2.html'><i class='fab fa-facebook-f'></i></a></li>";
-                        echo "<li><a href='index-2.html'><i class='fab fa-twitter'></i></a></li>";
-                        echo "<li><a href='index-2.html'><i class='fab fa-instagram'></i></a></li>";
-                        echo "<li><a href='index-2.html'><i class='fab fa-linkedin-in'></i></a></li>";
-                        echo "</ul>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "</div>";
+                    if ($result->num_rows > 0) {
+                        // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                            echo "<div class='team-block-one'>";
+                            echo "<div class='inner-box'>";
+                            echo "<figure class='image-box'><img src='" . htmlspecialchars($row["candidate_profile_path"]) . "' alt=''></figure>";
+                            echo "<div class='lower-content'>";
+                            echo "<div class='content-box'>";
+                            echo "<h3><a href='index-2.html'>" . htmlspecialchars($row["candidate_fullname"]) . "</a></h3>";
+                            echo "<span class='designation'>Senior Manager</span>";
+                            echo "</div>";
+                            echo "<div class='ovellay-box'>";
+                            echo "<h3><a href='index-2.html'>" . htmlspecialchars($row["candidate_fullname"]) . "</a></h3>";
+                            echo "<span class='designation'>Senior Manager</span>";
+                            echo "<ul class='social-links clearfix'>";
+                            echo "<li><a href='index-2.html'><i class='fab fa-facebook-f'></i></a></li>";
+                            echo "<li><a href='index-2.html'><i class='fab fa-twitter'></i></a></li>";
+                            echo "<li><a href='index-2.html'><i class='fab fa-instagram'></i></a></li>";
+                            echo "<li><a href='index-2.html'><i class='fab fa-linkedin-in'></i></a></li>";
+                            echo "</ul>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                    } else {
+                        echo "0 results";
                     }
-                } else {
-                    echo "0 results";
-                }
-                $conn->close();
+                    $conn->close();
                 ?>
 
             </div>
         </div>
     </section>
-    <!--
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-3.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Amanda Tim</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Amanda Tim</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-4.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Jasmine Olgin</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Jasmine Olgin</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-1.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Christina Roy</a></h3>
-                                <span class="designation">Founder CEO</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Christina Roy</a></h3>
-                                <span class="designation">Founder CEO</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-2.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Paul Wilson</a></h3>
-                                <span class="designation">Senior Manager</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Paul Wilson</a></h3>
-                                <span class="designation">Senior Manager</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-3.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Amanda Tim</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Amanda Tim</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-4.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Jasmine Olgin</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Jasmine Olgin</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-1.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Christina Roy</a></h3>
-                                <span class="designation">Founder CEO</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Christina Roy</a></h3>
-                                <span class="designation">Founder CEO</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-2.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Paul Wilson</a></h3>
-                                <span class="designation">Senior Manager</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Paul Wilson</a></h3>
-                                <span class="designation">Senior Manager</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-3.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Amanda Tim</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Amanda Tim</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box"><img src="assets/images/team/team-4.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <div class="content-box">
-                                <h3><a href="index-2.html">Jasmine Olgin</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                            </div>
-                            <div class="ovellay-box">
-                                <h3><a href="index-2.html">Jasmine Olgin</a></h3>
-                                <span class="designation">Insurance Agent</span>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-
-
-    <!-- Candidate details list end -->
 
 
     <!-- about-style-two -->
