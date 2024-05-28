@@ -102,6 +102,10 @@
                         <input type="text" id="party" name="party">
                     </li>
                     <li>
+                        <label for="karyaArea">Karya Area:</label>
+                        <input type="text" id="karyaArea" name="karyaArea">
+                    </li>
+                    <li>
                         <label for="area">Area:</label>
                         <select id="area" name="area">
                             <option value="">Select Area</option>
@@ -120,10 +124,6 @@
                             <option value="Bibwewadi">Bibwewadi</option>
                             <option value="Swargate">Swargate</option>
                         </select>
-                    </li>
-                    <li>
-                        <label for="karyaArea">Karya Area:</label>
-                        <input type="text" id="karyaArea" name="karyaArea">
                     </li>
                     <li>
                         <label>Gender:</label>
