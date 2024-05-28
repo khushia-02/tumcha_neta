@@ -7,9 +7,6 @@
             <input type="email" name="candidate_email" placeholder="Enter your email">
             <label for="password">Password:</label>
             <input type="password" name="password_generation" placeholder="Enter your password">
-            <!-- <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" style="position: absolute; top: 73%; right: 230px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
-                <i class="fas fa-eye" id="toggleIcon"></i>
-            </button> -->
             <button type="button" class="toggle-password" aria-label="Toggle Password Visibility">
                 <i class="fas fa-eye"></i>
             </button>
@@ -17,43 +14,63 @@
             <span class="toggle-link" onclick="toggleForm()">Don't have an account? Register</span>
         </form>
     </div>
-    <div id="registrationForm" class="form-container" style="display:none;">
-        <h2>Register</h2>
+
+    <div id="registrationForm" class="form-container1" style="display:none;">
+      <div class="container">
+        <h3>Candidate Registration</h3>
+
         <form action="registration_data.php" method="post" class="register" enctype="multipart/form-data">
-            <label FOR="username">Username</label>
-            <input type="text" class="username" name="candidate_username" placeholder="Enter Your Username" required>
-            <label for="fullname">Fullname</label>
-            <input type="text" class="full_name" name="candidate_fullname" placeholder="Enter Your Full Name" required pattern="^[a-zA-Z\s]{1,50}$" title="Full Name should only contain letters and spaces, up to 50 characters.">
-            <label for="email">Email:</label>
-            <input type="email" class="email" name="candidate_email" placeholder="Enter Your Email" required>
-            <label for="contact">Contact:</label>
-            <input type="tel" class="contact" name="candidate_contact" placeholder="Enter Your Phone Number" required pattern="^\d{10}$" title="Phone number should be exactly 10 digits.">
-            <label for="profile">Profile Img:</label>
-            <input type="file" name="candidate_profile_path" placeholder="Choose your profile" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" class="password" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters long and contain at least one uppercase letter, one symbol, and two numbers.">
-            <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" style="position: absolute; top: 73%; right: 230px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
-                <i class="fas fa-eye" id="toggleIcon"></i>
-            </button>
-
-            <button type="submit" class="button-register">Register</button>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" name="candidate_username" placeholder="Enter Your Username" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" class="form-control" name="candidate_fullname" placeholder="Enter Your Full Name" required pattern="^[a-zA-Z\s]{1,50}$" title="Full Name should only contain letters and spaces, up to 50 characters.">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="candidate_email" placeholder="Enter Your Email" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="contact">Contact</label>
+                        <input type="tel" class="form-control" name="candidate_contact" placeholder="Enter Your Phone Number" required pattern="^\d{10}$" title="Phone number should be exactly 10 digits.">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="profile">Profile Img</label>
+                <input type="file" class="form-control-file" name="candidate_profile_path" accept="image/png, image/jpeg, image/jpg" required>
+                <small class="form-text text-muted">Only PNG, JPEG, and JPG files are accepted.</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-group">
+                    <input type="password" id="password" class="form-control" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters long and contain at least one letter, one symbol, and two numbers.">
+                    <div class="input-group-append">
+                        <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" class="btn btn-outline-secondary">
+                            <i class="fas fa-eye" id="toggleIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
             <span class="toggle-link" onclick="toggleForm()">Already have an account? Login</span>
+            <button onclick="closeFn()" class="close"><i class="fas fa-times"></i></button>
         </form>
     </div>
-    <!-- <button onclick="closeFn()" class="close">Close</button> -->
-    <button onclick="closeFn()" class="close"><i class="fas fa-times"></i></button>
 </div>
-
-<!-- login form end-->
-<!-- Preloader -->
-<div class="loader-wrap">
-    <div class="preloader style-two">
-        <div class="preloader-close">Preloader Close</div>
-    </div>
-    <div class="layer layer-one"><span class="overlay"></span></div>
-    <div class="layer layer-two"><span class="overlay"></span></div>
-    <div class="layer layer-three"><span class="overlay"></span></div>
+    <button onclick="closeFn()" class="close"><i class="fas fa-times"></i></button>
 </div>
 
 <!-- search-popup -->
