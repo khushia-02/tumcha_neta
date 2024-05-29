@@ -184,11 +184,6 @@
                                                             echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
                                                         }
                                                         ?>
-
-
-
-
-
                         </li>
                     </ul>
                 </div>
