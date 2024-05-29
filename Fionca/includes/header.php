@@ -123,6 +123,7 @@
             </div>
         </div>
     </div>
+
     <div class="header-upper">
         <div class="auto-container">
             <div class="upper-inner clearfix">
@@ -176,26 +177,48 @@
                                 $stmt->close();
                                 $conn->close();
 
-                                // Display profile image and full name
-                                echo "<p>" . htmlspecialchars($full_name) . "</p>";
-                                echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>";
-
-                                // Logout button
-                                echo "<a href='logout.php' class='logout-header'>Logout</a><br>";
-
-                                // Insert Your Info button
-                                echo "<a href='./form/candidate_further_details.html'></a>";
+                                // Display profile photo with dropdown
+                                echo "<div class='dropdown'>";
+                                echo "<p class='dropdown-toggle' onclick='toggleDropdown()'>" . htmlspecialchars($full_name) . "</p>";
+                                echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar dropbtn' onclick='toggleDropdown()'>";
+                                echo "<div class='dropdown-content'>";
+                                echo "<a href='logout.php' class='logout-header'>Logout</a>";
+                                echo "</div>"; // Close dropdown-content
+                                echo "</div>"; // Close dropdown
                             } else {
                                 // User is not logged in, display Login/SignUp link
                                 echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
                             }
                             ?>
+
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // JavaScript function to toggle dropdown visibility
+        function toggleDropdown() {
+            var dropdownContent = document.querySelector('.dropdown-content');
+            dropdownContent.classList.toggle('show');
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
 
     <div class="header-lower">
         <div class="outer-box">
@@ -378,3 +401,31 @@
 <button class="scroll-top scroll-to-target" data-target="html">
     <span class="fa fa-arrow-up"></span>
 </button>
+
+<script>
+    function openForm() {
+        // Show the form (you need to replace 'formId' with the actual ID of your form)
+        document.getElementById('basic-details').style.display = 'block';
+    }
+</script>
+
+<script>
+// Function to toggle the dropdown
+function toggleDropdown() {
+    var dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('active');
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('active')) {
+                openDropdown.classList.remove('active');
+            }
+        }
+    }
+};
+</script>
