@@ -177,18 +177,19 @@
                                 $conn->close();
 
                                 // Display profile image and full name
-                                echo "<p>" . htmlspecialchars($full_name) . "</p>";
-                                echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>";
+                                // Display profile image and full name
+echo "<p>" . htmlspecialchars($full_name) . "</p>";
+echo "<a href='./form/candidate_details.php'><img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'></a>";
 
-                                // Logout button
-                                echo "<a href='logout.php' class='logout-header'>Logout</a><br>";
+// Logout button
+echo "<a href='logout.php' class='logout-header'>Logout</a><br>";
 
-                                // Insert Your Info button
-                                echo "<a href='./form/candidate_further_details.html'></a>";
-                            } else {
-                                // User is not logged in, display Login/SignUp link
-                                echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
-                            }
+// Insert Your Info button
+echo "<a href='./form/candidate_further_details.html'>Insert Your Info</a>";
+} else {
+// User is not logged in, display Login/SignUp link
+echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
+}
                             ?>
                         </li>
                     </ul>
