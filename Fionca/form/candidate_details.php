@@ -46,60 +46,33 @@
         <!-- Basic Details Form Section -->
         <div id="basic-details" class="form-section">
             <h3>Basic Details</h3>
-            <form method="post" action="register_candidate.php">
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="candidate_username">Username:</label>
-                        <input type="text" id="candidate_username" name="candidate_username" required>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="self_profession">Profession:</label>
-                        <input type="text" id="self_profession" name="self_profession">
-                    </div>
+            <form method="post" action="register_candidate.php" id="frmPinCode">
+                <!-- <div class="form-row"> -->
+                <div class="form-group col-md-4">
+                    <label for="candidate_username">Username:</label>
+                    <input type="text" id="candidate_username" name="candidate_username" required>
                 </div>
-
+                <!-- </div> -->
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="country">Country:</label>
-                        <select class="form-select country" aria-label="Default select example" onchange="loadStates()">
-                            <option selected>Select Country</option>
-                        </select>
+                    <input type="text" class="textbox" name="pincode" id="pincode" placeholder="Enter Pincode"  autocomplete="new-password">
+			        <input type="button" class="btn btn-primary" value="Enter" onclick="get_details()">
                     </div>
                     <div class="form-group col-md-4">   
-                        <label for="state">State:</label>
-                        <select class="form-select state" aria-label="Default select example" onchange="loadCities()">
-                        <option selected>Select State</option>
-                        </select>
+                    <input type="text" class="textbox" id="city" disabled placeholder="City"><br/><br/>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="city">City:</label>
-                        <select class="form-select city" aria-label="Default select example">
-                            <option selected>Select City</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="pincode">Pincode:</label>
-                        <select class="form-select pincode" aria-label="Default select example">
-                            <option selected>Select Pincode</option>
-                        </select>
-                    </div>
-                    
+                    <input type="text" class="textbox" id="state" disabled placeholder="State">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="candidate_area_current">Current Area:</label>
-                        <select id="candidate_gender" name="candidate_city" class="form-control">
-                            <option value="">Select Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                        </select>
+                        <input type="text" id="candidate_area_current" name="candidate_area_current" required>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="candidate_gender">Gender:</label>
-                        <select id="candidate_gender" name="candidate_gender" class="form-control">
+                        <select id="candidate_gender" name="candidate_gender" class="form-control" placeholder="Gender">
                             <option value="">Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -118,16 +91,16 @@
                         <input type="text" id="age" name="age" readonly>
                     </div>
                     <div class="form-group col-md-4">
+                        <label for="self_profession">Profession:</label>
+                        <input type="text" id="self_profession" name="self_profession">
+                    </div>
+                    <div class="form-group col-md-4">
                         <label for="candidate_email">Email:</label>
                         <input type="email" id="candidate_email" name="candidate_email">
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="candidate_state">State:</label>
-                        <input type="text" id="candidate_state" name="candidate_state" value="Maharashtra" readonly>
-                    </div>
                 </div>
-
-                <input type="submit" value="Submit">
+                
+                <input type="submit"class="btn btn-primary" value="Submit">
             </form>
         </div>
 
@@ -278,7 +251,7 @@
         </div>
 
 
-        <!-- Terms & Conditions Section -->
+        <!-- Social Media Section -->
         <div id="terms-conditions" class="form-section" style="display: none;">
             <div class="form-container">
                 <h2>Candidate Social Links Form</h2>
@@ -322,7 +295,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit" class="btn btn-primary">
                     </div>
                 </form>
             </div>
