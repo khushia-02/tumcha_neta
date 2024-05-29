@@ -42,7 +42,8 @@
 }
 
 .work-entry,
-#basic-details .form-row {
+#basic-details .form-row,
+.education-form {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
@@ -59,39 +60,37 @@
     color: red;
 }
 
-/* Additional styling for Basic Details form */
-#basic-details .form-row {
-    display: flex;
-    flex-wrap: wrap;
+.education-form .form-row {
     margin-bottom: 10px;
 }
 
-#basic-details .form-group {
+.education-form .form-group {
     flex: 0 0 calc(33.333% - 20px);
     /* Adjust this value as needed */
     margin-right: 20px;
     margin-bottom: 10px;
 }
 
-#basic-details .form-group:last-child {
+.education-form .form-group:last-child {
     margin-right: 0;
 }
 
-#basic-details label {
+.education-form label {
     display: block;
     margin-bottom: 5px;
 }
 
-#basic-details input[type="text"],
-#basic-details input[type="date"],
-#basic-details input[type="email"] {
+.education-form input[type="text"],
+.education-form input[type="number"],
+.education-form select,
+.education-form textarea {
     width: 100%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-#basic-details input[type="submit"] {
+.education-form input[type="submit"] {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
@@ -101,6 +100,6 @@
     margin-bottom: 10px;
 }
 
-#basic-details input[type="submit"]:hover {
+.education-form input[type="submit"]:hover {
     background-color: #0056b3;
 }
