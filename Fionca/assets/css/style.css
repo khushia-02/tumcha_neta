@@ -7817,14 +7817,16 @@
 
  /* filtre css  */
 
- /* Profile photo */
- .avatar {
-   width: 40px;
-   /* Adjust size as needed */
-   height: 40px;
-   /* Adjust size as needed */
-   border-radius: 50%;
-   /* Make it circular */
+ /* Dropdown container */
+ .dropdown {
+   position: relative;
+   display: inline-block;
+ }
+
+ /* Dropdown trigger (user's name) */
+ .dropdown-name {
+   margin: 0;
+   /* Remove default margin */
    cursor: pointer;
    /* Show pointer cursor on hover */
  }
@@ -7843,19 +7845,40 @@
    /* Show pointer cursor on hover */
  }
 
- /* Dropdown content */
+ .dropdown {
+   position: relative;
+   display: inline-block;
+ }
+
+ .dropdown-trigger {
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+ }
+
+ .dropdown-name {
+   margin: 0;
+   margin-right: 10px;
+ }
+
+ .avatar {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   cursor: pointer;
+ }
+
  .dropdown-content {
    display: none;
    position: absolute;
-   top: 40px;
-   /* Adjust dropdown position */
    background-color: #f9f9f9;
    min-width: 160px;
    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
    z-index: 1;
+   right: 0;
+   /* Align the dropdown to the right */
  }
 
- /* Dropdown links */
  .dropdown-content a {
    color: black;
    padding: 12px 16px;
@@ -7863,15 +7886,10 @@
    display: block;
  }
 
- /* Change color of dropdown links on hover */
  .dropdown-content a:hover {
    background-color: #f1f1f1;
  }
 
- /* Show the dropdown content when the user clicks on the dropdown trigger */
- .dropdown:hover .dropdown-content {
+ .show {
    display: block;
  }
-
- 
- 

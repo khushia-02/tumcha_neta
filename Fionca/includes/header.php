@@ -149,46 +149,52 @@
                         <li>
                             <div class="dropdown">
                                 <?php
-                                        if (isset($_SESSION['username'])) {
-                                            // User is logged in, fetch user's full name and profile image path from the database
-                                            $username = $_SESSION['username'];
 
-                                            // Database connection details
-                                            $servername = "localhost";
-                                            $username_db = "root";
-                                            $password_db = "";
-                                            $dbname = "tumcha_neta";
+                                if (isset($_SESSION['username'])) {
+                                    // User is logged in, fetch user's full name and profile image path from the database
+                                    $username = $_SESSION['username'];
 
-                                            // Create connection
-                                            $conn = new mysqli($servername, $username_db, $password_db, $dbname);
+                                    // Database connection details
+                                    $servername = "localhost";
+                                    $username_db = "root";
+                                    $password_db = "";
+                                    $dbname = "tumcha_neta";
 
-                                            // Check connection
-                                            if ($conn->connect_error) {
-                                                die("Connection failed: " . $conn->connect_error);
-                                            }
+                                    // Create connection
+                                    $conn = new mysqli($servername, $username_db, $password_db, $dbname);
 
-                                            // Fetch user's full name and profile image path from the database
-                                            $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration WHERE candidate_username = ?";
-                                            $stmt = $conn->prepare($sql);
-                                            $stmt->bind_param("s", $username);
-                                            $stmt->execute();
-                                            $stmt->bind_result($full_name, $profile_path);
-                                            $stmt->fetch();
-                                            $stmt->close();
-                                            $conn->close();
+                                    // Check connection
+                                    if ($conn->connect_error) {
+                                        die("Connection failed: " . $conn->connect_error);
+                                    }
 
-                                            // Display profile image and full name with dropdown
-                                            echo "<p class='dropdown-name'>" . htmlspecialchars($full_name) . "</p>";
-                                            echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar dropbtn'>";
-                                            echo "<div class='dropdown-content'>";
-                                            echo "<a href='./form/candidate_details.php'>Form</a>"; // Link to form
-                                            echo "<a href='logout.php' class='logout-header'>Logout</a>"; // Logout button
-                                            echo "</div>"; // Close dropdown-content
-                                        } else {
-                                            // User is not logged in, display Login/SignUp link
-                                            echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
-                                        }
-                                        ?> 
+                                    // Fetch user's full name and profile image path from the database
+                                    $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration WHERE candidate_username = ?";
+                                    $stmt = $conn->prepare($sql);
+                                    $stmt->bind_param("s", $username);
+                                    $stmt->execute();
+                                    $stmt->bind_result($full_name, $profile_path);
+                                    $stmt->fetch();
+                                    $stmt->close();
+                                    $conn->close();
+
+                                    // Display profile image and full name with dropdown
+                                    echo "<div class='dropdown'>";
+                                    echo "<div class='dropdown-trigger' onclick='toggleDropdown()'>";
+                                    echo "<p class='dropdown-name'>" . htmlspecialchars($full_name) . "</p>";
+                                    echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>";
+                                    echo "</div>";
+                                    echo "<div class='dropdown-content'>";
+                                    echo "<a href='./form/candidate_details.php'>Form</a>"; // Link to form
+                                    echo "<a href='logout.php' class='logout-header'>Logout</a>"; // Logout button
+                                    echo "</div>"; // Close dropdown-content
+                                    echo "</div>"; // Close dropdown
+                                } else {
+                                    // User is not logged in, display Login/SignUp link
+                                    echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
+                                }
+                                ?>
+
                             </div>
                         </li>
 
@@ -197,27 +203,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // JavaScript function to toggle dropdown visibility
-        function toggleDropdown() {
-            var dropdownContent = document.querySelector('.dropdown-content');
-            dropdownContent.classList.toggle('show');
-        }
-
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
 
 
     <div class="header-lower">
@@ -409,23 +394,24 @@
     }
 </script>
 
+<!-- dropdown script -->
 <script>
-    // Function to toggle the dropdown
     function toggleDropdown() {
-        var dropdown = document.querySelector('.dropdown');
-        dropdown.classList.toggle('active');
+        var dropdownContent = document.querySelector(".dropdown-content");
+        dropdownContent.classList.toggle("show");
     }
 
     // Close the dropdown if the user clicks outside of it
     window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
+        if (!event.target.matches('.dropdown-trigger') && !event.target.matches('.dropdown-trigger *')) {
             var dropdowns = document.getElementsByClassName("dropdown-content");
             for (var i = 0; i < dropdowns.length; i++) {
                 var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('active')) {
-                    openDropdown.classList.remove('active');
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
                 }
             }
         }
-    };
+    }
 </script>
+<!-- dropdown script ended-->
