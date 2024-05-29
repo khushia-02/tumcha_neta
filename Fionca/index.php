@@ -97,42 +97,11 @@
                             <label for="fullName">Full Name:</label>
                             <input type="text" id="fullName" name="fullName" require>
                         </li>
-
-                        <!-- <li>
-                            <label for="party">Party Name:</label>
-                            <input type="text" id="party" name="party">
-                        </li>
-                        <li>
-                            <label for="karyaArea">Karya Area:</label>
-                            <input type="text" id="karyaArea" name="karyaArea">
-                        </li>
-                        <li>
-                            <label for="area">Area:</label>
-                            <select id="area" name="area">
-                                <option value="">Select Area</option>
-                                <option value="Shivajinagar">Shivajinagar</option>
-                                <option value="Kothrud">Kothrud</option>
-                                <option value="Baner">Baner</option>
-                                <option value="Aundh">Aundh</option>
-                                <option value="Pimple Saudagar">Pimple Saudagar</option>
-                                <option value="Wakad">Wakad</option>
-                                <option value="Hinjewadi">Hinjewadi</option>
-                                <option value="Kharadi">Kharadi</option>
-                                <option value="Viman Nagar">Viman Nagar</option>
-                                <option value="Hadapsar">Hadapsar</option>
-                                <option value="Magarpatta">Magarpatta</option>
-                                <option value="Kondhwa">Kondhwa</option>
-                                <option value="Bibwewadi">Bibwewadi</option>
-                                <option value="Swargate">Swargate</option>
-                            </select>
-                        </li> -->
                         <li>
                             <label>Gender:</label>
                             <div class="gender-options">
                                 <label><input type="radio" name="gender" value="Male"> Male</label>
                                 <label><input type="radio" name="gender" value="Female"> Female</label>
-                                <label><input type="radio" name="gender" value="Others"> Others</label>
-                                <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
                             </div>
                         </li>
                         <li>
@@ -140,7 +109,7 @@
                         </li>
                     </ul>
                 </div>
-</aside>
+            </aside>
         </div>
     </form>
     <!-- filtre ends -->
