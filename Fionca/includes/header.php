@@ -73,6 +73,8 @@
     <button onclick="closeFn()" class="close"><i class="fas fa-times"></i></button>
 </div>
 
+<!-- login form end-->
+
 <!-- search-popup -->
 <div id="search-popup" class="search-popup">
     <div class="close-search"><span>Close</span></div>

@@ -396,7 +396,6 @@
 
     <!-- Candidate details list end -->
 
-
     <!-- about-style-two -->
     <section class="about-style-two">
         <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-4.png);"></div>
