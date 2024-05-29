@@ -95,7 +95,8 @@
                     <ul>
                         <li>
                             <label for="fullName">Full Name:</label>
-                            <input type="text" id="fullName" name="fullName" require>
+                            <input type="text" id="fullName" name="fullName" list="candidateList" require>
+                            <datalist id="candidatesList"></datalist>
                         </li>
                         <li>
                             <label>Gender:</label>
@@ -1437,6 +1438,27 @@
             }
         });
     </script>
+
+
+    <!-- fetch data -->
+    <script>
+        $(document).ready(function() {
+            $('#fullName').keyup(function() {
+                var input = $(this).val();
+                $.ajax({
+                    url: 'fetch_candidates.php',
+                    method: 'POST',
+                    data: {
+                        input: input
+                    },
+                    success: function(data) {
+                        $('#candidatesList').html(data);
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- fetch data ended-->
 </body><!-- End of .page_wrapper -->
 
 <!-- Mirrored from azim.commonsupport.com/Fionca/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 May 2024 09:17:17 GMT -->

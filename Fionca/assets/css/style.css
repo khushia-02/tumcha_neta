@@ -7635,20 +7635,20 @@
  /* toggle btn login btn visiblity ended*/
 
  .avatar {
-   vertical-align: middle;
-   width: 50px;
-   height: 50px;
-   border-radius: 50%;
-   right: 64%;
-   position: relative;
-   top: -25px;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    right: 118%;
+    position: relative;
+    top: -25px;
  }
 
  /* header logout */
  .logout-header {
    top: 34%;
    position: absolute;
-   right: 31%;
+   right: 2%;
  }
 
  /* header logout ended*/
@@ -7815,3 +7815,43 @@
  }
 
  /* filtre css  */
+
+ /* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer; /* Add cursor pointer to indicate clickable */
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu */
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+
+
+
+

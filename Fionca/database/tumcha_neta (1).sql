@@ -23,6 +23,12 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+CREATE TABLE candidates (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL,
+    gender VARCHAR(10) NOT NULL
+);
+
 --
 -- Table structure for table `candidates_upcoming_events`
 --
