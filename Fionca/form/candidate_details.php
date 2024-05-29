@@ -47,7 +47,7 @@
         <!-- Basic Details Form Section -->
         <div id="basic-details" class="form-section">
             <h3>Basic Details</h3>
-            <form method="post" action="register_candidate_further.php">
+            <form method="post" action="register_candidate.php">
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="candidate_username">Username:</label>

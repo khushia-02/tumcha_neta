@@ -4377,7 +4377,7 @@
  .main-header.style-two .header-upper .info-box .info-list li p {
    font-size: 16px;
    color: #222;
-   line-height: 24px;
+   line-height: 31px;
  }
 
  .main-header.style-two .header-upper .info-box .info-list li p a {
@@ -7596,20 +7596,21 @@
  }
 
  .form-container1 {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 600px;
-}
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   margin: 20px auto;
+   max-width: 600px;
+ }
 
-.form-group1 {
-  margin-bottom: 20px;
-}
-.form-group1 label {
-  font-weight: bold;
-}
+ .form-group1 {
+   margin-bottom: 20px;
+ }
+
+ .form-group1 label {
+   font-weight: bold;
+ }
 
  /* toggle btn login btn visiblity */
 
@@ -7635,13 +7636,13 @@
  /* toggle btn login btn visiblity ended*/
 
  .avatar {
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    right: 118%;
-    position: relative;
-    top: -25px;
+   vertical-align: middle;
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   right: 135%;
+   position: relative;
+   top: -25px;
  }
 
  /* header logout */
@@ -7776,7 +7777,7 @@
    top: 44%;
    position: relative;
    /* right: 470% */
-     /* Aligns the button to the start of the flex container */
+   /* Aligns the button to the start of the flex container */
  }
 
  .submit-btn:hover {
@@ -7806,52 +7807,71 @@
    border: 1px solid rgb(213 213 213);
  }
 
- .candi-search{
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: -6%;
+ .candi-search {
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   top: -6%;
  }
 
  /* filtre css  */
 
+ /* Profile photo */
+ .avatar {
+   width: 40px;
+   /* Adjust size as needed */
+   height: 40px;
+   /* Adjust size as needed */
+   border-radius: 50%;
+   /* Make it circular */
+   cursor: pointer;
+   /* Show pointer cursor on hover */
+ }
+
  /* Dropdown container */
-.dropdown {
-  position: relative;
-  display: inline-block;
-  cursor: pointer; /* Add cursor pointer to indicate clickable */
-}
+ .dropdown {
+   position: relative;
+   display: inline-block;
+ }
 
-/* Dropdown content */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  z-index: 1;
-}
+ /* Dropdown trigger (user's name) */
+ .dropdown-name {
+   margin: 0;
+   /* Remove default margin */
+   cursor: pointer;
+   /* Show pointer cursor on hover */
+ }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+ /* Dropdown content */
+ .dropdown-content {
+   display: none;
+   position: absolute;
+   top: 40px;
+   /* Adjust dropdown position */
+   background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+   z-index: 1;
+ }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
+ /* Dropdown links */
+ .dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+ }
 
-/* Show the dropdown menu */
-.dropdown.active .dropdown-content {
-  display: block;
-}
+ /* Change color of dropdown links on hover */
+ .dropdown-content a:hover {
+   background-color: #f1f1f1;
+ }
 
+ /* Show the dropdown content when the user clicks on the dropdown trigger */
+ .dropdown:hover .dropdown-content {
+   display: block;
+ }
 
-
-
-
+ 
+ 
