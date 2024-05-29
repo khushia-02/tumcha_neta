@@ -16,60 +16,60 @@
     </div>
 
     <div id="registrationForm" class="form-container1" style="display:none;">
-      <div class="container">
-        <h3>Candidate Registration</h3>
+        <div class="container">
+            <h3>Candidate Registration</h3>
 
-        <form action="registration_data.php" method="post" class="register" enctype="multipart/form-data">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" name="candidate_username" placeholder="Enter Your Username" required>
+            <form action="registration_data.php" method="post" class="register" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" name="candidate_username" placeholder="Enter Your Username" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" class="form-control" name="candidate_fullname" placeholder="Enter Your Full Name" required pattern="^[a-zA-Z\s]{1,50}$" title="Full Name should only contain letters and spaces, up to 50 characters.">
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="fullname">Full Name</label>
-                        <input type="text" class="form-control" name="candidate_fullname" placeholder="Enter Your Full Name" required pattern="^[a-zA-Z\s]{1,50}$" title="Full Name should only contain letters and spaces, up to 50 characters.">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="candidate_email" placeholder="Enter Your Email" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="contact">Contact</label>
+                            <input type="tel" class="form-control" name="candidate_contact" placeholder="Enter Your Phone Number" required pattern="^\d{10}$" title="Phone number should be exactly 10 digits.">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" name="candidate_email" placeholder="Enter Your Email" required>
+                <div class="form-group">
+                    <label for="profile">Profile Img</label>
+                    <input type="file" class="form-control-file" name="candidate_profile_path" accept="image/png, image/jpeg, image/jpg" required>
+                    <small class="form-text text-muted">Only PNG, JPEG, and JPG files are accepted.</small>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                        <input type="password" id="password" class="form-control" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters long and contain at least one letter, one symbol, and two numbers.">
+                        <div class="input-group-append">
+                            <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" class="btn btn-outline-secondary">
+                                <i class="fas fa-eye" id="toggleIcon"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="contact">Contact</label>
-                        <input type="tel" class="form-control" name="candidate_contact" placeholder="Enter Your Phone Number" required pattern="^\d{10}$" title="Phone number should be exactly 10 digits.">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="profile">Profile Img</label>
-                <input type="file" class="form-control-file" name="candidate_profile_path" accept="image/png, image/jpeg, image/jpg" required>
-                <small class="form-text text-muted">Only PNG, JPEG, and JPG files are accepted.</small>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <div class="input-group">
-                    <input type="password" id="password" class="form-control" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters long and contain at least one letter, one symbol, and two numbers.">
-                    <div class="input-group-append">
-                        <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" class="btn btn-outline-secondary">
-                            <i class="fas fa-eye" id="toggleIcon"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-            <span class="toggle-link" onclick="toggleForm()">Already have an account? Login</span>
-            <button onclick="closeFn()" class="close"><i class="fas fa-times"></i></button>
-        </form>
+                <button type="submit" class="btn btn-primary">Register</button>
+                <span class="toggle-link" onclick="toggleForm()">Already have an account? Login</span>
+                <button onclick="closeFn()" class="close"><i class="fas fa-times"></i></button>
+            </form>
+        </div>
     </div>
-</div>
     <button onclick="closeFn()" class="close"><i class="fas fa-times"></i></button>
 </div>
 
@@ -99,7 +99,6 @@
 </div>
 <!-- search-popup end -->
 
-
 <!-- main header -->
 <header class="main-header style-two">
     <div class="header-top">
@@ -126,7 +125,13 @@
         <div class="auto-container">
             <div class="upper-inner clearfix">
                 <div class="logo-box pull-left">
-                    <!-- <figure class="logo"><a href="index.html"><img src="assets/images/logo-2.png" alt=""></a></figure> -->
+                    <?php
+                    // session_start();
+                    if (!isset($_SESSION['username'])) {
+                        // If the user is not logged in, show the logo
+                        echo '<figure class="logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="Logo"></a></figure>';
+                    }
+                    ?>
                 </div>
                 <div class="info-box pull-right">
                     <ul class="info-list clearfix">
@@ -136,58 +141,60 @@
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>838 Andy Street, Madison, <br />New Jersy 08003</p>
+                            <p>838 Andy Street, Madison, <br />New Jersey 08003</p>
                         </li>
                         <li>
-                            <i class="far fa-user"></i><?php
+                            <i class="far fa-user"></i>
+                            <?php
+                            if (isset($_SESSION['username'])) {
+                                // User is logged in, fetch user's full name and profile image path from the database
+                                $username = $_SESSION['username'];
 
-                                                        if (isset($_SESSION['username'])) {
-                                                            // User is logged in, fetch user's full name and profile image path from the database
-                                                            $username = $_SESSION['username'];
+                                // Database connection details
+                                $servername = "localhost";
+                                $username_db = "root";
+                                $password_db = "";
+                                $dbname = "tumcha_neta";
 
-                                                            // Database connection details
-                                                            $servername = "localhost";
-                                                            $username_db = "root";
-                                                            $password_db = "";
-                                                            $dbname = "tumcha_neta";
+                                // Create connection
+                                $conn = new mysqli($servername, $username_db, $password_db, $dbname);
 
-                                                            // Create connection
-                                                            $conn = new mysqli($servername, $username_db, $password_db, $dbname);
+                                // Check connection
+                                if ($conn->connect_error) {
+                                    die("Connection failed: " . $conn->connect_error);
+                                }
 
-                                                            // Check connection
-                                                            if ($conn->connect_error) {
-                                                                die("Connection failed: " . $conn->connect_error);
-                                                            }
+                                // Fetch user's full name and profile image path from the database
+                                $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration WHERE candidate_username = ?";
+                                $stmt = $conn->prepare($sql);
+                                $stmt->bind_param("s", $username);
+                                $stmt->execute();
+                                $stmt->bind_result($full_name, $profile_path);
+                                $stmt->fetch();
+                                $stmt->close();
+                                $conn->close();
 
-                                                            // Fetch user's full name and profile image path from the database
-                                                            $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration WHERE candidate_username = ?";
-                                                            $stmt = $conn->prepare($sql);
-                                                            $stmt->bind_param("s", $username);
-                                                            $stmt->execute();
-                                                            $stmt->bind_result($full_name, $profile_path);
-                                                            $stmt->fetch();
-                                                            $stmt->close();
+                                // Display profile image and full name
+                                echo "<p>" . htmlspecialchars($full_name) . "</p>";
+                                echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>";
 
-                                                            // Display profile image and full name
-                                                            echo "<p>" . htmlspecialchars($full_name) . "</p>";
-                                                            echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>";
+                                // Logout button
+                                echo "<a href='logout.php' class='logout-header'>Logout</a><br>";
 
-                                                            // Logout button
-                                                            echo "<a href='logout.php' class='logout-header'>Logout</a><br>";
-
-                                                            // Insert Your Info button
-                                                            echo "<a href='./form/candidate_further_details.html'></a>";
-                                                        } else {
-                                                            // User is not logged in, display Login/SignUp link
-                                                            echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
-                                                        }
-                                                        ?>
+                                // Insert Your Info button
+                                echo "<a href='./form/candidate_further_details.html'></a>";
+                            } else {
+                                // User is not logged in, display Login/SignUp link
+                                echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
+                            }
+                            ?>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="header-lower">
         <div class="outer-box">
             <div class="auto-container">
