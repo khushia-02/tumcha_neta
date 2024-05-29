@@ -123,6 +123,7 @@
             </div>
         </div>
     </div>
+
     <div class="header-upper">
         <div class="auto-container">
             <div class="upper-inner clearfix">
@@ -146,56 +147,78 @@
                             <p>838 Andy Street, Madison, <br />New Jersey 08003</p>
                         </li>
                         <li>
-                            <i class="far fa-user"></i>
-                            <?php
-                            if (isset($_SESSION['username'])) {
-                                // User is logged in, fetch user's full name and profile image path from the database
-                                $username = $_SESSION['username'];
+                            <div class="dropdown">
+                                <?php
+                                        if (isset($_SESSION['username'])) {
+                                            // User is logged in, fetch user's full name and profile image path from the database
+                                            $username = $_SESSION['username'];
 
-                                // Database connection details
-                                $servername = "localhost";
-                                $username_db = "root";
-                                $password_db = "";
-                                $dbname = "tumcha_neta";
+                                            // Database connection details
+                                            $servername = "localhost";
+                                            $username_db = "root";
+                                            $password_db = "";
+                                            $dbname = "tumcha_neta";
 
-                                // Create connection
-                                $conn = new mysqli($servername, $username_db, $password_db, $dbname);
+                                            // Create connection
+                                            $conn = new mysqli($servername, $username_db, $password_db, $dbname);
 
-                                // Check connection
-                                if ($conn->connect_error) {
-                                    die("Connection failed: " . $conn->connect_error);
-                                }
+                                            // Check connection
+                                            if ($conn->connect_error) {
+                                                die("Connection failed: " . $conn->connect_error);
+                                            }
 
-                                // Fetch user's full name and profile image path from the database
-                                $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration WHERE candidate_username = ?";
-                                $stmt = $conn->prepare($sql);
-                                $stmt->bind_param("s", $username);
-                                $stmt->execute();
-                                $stmt->bind_result($full_name, $profile_path);
-                                $stmt->fetch();
-                                $stmt->close();
-                                $conn->close();
+                                            // Fetch user's full name and profile image path from the database
+                                            $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration WHERE candidate_username = ?";
+                                            $stmt = $conn->prepare($sql);
+                                            $stmt->bind_param("s", $username);
+                                            $stmt->execute();
+                                            $stmt->bind_result($full_name, $profile_path);
+                                            $stmt->fetch();
+                                            $stmt->close();
+                                            $conn->close();
 
-                                // Display profile image and full name
-                                echo "<p>" . htmlspecialchars($full_name) . "</p>";
-                                echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>";
-
-                                // Logout button
-                                echo "<a href='logout.php' class='logout-header'>Logout</a><br>";
-
-                                // Insert Your Info button
-                                echo "<a href='./form/candidate_further_details.html'></a>";
-                            } else {
-                                // User is not logged in, display Login/SignUp link
-                                echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
-                            }
-                            ?>
+                                            // Display profile image and full name with dropdown
+                                            echo "<p class='dropdown-name'>" . htmlspecialchars($full_name) . "</p>";
+                                            echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar dropbtn'>";
+                                            echo "<div class='dropdown-content'>";
+                                            echo "<a href='./form/candidate_details.php'>Form</a>"; // Link to form
+                                            echo "<a href='logout.php' class='logout-header'>Logout</a>"; // Logout button
+                                            echo "</div>"; // Close dropdown-content
+                                        } else {
+                                            // User is not logged in, display Login/SignUp link
+                                            echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
+                                        }
+                                        ?> 
+                            </div>
                         </li>
+
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // JavaScript function to toggle dropdown visibility
+        function toggleDropdown() {
+            var dropdownContent = document.querySelector('.dropdown-content');
+            dropdownContent.classList.toggle('show');
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
 
     <div class="header-lower">
         <div class="outer-box">
@@ -378,3 +401,31 @@
 <button class="scroll-top scroll-to-target" data-target="html">
     <span class="fa fa-arrow-up"></span>
 </button>
+
+<script>
+    function openForm() {
+        // Show the form (you need to replace 'formId' with the actual ID of your form)
+        document.getElementById('basic-details').style.display = 'block';
+    }
+</script>
+
+<script>
+    // Function to toggle the dropdown
+    function toggleDropdown() {
+        var dropdown = document.querySelector('.dropdown');
+        dropdown.classList.toggle('active');
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('active')) {
+                    openDropdown.classList.remove('active');
+                }
+            }
+        }
+    };
+</script>
