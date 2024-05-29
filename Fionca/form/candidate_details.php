@@ -52,11 +52,6 @@
                         <label for="candidate_username">Username:</label>
                         <input type="text" id="candidate_username" name="candidate_username" required>
                     </div>
-                    <!-- <div class="form-group col-md-4">
-                        <label for="profile_photo_path">Change Profile Photo:</label>
-                        <input type="text" placeholder="Upload Image" accept="image/png, image/jpeg, image/jpg"
-                            onfocus="(this.type='file')" name="image" class="box" required>
-                    </div> -->
                     <div class="form-group col-md-4">
                         <label for="self_profession">Profession:</label>
                         <input type="text" id="self_profession" name="self_profession">
@@ -82,6 +77,13 @@
                             <option selected>Select City</option>
                         </select>
                     </div>
+                    <div class="form-group col-md-4">
+                        <label for="pincode">Pincode:</label>
+                        <select class="form-select pincode" aria-label="Default select example">
+                            <option selected>Select Pincode</option>
+                        </select>
+                    </div>
+                    
                     </div>
                 </div>
 
