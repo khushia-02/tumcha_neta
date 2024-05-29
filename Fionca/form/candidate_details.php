@@ -8,7 +8,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -66,16 +65,23 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="about_candidate">About Candidate:</label>
-                        <input type="text" id="about_candidate" name="about_candidate">
+                        <label for="country">Country:</label>
+                        <select class="form-select country" aria-label="Default select example" onchange="loadStates()">
+                            <option selected>Select Country</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">   
+                        <label for="state">State:</label>
+                        <select class="form-select state" aria-label="Default select example" onchange="loadCities()">
+                        <option selected>Select State</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="candidate_area_pincode">Area Pincode:</label>
-                        <input type="text" id="candidate_area_pincode" name="candidate_area_pincode">
+                        <label for="city">City:</label>
+                        <select class="form-select city" aria-label="Default select example">
+                            <option selected>Select City</option>
+                        </select>
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="candidate_city">City:</label>
-                        <input type="text" id="candidate_city" name="candidate_city" required>
                     </div>
                 </div>
 
@@ -333,6 +339,7 @@
 
     </div>
 
+    <script src="city.js"></script>
     <script src="date.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
