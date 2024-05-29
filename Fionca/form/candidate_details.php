@@ -136,20 +136,17 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="education_year_of_completion">Year of Completion:</label>
-                                <input type="number" id="education_year_of_completion"
-                                    name="education_year_of_completion" required>
+                                <input type="number" id="education_year_of_completion" name="education_year_of_completion" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="education_institute_name">Institute Name:</label>
-                                <input type="text" id="education_institute_name" name="education_institute_name"
-                                    required>
+                                <input type="text" id="education_institute_name" name="education_institute_name" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="education_university_name">University Name:</label>
-                                <input type="text" id="education_university_name" name="education_university_name"
-                                    required>
+                                <input type="text" id="education_university_name" name="education_university_name" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="qualification">Qualification:</label>
@@ -196,8 +193,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="candidate_office_address">Candidate Office Address:</label>
-                        <input type="text" id="candidate_office_address" name="candidate_office_address"
-                            class="form-control">
+                        <input type="text" id="candidate_office_address" name="candidate_office_address" class="form-control">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="candidate_party_name">Candidate Party Name:</label>
@@ -208,18 +204,15 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="candidate_logo_path">Candidate Logo Image:</label>
-                        <input type="text" placeholder="Upload Image" accept="image/png, image/jpeg, image/jpg"
-                            onfocus="(this.type='file')" name="image" class="box" required>
+                        <input type="text" placeholder="Upload Image" accept="image/png, image/jpeg, image/jpg" onfocus="(this.type='file')" name="image" class="box" required>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="candidate_banner_path">Candidate Banner Image:</label>
-                        <input type="text" placeholder="Upload Image" accept="image/png, image/jpeg, image/jpg"
-                            onfocus="(this.type='file')" name="image" required>
+                        <input type="text" placeholder="Upload Image" accept="image/png, image/jpeg, image/jpg" onfocus="(this.type='file')" name="image" required>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="candidate_books_pdf_path">Candidate Books PDF Path:</label>
-                        <input type="text" id="candidate_books_pdf_path" name="candidate_books_pdf_path"
-                            class="form-control">
+                        <input type="text" id="candidate_books_pdf_path" name="candidate_books_pdf_path" class="form-control">
                     </div>
                 </div>
 
@@ -233,15 +226,13 @@
             <form action="submit_candidate_works.php" method="POST">
                 <div class="form-group">
                     <label for="candidate_username_available">Username:</label>
-                    <input type="text" id="candidate_username_available" name="candidate_username_available" required
-                        maxlength="50">
+                    <input type="text" id="candidate_username_available" name="candidate_username_available" required maxlength="50">
                 </div>
                 <div id="work-entries">
                     <div class="work-entry">
                         <div class="form-group col-md-4">
                             <label for="year">Year:</label>
-                            <input type="number" id="year" name="year[]" class="form-control" required min="1900"
-                                max="2100">
+                            <input type="number" id="year" name="year[]" class="form-control" required min="1900" max="2100">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="district">District:</label>
@@ -257,8 +248,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="candidate_areas_of_workingfor">Areas of Working For:</label>
-                            <select id="candidate_areas_of_workingfor" name="candidate_areas_of_workingfor[]"
-                                class="form-control">
+                            <select id="candidate_areas_of_workingfor" name="candidate_areas_of_workingfor[]" class="form-control">
                                 <option value="Engineering">Engineering</option>
                                 <option value="Health">Health</option>
                                 <option value="Education">Education</option>
@@ -268,8 +258,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="details_of_working">Details of Working:</label>
-                            <textarea id="details_of_working" name="details_of_working[]"
-                                class="form-control"></textarea>
+                            <textarea id="details_of_working" name="details_of_working[]" class="form-control"></textarea>
                         </div>
                         <div class="remove-entry"><i class="fas fa-minus-circle"></i></div>
                     </div>
@@ -336,16 +325,16 @@
     <script src="date.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Form Section Visibility Toggle
-            $('.process-step').click(function () {
+            $('.process-step').click(function() {
                 var stepIndex = $(this).index();
                 $('.form-section').hide();
                 $('#' + $('.form-section').eq(stepIndex).attr('id')).show();
             });
 
             // Add more work entries
-            $('#add-work-entry').click(function () {
+            $('#add-work-entry').click(function() {
                 var newEntry = `
                     <div class="work-entry">
                         <div class="form-row">
@@ -389,11 +378,11 @@
             });
 
             // Remove work entry
-            $(document).on('click', '.remove-entry', function () {
+            $(document).on('click', '.remove-entry', function() {
                 $(this).closest('.work-entry').remove();
             });
 
-            $('#add-education-entry').click(function () {
+            $('#add-education-entry').click(function() {
                 var newEntry = `
                     <div class="education-form">
                         <div class="form-row">
@@ -427,7 +416,7 @@
             });
 
             // Remove education entry
-            $(document).on('click', '.remove-entry', function () {
+            $(document).on('click', '.remove-entry', function() {
                 $(this).closest('.education-form').remove();
             });
         });
