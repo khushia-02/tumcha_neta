@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <div class="input-group">
+                    <div class="input-grosup">
                         <input type="password" id="password" class="form-control" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters long and contain at least one letter, one symbol, and two numbers.">
                         <div class="input-group-append">
                             <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" class="btn btn-outline-secondary">
@@ -147,7 +147,7 @@
                         </li>
                         <li>
                             <div class="user-dropdown">
-                                
+
                                 <?php
                                 if (isset($_SESSION['username'])) {
                                     // User is logged in, fetch user's full name and profile image path from the database
