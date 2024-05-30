@@ -58,7 +58,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <div class="input-grosup">
+                    <div class="input-group">
                         <input type="password" id="password" class="form-control" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.*[A-Za-z])(?=.*\d.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters long and contain at least one letter, one symbol, and two numbers.">
                         <div class="input-group-append">
                             <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" class="btn btn-outline-secondary">
