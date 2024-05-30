@@ -10,7 +10,7 @@
             <button type="button" class="toggle-password" aria-label="Toggle Password Visibility">
                 <i class="fas fa-eye"></i>
             </button>
-            <button type="submit" class="button-login">Login</button>
+            <button name="submit" type="submit" class="button-login">Login</button>
             <span class="toggle-link" onclick="toggleForm()">Don't have an account? Register</span>
         </form>
     </div>
@@ -149,7 +149,6 @@
                         <li>
                             <div class="dropdown">
                                 <?php
-
                                 if (isset($_SESSION['username'])) {
                                     // User is logged in, fetch user's full name and profile image path from the database
                                     $username = $_SESSION['username'];
@@ -177,24 +176,25 @@
                                     $stmt->fetch();
                                     $stmt->close();
                                     $conn->close();
-
-                                    // Display profile image and full name with dropdown
-                                    echo "<div class='dropdown'>";
+                                    echo "<ul class='navigation info-list clearfix'>";
+                                    echo "<li class='dropdown'>";
                                     echo "<div class='dropdown-trigger' onclick='toggleDropdown()'>";
-                                    echo "<p class='dropdown-name'>" . htmlspecialchars($full_name) . "</p>";
-                                    echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>";
+                                    echo "<div class='dropdown-info'>";
+                                    echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>"; // Profile picture
                                     echo "</div>";
-                                    echo "<div class='dropdown-content'>";
-                                    echo "<a href='./form/candidate_details.php'>Form</a>"; // Link to form
-                                    echo "<a href='logout.php' class='logout-header'>Logout</a>"; // Logout button
-                                    echo "</div>"; // Close dropdown-content
-                                    echo "</div>"; // Close dropdown
+                                    echo "</div>";
+                                    echo "<ul class='dropdown-content'>"; // Open dropdown-content
+                                    echo "<li>" . htmlspecialchars($full_name) . "</li>";
+                                    echo "<li><a href='./form/candidate_details.php'>Form</a></li>"; // Link to form
+                                    echo "<li><a href='logout.php'>Logout</a></li>"; // Logout button
+                                    echo "</ul>"; 
+                                    echo "</li>"; 
+                                    echo "</ul>";                                             
                                 } else {
                                     // User is not logged in, display Login/SignUp link
                                     echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
                                 }
                                 ?>
-
                             </div>
                         </li>
 
