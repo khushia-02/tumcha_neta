@@ -138,15 +138,16 @@
                 <div class="info-box pull-right">
                     <ul class="info-list clearfix">
                         <li>
-                            <i class="fas fa-phone-volume"></i>
+                            <!-- <i class="fas fa-phone-volume"></i> -->
                             <p>Call Our Support<br /><a href="tel:01005200369">0100 5200 369</a></p>
                         </li>
                         <li>
-                            <i class="fas fa-map-marker-alt"></i>
+                            <!-- <i class="fas fa-map-marker-alt"></i> -->
                             <p>838 Andy Street, Madison,<br />New Jersey 08003</p>
                         </li>
                         <li>
                             <div class="user-dropdown">
+                                
                                 <?php
                                 if (isset($_SESSION['username'])) {
                                     // User is logged in, fetch user's full name and profile image path from the database
@@ -185,8 +186,8 @@
                                     echo "<div class='dropdown-content'>";
                                     echo "<a href='./form/candidate_details.php'>Form</a>"; // Link to form
                                     echo "<a href='logout.php' class='logout-header'>Logout</a>"; // Logout button
-                                    echo "</div>"; // Close dropdown-content
-                                    echo "</div>"; // Close dropdown
+                                    // echo "</div>"; // Close dropdown-content
+                                    // echo "</div>"; // Close dropdown
                                 } else {
                                     // User is not logged in, display Login/SignUp link
                                     echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
@@ -200,6 +201,7 @@
         </div>
     </div>
 
+    <!-- dropdown list script  -->
     <script>
         function toggleUserDropdown() {
             document.querySelector('.dropdown-content').classList.toggle('show');
@@ -218,6 +220,7 @@
             }
         }
     </script>
+    <!-- dropdown list script  -->
 
     <div class="header-lower">
         <div class="outer-box">

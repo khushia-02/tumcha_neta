@@ -96,7 +96,6 @@
                         <li>
                             <label for="fullName">Full Name:</label>
                             <input type="text" id="fullName" name="fullName" list="candidateList" required>
-                            <!-- <datalist id="candidatesList"></datalist> -->
                         </li>
 
                         <li>

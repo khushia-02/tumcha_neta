@@ -7861,7 +7861,7 @@
 
  .dropdown-name {
    margin-left: 10px;
-   font-weight: bold;
+   /* font-weight: bold; */
  }
 
  .avatar {
