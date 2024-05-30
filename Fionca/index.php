@@ -87,7 +87,7 @@
     <!-- banner-section end -->
 
     <!-- filtre  -->
-    <form method="post" action="submit_candidate.php">
+    <form method="post" action="#">
         <div class="container">
             <aside class="filters">
                 <div class="filter-category">
@@ -95,16 +95,9 @@
                     <ul>
                         <li>
                             <label for="fullName">Full Name:</label>
-                            <input type="text" id="fullName" name="fullName" list="candidateList" require>
-                            <datalist id="candidatesList"></datalist>
+                            <input type="text" id="fullName" name="fullName" list="candidateList" required>
                         </li>
-                        <li>
-                            <label>Gender:</label>
-                            <div class="gender-options">
-                                <label><input type="radio" name="gender" value="Male"> Male</label>
-                                <label><input type="radio" name="gender" value="Female"> Female</label>
-                            </div>
-                        </li>
+
                         <li>
                             <button type="submit" class="submit-btn">Submit</button>
                         </li>
@@ -132,25 +125,35 @@
                 <?php
                 // Database connection details
                 $servername = "localhost";
-                $username_db = "root";
-                $password_db = "";
-                $dbname = "tumcha_neta";
+                $username = "root";
+                $password = "";
+                $dbname = "tumcha_neta"; // Replace with your database name
 
                 // Create connection
-                $conn = new mysqli($servername, $username_db, $password_db, $dbname);
+                $conn = new mysqli($servername, $username, $password, $dbname);
 
                 // Check connection
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                // Fetch all candidates' full names and profile image paths from the database
-                $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration";
-                $result = $conn->query($sql);
+                // Retrieve and sanitize search input
+                $fullName = isset($_POST['fullName']) ? htmlspecialchars($_POST['fullName']) : '';
 
-                if ($result->num_rows > 0) {
-                    // Output data of each row
-                    while ($row = $result->fetch_assoc()) {
+                // Check if search input is provided
+                if (!empty($fullName)) {
+                    // Search candidates based on full name
+                    $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration WHERE candidate_fullname LIKE '%$fullName%' LIMIT 1";
+                    $result = $conn->query($sql);
+
+                    if ($result === false) {
+                        die("Error executing query: " . $conn->error);
+                    }
+
+                    // Check if any rows are returned
+                    if ($result->num_rows > 0) {
+                        // Output data of the searched candidate
+                        $row = $result->fetch_assoc();
                         echo "<div class='team-block-one'>";
                         echo "<div class='inner-box'>";
                         echo "<figure class='image-box'><img src='" . htmlspecialchars($row["candidate_profile_path"]) . "' alt=''></figure>";
@@ -172,16 +175,53 @@
                         echo "</div>";
                         echo "</div>";
                         echo "</div>";
+                    } else {
+                        echo "No results found";
                     }
                 } else {
-                    echo "0 results";
+                    // If no search input is provided, display all candidates
+                    $sql_all_candidates = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration";
+                    $result_all_candidates = $conn->query($sql_all_candidates);
+
+                    if ($result_all_candidates->num_rows > 0) {
+                        // Output data of each row
+                        while ($row = $result_all_candidates->fetch_assoc()) {
+                            echo "<div class='team-block-one'>";
+                            echo "<div class='inner-box'>";
+                            echo "<figure class='image-box'><img src='" . htmlspecialchars($row["candidate_profile_path"]) . "' alt=''></figure>";
+                            echo "<div class='lower-content'>";
+                            echo "<div class='content-box'>";
+                            echo "<h3><a href='index-2.html'>" . htmlspecialchars($row["candidate_fullname"]) . "</a></h3>";
+                            echo "<span class='designation'>Senior Manager</span>";
+                            echo "</div>";
+                            echo "<div class='ovellay-box'>";
+                            echo "<h3><a href='index-2.html'>" . htmlspecialchars($row["candidate_fullname"]) . "</a></h3>";
+                            echo "<span class='designation'>Senior Manager</span>";
+                            echo "<ul class='social-links clearfix'>";
+                            echo "<li><a href='index-2.html'><i class='fab fa-facebook-f'></i></a></li>";
+                            echo "<li><a href='index-2.html'><i class='fab fa-twitter'></i></a></li>";
+                            echo "<li><a href='index-2.html'><i class='fab fa-instagram'></i></a></li>";
+                            echo "<li><a href='index-2.html'><i class='fab fa-linkedin-in'></i></a></li>";
+                            echo "</ul>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                    } else {
+                        echo "0 results";
+                    }
                 }
+
+                // Close connection
                 $conn->close();
                 ?>
+
 
             </div>
         </div>
     </section>
+
     <!--
                 <div class="team-block-one">
                     <div class="inner-box">
@@ -1458,6 +1498,25 @@
             });
         });
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#fullName').keyup(function() {
+                var fullName = $(this).val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'search_candidates.php', // PHP script to handle search
+                    data: {
+                        fullName: fullName
+                    },
+                    success: function(response) {
+                        $('#candidatesList').html(response);
+                    }
+                });
+            });
+        });
+    </script>
+
     <!-- fetch data ended-->
 </body><!-- End of .page_wrapper -->
 

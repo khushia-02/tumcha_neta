@@ -159,7 +159,7 @@
  textarea:focus {
    outline: none;
    box-shadow: none;
-   transition: all 500ms ease;
+   /* transition: all 500ms ease; */
  }
 
  p {
@@ -7635,7 +7635,7 @@
 
  /* toggle btn login btn visiblity ended*/
 
- .avatar {
+ /* .avatar {
    vertical-align: middle;
    width: 50px;
    height: 50px;
@@ -7643,7 +7643,7 @@
    right: 135%;
    position: relative;
    top: -25px;
- }
+ } */
 
  /* header logout */
  .logout-header {
@@ -7817,79 +7817,83 @@
 
  /* filtre css  */
 
- /* Dropdown container */
+ /* Basic dropdown styles */
  .dropdown {
    position: relative;
    display: inline-block;
- }
-
- /* Dropdown trigger (user's name) */
- .dropdown-name {
-   margin: 0;
-   /* Remove default margin */
-   cursor: pointer;
-   /* Show pointer cursor on hover */
- }
-
- /* Dropdown container */
- .dropdown {
-   position: relative;
-   display: inline-block;
- }
-
- /* Dropdown trigger (user's name) */
- .dropdown-name {
-   margin: 0;
-   /* Remove default margin */
-   cursor: pointer;
-   /* Show pointer cursor on hover */
- }
-
- .dropdown {
-   position: relative;
-   display: inline-block;
- }
-
- .dropdown-trigger {
-   cursor: pointer;
-   display: flex;
-   align-items: center;
- }
-
- .dropdown-name {
-   margin: 0;
-   margin-right: 10px;
- }
-
- .avatar {
-   width: 40px;
-   height: 40px;
-   border-radius: 50%;
-   cursor: pointer;
  }
 
  .dropdown-content {
    display: none;
    position: absolute;
-   background-color: #f9f9f9;
-   min-width: 160px;
-   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-   z-index: 1;
    right: 0;
-   /* Align the dropdown to the right */
+   background-color: #ffffff;
+   /* Background color of the dropdown menu */
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+   /* Optional: add a shadow */
+   z-index: 1;
+   /* Ensure the dropdown menu is on top */
+   padding: 12px 16px;
+   min-width: 160px;
+   box-sizing: border-box;
  }
 
  .dropdown-content a {
-   color: black;
-   padding: 12px 16px;
+   color: #333;
+   /* Text color */
+   padding: 8px 12px;
    text-decoration: none;
    display: block;
  }
 
  .dropdown-content a:hover {
    background-color: #f1f1f1;
+   /* Background color on hover */
+   color: #007bff;
+   /* Text color on hover */
  }
 
- .show {
+ .dropdown-trigger {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+
+ .dropdown-name {
+   margin-left: 10px;
+   /* font-weight: bold; */
+ }
+
+ .avatar {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   object-fit: cover;
+ }
+
+ /* Additional alignment styles */
+ .info-list {
+   display: flex;
+   align-items: center;
+ }
+
+ .info-list li {
+   margin-right: 30px;
+   /* Space between info items */
+   display: flex;
+   align-items: center;
+ }
+
+ .info-list li p {
+   margin: 0;
+   padding-left: 10px;
+ }
+
+ .info-list li:last-child {
+   margin-right: 0;
+ }
+
+ /* Show dropdown on hover */
+ .user-dropdown:hover .dropdown-content {
    display: block;
  }

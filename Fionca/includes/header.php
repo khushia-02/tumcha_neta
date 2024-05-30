@@ -129,7 +129,6 @@
             <div class="upper-inner clearfix">
                 <div class="logo-box pull-left">
                     <?php
-                    // session_start();
                     if (!isset($_SESSION['username'])) {
                         // If the user is not logged in, show the logo
                         echo '<figure class="logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="Logo"></a></figure>';
@@ -144,10 +143,11 @@
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>838 Andy Street, Madison, <br />New Jersey 08003</p>
+                            <p>838 Andy Street, Madison,<br />New Jersey 08003</p>
                         </li>
                         <li>
-                            <div class="dropdown">
+                            <div class="user-dropdown">
+                                
                                 <?php
                                 if (isset($_SESSION['username'])) {
                                     // User is logged in, fetch user's full name and profile image path from the database
@@ -197,13 +197,32 @@
                                 ?>
                             </div>
                         </li>
-
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- dropdown list script  -->
+    <script>
+        function toggleUserDropdown() {
+            document.querySelector('.dropdown-content').classList.toggle('show');
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-trigger') && !event.target.matches('.avatar') && !event.target.matches('.dropdown-name')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- dropdown list script  -->
 
     <div class="header-lower">
         <div class="outer-box">
@@ -394,24 +413,4 @@
     }
 </script>
 
-<!-- dropdown script -->
-<script>
-    function toggleDropdown() {
-        var dropdownContent = document.querySelector(".dropdown-content");
-        dropdownContent.classList.toggle("show");
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropdown-trigger') && !event.target.matches('.dropdown-trigger *')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-</script>
-<!-- dropdown script ended-->
+<!-- dropdown script  -->
