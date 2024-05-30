@@ -2,7 +2,10 @@
 <div id="popupDialog">
     <div id="loginForm" class="form-container">
         <h2>Login</h2>
-        <form action="login_data.php" method="post" class="login">
+        <?php echo isset($msg) ? $msg : ''; ?> 
+        <!-- Display the message here -->
+        <!-- changed for timepass -->
+        <form action="login_data.php" method="post">
             <label for="email">Email:</label>
             <input type="email" name="candidate_email" placeholder="Enter your email">
             <label for="password">Password:</label>
@@ -10,7 +13,7 @@
             <button type="button" class="toggle-password" aria-label="Toggle Password Visibility">
                 <i class="fas fa-eye"></i>
             </button>
-            <button type="submit" class="button-login">Login</button>
+            <button name="submit" type="submit" class="button-login">Login</button>
             <span class="toggle-link" onclick="toggleForm()">Don't have an account? Register</span>
         </form>
     </div>
@@ -129,6 +132,7 @@
             <div class="upper-inner clearfix">
                 <div class="logo-box pull-left">
                     <?php
+                    // session_start();
                     if (!isset($_SESSION['username'])) {
                         // If the user is not logged in, show the logo
                         echo '<figure class="logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="Logo"></a></figure>';
@@ -143,7 +147,7 @@
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>838 Andy Street, Madison,<br />New Jersey 08003</p>
+                            <p>838 Andy Street, Madison, <br />New Jersey 08003</p>
                         </li>
                         <li>
                             <div class="user-dropdown">
@@ -176,18 +180,20 @@
                                     $stmt->fetch();
                                     $stmt->close();
                                     $conn->close();
-
-                                    // Display profile image and full name with dropdown
-                                    echo "<div class='dropdown'>";
-                                    echo "<div class='dropdown-trigger'>";
-                                    echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>";
-                                    echo "<p class='dropdown-name'>" . htmlspecialchars($full_name) . "</p>";
+                                    echo "<ul class='navigation info-list clearfix'>";
+                                    echo "<li class='dropdown'>";
+                                    echo "<div class='dropdown-trigger' onclick='toggleDropdown()'>";
+                                    echo "<div class='dropdown-info'>";
+                                    echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>"; // Profile picture
                                     echo "</div>";
-                                    echo "<div class='dropdown-content'>";
-                                    echo "<a href='./form/candidate_details.php'>Form</a>"; // Link to form
-                                    echo "<a href='logout.php' class='logout-header'>Logout</a>"; // Logout button
-                                    // echo "</div>"; // Close dropdown-content
-                                    // echo "</div>"; // Close dropdown
+                                    echo "</div>";
+                                    echo "<ul class='dropdown-content'>"; // Open dropdown-content
+                                    echo "<li>" . htmlspecialchars($full_name) . "</li>";
+                                    echo "<li><a href='./form/candidate_details.php'>Form</a></li>"; // Link to form
+                                    echo "<li><a href='logout.php'>Logout</a></li>"; // Logout button
+                                    echo "</ul>"; 
+                                    echo "</li>"; 
+                                    echo "</ul>";                                             
                                 } else {
                                     // User is not logged in, display Login/SignUp link
                                     echo "<p><a href='#' onclick='popupFn(); return false;'>Login/<br>SignUp</a></p>";
@@ -195,32 +201,13 @@
                                 ?>
                             </div>
                         </li>
+
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- dropdown list script  -->
-    <script>
-        function toggleUserDropdown() {
-            document.querySelector('.dropdown-content').classList.toggle('show');
-        }
-
-        // Close the dropdown menu if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropdown-trigger') && !event.target.matches('.avatar') && !event.target.matches('.dropdown-name')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- dropdown list script  -->
 
     <div class="header-lower">
         <div class="outer-box">
@@ -411,4 +398,24 @@
     }
 </script>
 
-<!-- dropdown script  -->
+<!-- dropdown script -->
+<script>
+    function toggleDropdown() {
+        var dropdownContent = document.querySelector(".dropdown-content");
+        dropdownContent.classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdown-trigger') && !event.target.matches('.dropdown-trigger *')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+<!-- dropdown script ended-->
