@@ -138,11 +138,11 @@
                 <div class="info-box pull-right">
                     <ul class="info-list clearfix">
                         <li>
-                            <!-- <i class="fas fa-phone-volume"></i> -->
+                            <i class="fas fa-phone-volume"></i>
                             <p>Call Our Support<br /><a href="tel:01005200369">0100 5200 369</a></p>
                         </li>
                         <li>
-                            <!-- <i class="fas fa-map-marker-alt"></i> -->
+                            <i class="fas fa-map-marker-alt"></i>
                             <p>838 Andy Street, Madison,<br />New Jersey 08003</p>
                         </li>
                         <li>
