@@ -56,7 +56,7 @@
                 <div class="form-group">
                     <label for="password">Password</label>
                     <div class="input-group">
-                        <input type="password" id="password" class="form-control" name="password_generation" placeholder="Enter Your Password" required pattern="^(?=.[A-Za-z])(?=.\d.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$" title="Password must be at least 8 characters long and contain at least one letter, one symbol, and two numbers.">
+                        <input type="password" id="password" class="form-control" name="password_generation" placeholder="Enter Your Password" required>
                         <div class="input-group-append">
                             <button type="button" id="togglePassword" aria-label="Toggle Password Visibility" class="btn btn-outline-secondary">
                                 <i class="fas fa-eye" id="toggleIcon"></i>
@@ -179,7 +179,7 @@
                                     // Display profile image and full name with dropdown
                                     echo "<div class='dropdown'>";
                                     echo "<div class='dropdown-trigger'>";
-                                    echo "<img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'>";
+                                    echo "<a href='./dash/dashboard.php'><img src='" . htmlspecialchars($profile_path) . "' alt='Profile Picture' class='avatar'></a>";
                                     echo "<p class='dropdown-name'>" . htmlspecialchars($full_name) . "</p>";
                                     echo "</div>";
                                     echo "<div class='dropdown-content'>";
@@ -253,7 +253,7 @@
                                         </ul> -->
                                 </li>
                                 <li class="dropdown"><a href="about-1.php">About</a></li>
-                                <li class="dropdown"><a href="index-2.html">Services</a>
+                                <li class="dropdown"><a href="service-2.php">Services</a>
                                     <!-- <ul>
                                             <li><a href="service-1.html">Service Page 01</a></li>
                                             <li><a href="service-2.html">Service Page 02</a></li>
