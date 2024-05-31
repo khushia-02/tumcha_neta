@@ -184,6 +184,7 @@
                                     echo "</div>";
                                     echo "<div class='dropdown-content'>";
                                     echo "<a href='./form/candidate_details.php'>Form</a>"; // Link to form
+                                    // echo "<a href='./dash/config.php'>Dashboard</a>"; // Dashboard button
                                     echo "<a href='logout.php' class='logout-header'>Logout</a>"; // Logout button
                                     echo "</div>"; // Close dropdown-content
                                     echo "</div>"; // Close dropdown
