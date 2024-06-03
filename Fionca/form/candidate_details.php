@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['username'])) {
+    echo "<script>
+        alert('Please log in first.');
+        window.location.href = 'index.php';
+        </script>";
+    exit();
+}
+
+$username = $_SESSION['username']; // Get the username from the session
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +29,10 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Update Profile</h1>
+        <div class="form-group col-md-4">
+            <label for="candidate_username">Username:</label>
+            <input type="text" id="candidate_username" name="candidate_username" value="<?php echo htmlspecialchars($username); ?>" readonly required>
+             </div>
 
         <!-- Process Line -->
         <div class="process-line d-flex justify-content-between">
@@ -21,14 +41,15 @@
                 <div class="step-text">Basic Details</div>
                 <div class="step-line"></div>
             </div>
-            <div class="process-step">
-                <div class="step-icon"><i class="fas fa-graduation-cap"></i></div>
-                <div class="step-text">Education Details</div>
-                <div class="step-line"></div>
-            </div>
+           
             <div class="process-step">
                 <div class="step-icon"><i class="fas fa-info-circle"></i></div>
                 <div class="step-text">Additional Details</div>
+                <div class="step-line"></div>
+            </div>
+            <div class="process-step">
+                <div class="step-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="step-text">Political Ideologies</div>
                 <div class="step-line"></div>
             </div>
             <div class="process-step">
@@ -44,113 +65,83 @@
         </div>
 
         <!-- Basic Details Form Section -->
-        <div id="basic-details" class="form-section">
-            <h3>Basic Details</h3>
-            <form method="post" action="register_candidate.php" id="frmPinCode">
-                <!-- <div class="form-row"> -->
-                <div class="form-group col-md-4">
-                    <label for="candidate_username">Username:</label>
-                    <input type="text" id="candidate_username" name="candidate_username" required>
-                </div>
-                <!-- </div> -->
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                    <input type="text" class="textbox" name="pincode" id="pincode" placeholder="Enter Pincode"  autocomplete="new-password">
-			        <input type="button" class="btn btn-primary" value="Enter" onclick="get_details()">
-                    </div>
-                    <div class="form-group col-md-4">   
-                    <input type="text" class="textbox" id="city" disabled placeholder="City"><br/><br/>
-                    </div>
-                    <div class="form-group col-md-4">
-                    <input type="text" class="textbox" id="state" disabled placeholder="State">
-                    </div>
-                </div>
+       <!-- Basic Details Form Section -->
+       <div id="basic-details" class="form-section">
+    <h3>Basic Details</h3>
+    <form method="post" action="register_candidate_further.php" id="frmPinCode">
+    <div class="form-row">
+    <div class="form-group col-md-4">
+        <input type="text" class="textbox" name="candidate_area_pincode" id="pincode" placeholder="Enter Pincode" autocomplete="new-password">
+        <input type="button" class="btn btn-primary" value="Enter" onclick="get_details()">
+    </div>
+    <div class="form-group col-md-4">
+        <input type="text" class="textbox" id="city" placeholder="City" name="candidate_city"><br /><br />
+    </div>
+    <div class="form-group col-md-4">
+        <input type="text" class="textbox" id="state" placeholder="State" name="candidate_state">
+    </div>
+</div>
 
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="candidate_area_current">Current Area:</label>
-                        <input type="text" id="candidate_area_current" name="candidate_area_current" required>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <select id="candidate_gender" name="candidate_gender" class="form-control" placeholder="Gender">
-                            <option value="">Select Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="candidate_dob">Date of Birth:</label>
-                        <input type="date" id="candidate_dob" name="candidate_dob" onchange="calculateAge()" required>
-                    </div>
-                </div>
 
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="age">Age:</label>
-                        <input type="text" id="age" name="age" readonly>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="self_profession">Profession:</label>
-                        <input type="text" id="self_profession" name="self_profession">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="candidate_email">Email:</label>
-                        <input type="email" id="candidate_email" name="candidate_email">
-                    </div>
-                </div>
-                
-                <input type="submit"class="btn btn-primary" value="Submit">
-            </form>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="candidate_area_current">Current Area:</label>
+                <input type="text" id="candidate_area_current" name="candidate_area_current" required>
+            </div>
+            <div class="form-group col-md-4">
+                <select id="candidate_gender" name="candidate_gender" class="form-control" placeholder="Gender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="candidate_dob">Date of Birth:</label>
+                <input type="date" id="candidate_dob" name="candidate_dob" onchange="calculateAge()" required>
+            </div>
         </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="candidate_age" readonly>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="education_type">Education Type:</label>
+                <select id="education_type" name="candidate_education" required>
+                    <option value="" disabled selected>Select Education</option>
+                    <option value="10th_pass">10th Pass</option>
+                    <option value="12th_pass">12th Pass</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="graduate">Graduate</option>
+                    <option value="post_graduate">Post Graduate</option>
+                    <option value="phd">PhD</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="self_profession">Profession:</label>
+                <input type="text" id="self_profession" name="self_profession">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="candidate_email">Email:</label>
+                <input type="email" id="candidate_email" name="candidate_email">
+            </div>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+</div>
 
         <!-- Education Details Form Section -->
-        <div id="education-details" class="form-section" style="display: none;">
-            <h3>Education Details</h3>
-            <form action="submit_education.php" method="post" id="education-form">
-                <div id="forms-container">
-                    <div class="education-form">
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label for="education_type">Education Type:</label>
-                                <input type="text" id="education_type" name="education_type" required>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="education_year_of_completion">Year of Completion:</label>
-                                <input type="number" id="education_year_of_completion" name="education_year_of_completion" required>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="education_institute_name">Institute Name:</label>
-                                <input type="text" id="education_institute_name" name="education_institute_name" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label for="education_university_name">University Name:</label>
-                                <input type="text" id="education_university_name" name="education_university_name" required>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="qualification">Qualification:</label>
-                                <input type="text" id="qualification" name="qualification" required>
-                            </div>
-                        </div>
-                        <div class="remove-entry"><i class="fas fa-minus-circle"></i></div>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-secondary" id="add-education-entry">+ Add Another
-                    Education</button>
-                <button type="submit" class="btn btn-primary">Submit and Continue</button>
-            </form>
-        </div>
+      
 
         <!-- Additional details Form Section -->
         <div id="upload-resume" class="form-section" style="display: none;">
             <h3>Additional Details</h3>
             <form method="post" action="candidate_additional_information.php">
-                <div class="form-group">
-                    <label for="candidate_username">Username:</label>
-                    <input type="text" id="candidate_username" name="candidate_username" class="form-control" required>
-                </div>
+               
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
@@ -158,51 +149,92 @@
                         <textarea id="about_detail" name="about_detail" rows="4" class="form-control"></textarea>
                     </div>
                     <div class="form-group col-md-4">
+                        <label for="marriage_status">Marital Status:</label>
+                        <select id="marriage_status" name="candidate_marriage_status" class="form-control">
+                            <option value="">Select Status</option>
+                            <option value="married">Married</option>
+                            <option value="unmarried">Unmarried</option>
+                            <option value="divorced">Divorced</option>
+                            <option value="prefer_not_to_say">Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div id="spouse_name_group" class="form-group col-md-4" style="display: none;">
                         <label for="spouse_name">Spouse Name:</label>
                         <input type="text" id="spouse_name" name="spouse_name" class="form-control">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="candidate_tagline">Candidate Tagline:</label>
-                        <input type="text" id="candidate_tagline" name="candidate_tagline" class="form-control">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="candidate_video_path">Candidate Video Path (Google Drive link):</label>
-                        <input type="url" id="candidate_video_path" name="candidate_video_path" class="form-control">
+                        <label for="office_mail">Office mail ID:</label>
+                        <input type="email" id="office_mail" name="candidate_office_email" class="form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="office_contact">Office Contact:</label>
+                        <input type="number" id="office_contact" name="candidate_office_contact" class="form-control">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="candidate_office_address">Candidate Office Address:</label>
                         <input type="text" id="candidate_office_address" name="candidate_office_address" class="form-control">
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="candidate_party_name">Candidate Party Name:</label>
-                        <input type="text" id="candidate_party_name" name="candidate_party_name" class="form-control">
-                    </div>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary"><br><br>
+            </form>
+        </div>
+        <div id="party-details" class="form-section" style="display: none;">
+            <h3>Party Ideologies</h3>
+            <form method="post" action="candidate_party.php" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="candidate_username">Username:</label>
+                    <input type="text" id="candidate_username" name="candidate_username" class="form-control" required>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="candidate_logo_path">Candidate Logo Image:</label>
-                        <input type="text" placeholder="Upload Image" accept="image/png, image/jpeg, image/jpg" onfocus="(this.type='file')" name="image" class="box" required>
+                        <label for="party">Select Party:</label>
+                        <select id="party" name="party" class="form-control">
+                            <option value="na">Select name:</option>
+                            <option value="bjp">Bhartiya Janta Party</option>
+                            <option value="congress">Congress</option>
+                            <option value="shivsena">Shivsena</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="candidate_banner_path">Candidate Banner Image:</label>
-                        <input type="text" placeholder="Upload Image" accept="image/png, image/jpeg, image/jpg" onfocus="(this.type='file')" name="image" required>
+                    <div id="party_name_group" class="form-group col-md-4" style="display: none;">
+                        <label for="party_name">Party Name:</label>
+                        <input type="text" id="party_name" name="party_name" class="form-control">
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="candidate_books_pdf_path">Candidate Books PDF Path:</label>
-                        <input type="text" id="candidate_books_pdf_path" name="candidate_books_pdf_path" class="form-control">
+                    <div id="default_party_logo" class="form-group col-md-4" style="display: none;">
+                        <label for="default_logo">Default Logo:</label><br>
+                        <img id="default_logo_img" src="" alt="Default Logo" class="img-thumbnail" style="height:100px; width:auto">
+                        <input type="hidden" id="default_logo_path" name="default_logo_path">
+                    </div>
+                    <div id="party_logo_group" class="form-group col-md-4" style="display: none;">
+                        <label for="party_logo_input">Party Logo:</label>
+                        <input type="file" id="party_logo_input" name="party_logo_input" class="form-control">
+                        <img id="party_logo" src="" alt="Party Logo" class="img-thumbnail mt-2" style="display: none;">
                     </div>
                 </div>
+                <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="banner">Profile Banner:</label>
+                    <input type="file" id="banner_image" name="banner_image" class="form-control-file">
+                </div>
 
-                <input type="submit" value="Submit" class="btn btn-primary">
+                    <div class="form-group col-md-4">
+                        <label for="ideologies">Ideologies(description):</label>
+                        <textarea id="ideologies" name="ideologies" rows="4" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="party_position">Position:</label>
+                        <input type="text" id="party_position" name="party_position" class="party_position" required>
+                    </div>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary"><br><br>
             </form>
         </div>
-
         <!-- Candidate work Form Section -->
-        <div id="additional-details" class="form-section" style="display: none;">
+        <div id="work-details" class="form-section" style="display: none;">
             <h3>Work and Area of expertise</h3>
             <form action="submit_candidate_works.php" method="POST">
                 <div class="form-group">
@@ -241,6 +273,13 @@
                             <label for="details_of_working">Details of Working:</label>
                             <textarea id="details_of_working" name="details_of_working[]" class="form-control"></textarea>
                         </div>
+                        <div class="form-group col-md-4">
+                            <label for="work_img">Work images:</label>
+                            <div class="work-images">
+                                <input type="file" id="work_image" name="work_image[]" class="form-control-file"><br>
+                            </div>
+                            <button type="button" class="btn btn-secondary add-more-images">+ Add More Images</button>
+                        </div>
                         <div class="remove-entry"><i class="fas fa-minus-circle"></i></div>
                     </div>
                 </div>
@@ -249,7 +288,6 @@
                 <button type="submit" class="btn btn-primary">Submit and Continue</button>
             </form>
         </div>
-
 
         <!-- Social Media Section -->
         <div id="terms-conditions" class="form-section" style="display: none;">
@@ -306,6 +344,17 @@
     <script src="city.js"></script>
     <script src="date.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    document.getElementById('marriage_status').addEventListener('change', function() {
+        var spouseNameGroup = document.getElementById('spouse_name_group');
+        if (this.value === 'married') {
+            spouseNameGroup.style.display = 'block';
+        } else {
+            spouseNameGroup.style.display = 'none';
+        }
+    });
+    </script>
+  
     <script>
         $(document).ready(function() {
             // Form Section Visibility Toggle
@@ -370,25 +419,25 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="education_type">Education Type:</label>
-                                <input type="text" id="education_type" name="education_type" required>
+                                <input type="text" id="education_type" name="education_type[]" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="education_year_of_completion">Year of Completion:</label>
-                                <input type="number" id="education_year_of_completion" name="education_year_of_completion" required>
+                                <input type="number" id="education_year_of_completion" name="education_year_of_completion[]" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="education_institute_name">Institute Name:</label>
-                                <input type="text" id="education_institute_name" name="education_institute_name" required>
+                                <input type="text" id="education_institute_name" name="education_institute_name[]" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="education_university_name">University Name:</label>
-                                <input type="text" id="education_university_name" name="education_university_name" required>
+                                <input type="text" id="education_university_name" name="education_university_name[]" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="qualification">Qualification:</label>
-                                <input type="text" id="qualification" name="qualification" required>
+                                <input type="text" id="qualification" name="qualification[]" required>
                             </div>
                         </div>
                         <div class="remove-entry"><i class="fas fa-minus-circle"></i></div>
@@ -403,7 +452,78 @@
             });
         });
     </script>
+<script>
+document.getElementById('party').addEventListener('change', function() {
+    var partyNameGroup = document.getElementById('party_name_group');
+    var partyLogoGroup = document.getElementById('party_logo_group');
+    var defaultPartyLogo = document.getElementById('default_party_logo');
+    var defaultLogoImg = document.getElementById('default_logo_img');
+    var defaultLogoPath = document.getElementById('default_logo_path');
+    var partyLogoInput = document.getElementById('party_logo_input');
+    var partyLogo = document.getElementById('party_logo');
 
+    if (this.value === 'other') {
+        partyNameGroup.style.display = 'block';
+        partyLogoGroup.style.display = 'block';
+        defaultPartyLogo.style.display = 'none';
+        defaultLogoImg.src = '';
+        defaultLogoPath.value = '';
+        partyLogo.src = '';
+    } else {
+        partyNameGroup.style.display = 'none';
+        partyLogoGroup.style.display = 'none';
+        defaultPartyLogo.style.display = 'block';
+        if (this.value === 'bjp') {
+            defaultLogoImg.src = 'bjp_logo.webp'; // Replace with actual path to the BJP default logo image
+            defaultLogoPath.value = 'bjp_logo.webp'; // Set the hidden input value
+        } else if (this.value === 'congress') {
+            defaultLogoImg.src = 'congress.svg'; // Replace with actual path to the Congress default logo image
+            defaultLogoPath.value = 'congress.svg'; // Set the hidden input value
+        } else if (this.value === 'shivsena') {
+            defaultLogoImg.src = 'ShivSena.svg'; // Replace with actual path to the Shivsena default logo image
+            defaultLogoPath.value = 'ShivSena.svg'; // Set the hidden input value
+        }
+    }
+});
+
+document.getElementById('party_logo_input').addEventListener('change', function(event) {
+    var partyLogo = document.getElementById('party_logo');
+    var file = event.target.files[0];
+    if (file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            partyLogo.src = e.target.result;
+            partyLogo.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    } else {
+        partyLogo.src = '';
+        partyLogo.style.display = 'none';
+    }
+});
+</script>
+<script>
+    document.getElementById('add-work-entry').addEventListener('click', function() {
+        let workEntry = document.querySelector('.work-entry').cloneNode(true);
+        workEntry.querySelectorAll('input').forEach(input => input.value = '');
+        workEntry.querySelectorAll('textarea').forEach(textarea => textarea.value = '');
+        workEntry.querySelector('.work-images').innerHTML = '<input type="file" id="work_image" name="work_image[]" class="form-control-file">';
+        document.getElementById('work-entries').appendChild(workEntry);
+    });
+
+    document.addEventListener('click', function(e) {
+        if (e.target && e.target.classList.contains('add-more-images')) {
+            let imageInput = document.createElement('input');
+            imageInput.type = 'file';
+            imageInput.name = 'work_image[]';
+            imageInput.className = 'form-control-file';
+            e.target.previousElementSibling.appendChild(imageInput);
+        }
+        if (e.target && e.target.closest('.remove-entry')) {
+            e.target.closest('.work-entry').remove();
+        }
+    });
+</script>
 </body>
 
 </html>

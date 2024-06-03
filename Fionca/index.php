@@ -118,7 +118,7 @@
                     <h2>Candidates</h2>
                 </div>
                 <div class="btn-box pull-right">
-                    <a href="index-2.html"><i class="fas fa-user"></i>view all Candidates</a>
+                    <a href="filter.php"><i class="fas fa-user"></i>view all Candidates</a>
                 </div>
             </div>
             <div class="four-item-carousel owl-carousel owl-theme owl-nav-none owl-dot-style-one">
@@ -133,10 +133,10 @@
                 // Create connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
                 // Retrieve and sanitize search input
                 $fullName = isset($_POST['fullName']) ? htmlspecialchars($_POST['fullName']) : '';
@@ -144,7 +144,7 @@
                 // Check if search input is provided
                 if (!empty($fullName)) {
                     // Search candidates based on full name
-                    $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration WHERE candidate_fullname LIKE '%$fullName%' LIMIT 1";
+                    $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration WHERE candidate_fullname LIKE '%$fullName%' ";
                     $result = $conn->query($sql);
 
                     if ($result === false) {
@@ -181,7 +181,7 @@
                     }
                 } else {
                     // If no search input is provided, display all candidates
-                    $sql_all_candidates = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration";
+                    $sql_all_candidates = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration limit 1";
                     $result_all_candidates = $conn->query($sql_all_candidates);
 
                     if ($result_all_candidates->num_rows > 0) {
