@@ -42,7 +42,7 @@ $username = $_SESSION['username']; // Get the username from the session
                 <div class="step-line"></div>
             </div>
            
-            <div class="process-step">
+            <div class="process-step"> 
                 <div class="step-icon"><i class="fas fa-info-circle"></i></div>
                 <div class="step-text">Additional Details</div>
                 <div class="step-line"></div>
@@ -134,11 +134,8 @@ $username = $_SESSION['username']; // Get the username from the session
     </form>
 </div>
 
-        <!-- Education Details Form Section -->
-      
-
-        <!-- Additional details Form Section -->
-        <div id="upload-resume" class="form-section" style="display: none;">
+        <!-- additional details form -->
+        <div id="additional_details" class="form-section" style="display: none;">
             <h3>Additional Details</h3>
             <form method="post" action="candidate_additional_information.php">
                
@@ -311,11 +308,11 @@ $username = $_SESSION['username']; // Get the username from the session
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="twitter">Twitter:</label>
-                            <input type="url" id="twitter" name="twitter" required>
+                            <input type="url" id="twitter" name="twitter">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="linkedin">LinkedIn:</label>
-                            <input type="url" id="linkedin" name="linkedin">
+                            <input type="url" id="linkedin" name="linkedin"  required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="whatsapp_channel_link">WhatsApp Channel:</label>
@@ -329,7 +326,7 @@ $username = $_SESSION['username']; // Get the username from the session
                         </div>
                         <div class="form-group col-md-6">
                             <label for="canidate_linked_NGO">Candidate Linked NGO:</label>
-                            <input type="text" id="canidate_linked_NGO" name="canidate_linked_NGO">
+                            <input type="text" id="candidate_linked_NGO" name="candidate_linked_NGO">
                         </div>
                     </div>
                     <div class="form-row">
@@ -451,6 +448,7 @@ $username = $_SESSION['username']; // Get the username from the session
                 $(this).closest('.education-form').remove();
             });
         });
+
     </script>
 <script>
 document.getElementById('party').addEventListener('change', function() {
