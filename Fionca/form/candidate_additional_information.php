@@ -1,12 +1,14 @@
 <?php
-// Database connection
-$servername = "localhost"; // Change this to your database server name
-$username = "root"; // Change this to your database username
-$password = ""; // Change this to your database password
-$dbname = "tumcha_neta"; // Change this to your database name
+session_start();
+
+// Database connection details
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "tumcha_neta";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {
@@ -14,26 +16,38 @@ if ($conn->connect_error) {
 }
 
 // Retrieve form data
-$candidate_username = $_POST['candidate_username'];
-$about_detail = $_POST['about_detail'];
-$spouse_name = $_POST['spouse_name'];
-$candidate_tagline = $_POST['candidate_tagline'];
-$candidate_video_path = $_POST['candidate_video_path'];
-$candidate_office_address = $_POST['candidate_office_address'];
-$candidate_party_name = $_POST['candidate_party_name'];
-$candidate_logo_path = $_POST['candidate_logo_path'];
-$candidate_banner_path = $_POST['candidate_banner_path'];
-$candidate_books_pdf_path = $_POST['candidate_books_pdf_path'];
+$about_detail = $conn->real_escape_string($_POST['about_detail']);
+$candidate_marriage_status = $conn->real_escape_string($_POST['candidate_marriage_status']);
+$spouse_name = $conn->real_escape_string($_POST['spouse_name']);
+$candidate_office_contact = $conn->real_escape_string($_POST['candidate_office_contact']);
+$candidate_office_email = $conn->real_escape_string($_POST['candidate_office_email']);
+$candidate_office_address = $conn->real_escape_string($_POST['candidate_office_address']);
+$candidate_username = $_SESSION['username']; // Assuming you have stored the username in session
 
-// SQL query to insert data into candidate_registration table
-$sql = "INSERT INTO candidate_additional_information(candidate_username, about_detail, spouse_name, candidate_tagline, candidate_video_path, candidate_office_address, candidate_party_name, candidate_logo_path, candidate_banner_path, candidate_books_pdf_path) 
-        VALUES ('$candidate_username', '$about_detail', '$spouse_name', '$candidate_tagline', '$candidate_video_path', '$candidate_office_address', '$candidate_party_name', '$candidate_logo_path', '$candidate_banner_path', '$candidate_books_pdf_path')";
+// Check if candidate already exists
+$check_query = "SELECT * FROM candidate_additional_information WHERE candidate_username = '$candidate_username'";
+$result = $conn->query($check_query);
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+if ($result->num_rows > 0) {
+    echo "<script>
+        alert('You have already entered this data.');
+        window.location.href = 'candidate_information.php';
+    </script>";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    // SQL query to insert data into candidate_additional_information table
+    $sql = "INSERT INTO candidate_additional_information (candidate_username, about_detail, candidate_marriage_status, spouse_name, candidate_office_contact, candidate_office_email, candidate_office_address) 
+            VALUES ('$candidate_username', '$about_detail', '$candidate_marriage_status', '$spouse_name', '$candidate_office_contact', '$candidate_office_email', '$candidate_office_address')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>
+            alert('New record created successfully');
+            window.location.href = 'candidate_details.php';
+        </script>";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 }
 
 $conn->close();
 ?>
+<!-- hello -->
