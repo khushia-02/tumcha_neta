@@ -1,16 +1,10 @@
 <?php
 
-// $conn = mysqli_connect("localhost", "root", "", "tumcha_neta");
+$conn = mysqli_connect("localhost", "root", "", "tumcha_neta");
 
-// if (!$conn) {
-//     echo "Connection Failed";
-// }
-// fetch_data.php
-
-// include 'db_connect.php';
 
 // Fetch candidate data
-$candidate_id = "aditya_1"; // example candidate ID
+$candidate_id = "khushi"; // example candidate ID
 $sql = "SELECT * FROM candidate_registration WHERE candidate_username ='aditya_1'";
 $result = $conn->query($sql);
 
