@@ -1,3 +1,5 @@
+<!--header-->
+
 <div id="overlay"></div>
 <div id="popupDialog">
     <div id="loginForm" class="form-container">
