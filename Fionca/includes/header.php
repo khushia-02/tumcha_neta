@@ -1,16 +1,21 @@
+
 <div id="overlay"></div>
+
 <div id="popupDialog">
     <div id="loginForm" class="form-container">
         <h2>Login</h2>
-        <form action="login_data.php" method="post" class="login">
+        <form id="loginForm" method="post" class="login">
+        <?php if (isset($_SESSION['login_error'])) {
+            echo "<div class='error-message'>" . $_SESSION['login_error'] . "</div>";
+            unset($_SESSION['login_error']);}?>
             <label for="email">Email:</label>
-            <input type="email" name="candidate_email" placeholder="Enter your email">
+            <input type="email" name="candidate_email" placeholder="Enter your email" required>
             <label for="password">Password:</label>
-            <input type="password" name="password_generation" placeholder="Enter your password">
+            <input type="password" name="password_generation" placeholder="Enter your password" required>
             <button type="button" class="toggle-password" aria-label="Toggle Password Visibility">
                 <i class="fas fa-eye"></i>
             </button>
-            <button type="submit" class="button-login">Login</button>
+            <button type="submit" class="button-login" id="loginButton">Login</button>
             <span class="toggle-link" onclick="toggleForm()">Don't have an account? Register</span>
         </form>
     </div>
@@ -365,49 +370,65 @@
     </div>
 </header>
 <!-- header end -->
-
-<!-- Mobile Menu  -->
-<!-- <div class="mobile-menu">
     
-        <div class="menu-backdrop"></div>
-        <div class="close-btn"><i class="fas fa-times"></i></div>
-        
-        <nav class="menu-box">
-            <div class="nav-logo"><a href="index.html"><img src="assets/images/mobile-logo.png" alt="" title=""></a></div>
-            <div class="menu-outer">  -->
-<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header</div> -->
-<!-- <div class="contact-info">
-                <h4>Contact Info</h4>
-                <ul>
-                    <li>Chicago 12, Melborne City, USA</li>
-                    <li><a href="tel:+8801682648101">+88 01682648101</a></li>
-                    <li><a href="mailto:info@example.com">info@example.com</a></li>
-                </ul>
-            </div>
-            <div class="social-links">
-                <ul class="clearfix">
-                    <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                    <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                    <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                    <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                    <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>  -->
-<!-- End Mobile Menu -->
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var loginButton = document.getElementById("loginButton");
+    if (loginButton) {
+        loginButton.addEventListener("click", login);
+    } else {
+        console.error("Element with ID 'loginButton' not found");
+    }
+});
+    // Function to handle login form submission
+    function login() {
+        var email = document.forms["loginForm"]["candidate_email"].value;
+        var password = document.forms["loginForm"]["password_generation"].value;
 
-<!--Scroll to top-->
+        // Create FormData object to send form data asynchronously
+        var formData = new FormData();
+        formData.append("candidate_email", email);
+        formData.append("password_generation", password);
+
+        // Create XMLHttpRequest object
+        var xhr = new XMLHttpRequest();
+        var url = "login_data.php";
+
+        // Configure XMLHttpRequest object
+        xhr.open("POST", url, true);
+
+        // Set up callback function to handle response
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Handle response from server
+                handleLoginResponse(xhr.responseText);
+            }
+        };
+
+        // Send form data asynchronously
+        xhr.send(formData);
+    }
+
+    // Function to handle response from server
+    function handleLoginResponse(response) {
+        // Update UI based on response
+        if (response.trim() === "success") {
+            // Redirect to the home page or perform any other action for successful login
+            window.location.href = "index.php";
+        } else {
+            // Display error message
+            document.getElementById("error-message").innerHTML = response;
+        }
+    }
+
+    // Bind login function to click event of login button
+    document.getElementById("loginButton").addEventListener("click", login);
+</script>
+    
+    <!--Scroll to top-->
 <button class="scroll-top scroll-to-target" data-target="html">
     <span class="fa fa-arrow-up"></span>
 </button>
-
-<script>
-    function openForm() {
-        // Show the form (you need to replace 'formId' with the actual ID of your form)
-        document.getElementById('basic-details').style.display = 'block';
-    }
-</script>
 
 <!-- dropdown script  -->
