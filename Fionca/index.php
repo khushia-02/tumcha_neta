@@ -149,7 +149,7 @@ if ($conn->connect_error) {
                     if ($result === false) {
                         die("Error executing query: " . $conn->error);
                     }
-
+//
                     // Check if any rows are returned
                     if ($result->num_rows > 0) {
                         // Output data of the searched candidate
