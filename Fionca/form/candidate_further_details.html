@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Registration Form</title>
+    <script>
+        function calculateAge() {
+            const dob = document.getElementById('candidate_dob').value;
+            const dobDate = new Date(dob);
+            const now = new Date();
+            let age = now.getFullYear() - dobDate.getFullYear();
+            const monthDiff = now.getMonth() - dobDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < dobDate.getDate())) {
+                age--;
+            }
+            document.getElementById('age').value = age;
+        }
+    </script>
+</head>
+<body>
+    <h2>Candidate Registration Form</h2>
+<<<<<<<< HEAD:Fionca/form/candidate_further_details.html
+    <form method="post" action="register_candidate.php" enctype="multipart/form-data">
+
+        <input type="hidden" id="candidate_username" name="candidate_username" value="<?php echo $username; ?>">
+
+        <label for="profile_photo_path">Profile Photo:</label><br>
+        <input type="file"  name="profile_photo_path" accept="image/*" required><br>
+        
+        <label for="self_profession">Self Profession:</label><br>
+        <input type="text" id="self_profession" name="self_profession"><br>
+        
+========
+    <form method="post" action="register_candidate.php">
+        <label for="candidate_username">Username:</label><br>
+        <input type="text" id="candidate_username" name="candidate_username" required><br><br>
+
+        <label for="profile_photo_path">Profile Photo Path:</label><br>
+        <input type="text" id="profile_photo_path" name="profile_photo_path"><br><br>
+
+        <label for="self_profession">Profession:</label><br>
+        <input type="text" id="self_profession" name="self_profession"><br><br>
+
+>>>>>>>> 8d96b9c51d59a8a6acc3d411dc8dbedbe2e1a26f:Fionca/form/candidate_further.html
+        <label for="about_candidate">About Candidate:</label><br>
+        <input type="text" id="about_candidate" name="about_candidate"><br><br>
+
+        <label for="candidate_area_pincode">Pincode:</label><br>
+        <input type="text" id="candidate_area_pincode" name="candidate_area_pincode"><br><br>
+
+        <label for="candidate_city">City:</label><br>
+        <input type="text" id="candidate_city" name="candidate_city"><br><br>
+
+        <label for="candidate_area_current">Current Area:</label><br>
+        <input type="text" id="candidate_area_current" name="candidate_area_current"><br><br>
+
+        <label for="candidate_gender">Gender:</label><br>
+        <input type="text" id="candidate_gender" name="candidate_gender"><br><br>
+
+        <label for="candidate_dob">Date of Birth:</label><br>
+        <input type="date" id="candidate_dob" name="candidate_dob" onchange="calculateAge()" required><br><br>
+
+        <label for="candidate_email">Email:</label><br>
+        <input type="email" id="candidate_email" name="candidate_email"><br><br>
+
+        <label for="candidate_state">State:</label><br>
+        <input type="text" id="candidate_state" name="candidate_state"><br><br>
+
+        <label for="age">Age:</label><br>
+        <input type="text" id="age" name="age" readonly><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,5 +1,4 @@
 <?php
-    session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -14,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $candidate_username = $_SESSION['username']; // Assuming you have stored the username in session
+    $username = $_POST['candidate_username'];
     $party = $_POST['party'];
     $party_name = $_POST['party_name'] ?? '';
     $ideologies = $_POST['ideologies'];
@@ -40,12 +39,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             mkdir($upload_dir, 0777, true);
         }
         $profile_banner_name = $_FILES['banner_image']['name'];
-        $profile_banner_path = './candidate_uploads/' . $profile_banner_name; // Adjusted path
+        $profile_banner_path = '../candidate_uploads/' . $profile_banner_name; // Adjusted path
         move_uploaded_file($_FILES['banner_image']['tmp_name'], $upload_dir . $profile_banner_name); // Adjusted path
     }
 
     $stmt = $conn->prepare("INSERT INTO candidate_party_ideologies (username, party, party_name, party_logo_path, profile_banner_path, ideologies, party_position) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param('sssssss', $candidate_username, $party, $party_name, $party_logo_path, $profile_banner_path, $ideologies, $party_position);
+    $stmt->bind_param('sssssss', $username, $party, $party_name, $party_logo_path, $profile_banner_path, $ideologies, $party_position);
 
     if ($stmt->execute()) {
         echo "Data inserted successfully.";
