@@ -1,6 +1,6 @@
-<!-- <?php
-        session_start();
-        ?>
+ <?php
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +8,101 @@
 <?php include './includes/head.php'; ?>
 <?php include './includes/header.php'; ?>
 
+<head>
+    <style>
+        /* Custom CSS for Candidate Profiles */
+
+/* Custom CSS for Candidate Profiles */
+
+.team-section {
+  margin-top: 50px;
+}
+
+.candidates-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.team-block-one {
+  display: inline-block;
+  vertical-align: top;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  max-width: 300px; /* Adjust the maximum width as needed */
+}
+
+.image-box {
+  overflow: hidden;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.image-box img {
+  width: auto;
+  display: block;
+  height: 150px
+}
+
+.lower-content {
+  padding: 20px;
+}
+
+.content-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.designation {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.ovellay-box {
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-links li:last-child {
+  margin-right: 0;
+}
+
+.social-links a {
+  color: #555;
+  font-size: 18px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .team-block-one {
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width: 200px; /* Adjust width as needed */
+  }
+
+  .content-box h3 {
+    font-size: 18px;
+  }
+
+  .designation {
+    font-size: 14px;
+  }
+}
+    </style>
+</head>
 <!-- page wrapper -->
 
 <body class="boxed_wrapper ltr">
@@ -86,142 +181,107 @@
     </section>
     <!-- banner-section end -->
 
-    <!-- filtre  -->
-    <form method="post" action="#">
-        <div class="container">
-            <aside class="filters">
-                <div class="filter-category">
-                    <h3 class="candi-search">Search your candidate</h3>
-                    <ul>
-                        <li>
-                            <label for="fullName">Full Name:</label>
-                            <input type="text" id="fullName" name="fullName" list="candidateList" required>
-                        </li>
+<?php
+    // Database connection details
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "tumcha_neta"; // Replace with your database name
 
-                        <li>
-                            <button type="submit" class="submit-btn">Submit</button>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
-    </form>
-    <!-- filtre ends -->
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-    <!-- Candidate details list start -->
-    <section class="team-section">
-        <div class="auto-container">
-            <div class="upper-box clearfix">
-                <div class="sec-title style-two pull-left">
-                    <!-- <h5>insurance team</h5> -->
-                    <h2>Candidates</h2>
-                </div>
-                <div class="btn-box pull-right">
-                    <a href="filter.php"><i class="fas fa-user"></i>view all Candidates</a>
-                </div>
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Retrieve and sanitize search input
+    $fullName = isset($_POST['fullName']) ? htmlspecialchars($_POST['fullName']) : '';
+
+    // Fetch candidates based on search input
+    $sql = !empty($fullName) ?
+        "SELECT * FROM candidate_registration WHERE candidate_fullname LIKE '%$fullName%'" :
+        "SELECT * FROM candidate_registration";
+
+    $result = $conn->query($sql);
+
+    if ($result === false) {
+        die("Error executing query: " . $conn->error);
+    }
+?>
+
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <div class="container">
+        <aside class="filters">
+            <div class="filter-category">
+                <h3 class="candi-search">Search your candidate</h3>
+                <ul>
+                    <li>
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName" list="candidateList" value="<?php echo htmlspecialchars($fullName); ?>">
+                    </li>
+                    <li>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </li>
+                </ul>
             </div>
-            <div class="four-item-carousel owl-carousel owl-theme owl-nav-none owl-dot-style-one">
+        </aside>
+    </div>
+</form>
 
-                <?php
-                // Database connection details
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "tumcha_neta"; // Replace with your database name
+<section class="team-section">
+    <div class="auto-container">
+        <div class="upper-box clearfix">
+            <div class="sec-title style-two pull-left">
+                <h2>Candidates</h2>
+            </div>
+            <div class="btn-box pull-right">
+                <a href="filter.php"><i class="fas fa-user"></i>View all Candidates</a>
+            </div>
+        </div>
+        <div class="candidates-wrapper">
+            <?php
+            // Check if any candidates are found
+            if ($result->num_rows > 0) {
+                // Output data of the candidates
+                while ($row = $result->fetch_assoc()) {
+                    // Display the candidate using the function
+                    displayCandidate($row);
+                }
+            } else {
+                echo "No results found";
+            }
+            ?>
+        </div>
+    </div>
+</section>
 
-                // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+<?php
+// Function to display a candidate
+function displayCandidate($row)
+{
+    echo "<div class='team-block-one'>";
+    echo "<div class='inner-box'>";
+    echo "<figure class='image-box'><img src='" . htmlspecialchars($row["candidate_profile_path"]) . "' alt=''></figure>";
+    echo "<div class='lower-content'>";
+    echo "<div class='content-box'>";
+    echo "<h3><a href='service-2.php?username=" . urlencode($row["candidate_username"]) . "'>" . htmlspecialchars($row["candidate_fullname"]) . "</a></h3>";
+    echo "<span class='designation'>Senior Manager</span>";
+    echo "</div>";
+    echo "<div class='ovellay-box'>";
+    echo "<h3><a href='service-2.php?username=" . urlencode($row["candidate_username"]) . "'>" . htmlspecialchars($row["candidate_fullname"]) . "</a></h3>";
+    echo "<span class='designation'>Senior Manager</span>";
+    echo "</div>";
+    echo "</div>";
+    echo "</div>";
+    echo "</div>";
 }
 
-                // Retrieve and sanitize search input
-                $fullName = isset($_POST['fullName']) ? htmlspecialchars($_POST['fullName']) : '';
+// Close connection
+$conn->close();
 
-                // Check if search input is provided
-                if (!empty($fullName)) {
-                    // Search candidates based on full name
-                    $sql = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration WHERE candidate_fullname LIKE '%$fullName%' ";
-                    $result = $conn->query($sql);
-
-                    if ($result === false) {
-                        die("Error executing query: " . $conn->error);
-                    }
-//Index code 
-                    // Check if any rows are returned
-                    if ($result->num_rows > 0) {
-                        // Output data of the searched candidate
-                        $row = $result->fetch_assoc();
-                        echo "<div class='team-block-one'>";
-                        echo "<div class='inner-box'>";
-                        echo "<figure class='image-box'><img src='" . htmlspecialchars($row["candidate_profile_path"]) . "' alt=''></figure>";
-                        echo "<div class='lower-content'>";
-                        echo "<div class='content-box'>";
-                        echo "<h3><a href='index-2.html'>" . htmlspecialchars($row["candidate_fullname"]) . "</a></h3>";
-                        echo "<span class='designation'>Senior Manager</span>";
-                        echo "</div>";
-                        echo "<div class='ovellay-box'>";
-                        echo "<h3><a href='index-2.html'>" . htmlspecialchars($row["candidate_fullname"]) . "</a></h3>";
-                        echo "<span class='designation'>Senior Manager</span>";
-                        echo "<ul class='social-links clearfix'>";
-                        echo "<li><a href='index-2.html'><i class='fab fa-facebook-f'></i></a></li>";
-                        echo "<li><a href='index-2.html'><i class='fab fa-twitter'></i></a></li>";
-                        echo "<li><a href='index-2.html'><i class='fab fa-instagram'></i></a></li>";
-                        echo "<li><a href='index-2.html'><i class='fab fa-linkedin-in'></i></a></li>";
-                        echo "</ul>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "</div>";
-                    } else {
-                        echo "No results found";
-                    }
-                } else {
-                    // If no search input is provided, display all candidates
-                    $sql_all_candidates = "SELECT candidate_fullname, candidate_profile_path FROM candidate_registration limit 1";
-                    $result_all_candidates = $conn->query($sql_all_candidates);
-
-                    if ($result_all_candidates->num_rows > 0) {
-                        // Output data of each row
-                        while ($row = $result_all_candidates->fetch_assoc()) {
-                            echo "<div class='team-block-one'>";
-                            echo "<div class='inner-box'>";
-                            echo "<figure class='image-box'><img src='" . htmlspecialchars($row["candidate_profile_path"]) . "' alt=''></figure>";
-                            echo "<div class='lower-content'>";
-                            echo "<div class='content-box'>";
-                            echo "<h3><a href='index-2.html'>" . htmlspecialchars($row["candidate_fullname"]) . "</a></h3>";
-                            echo "<span class='designation'>Senior Manager</span>";
-                            echo "</div>";
-                            echo "<div class='ovellay-box'>";
-                            echo "<h3><a href='index-2.html'>" . htmlspecialchars($row["candidate_fullname"]) . "</a></h3>";
-                            echo "<span class='designation'>Senior Manager</span>";
-                            echo "<ul class='social-links clearfix'>";
-                            echo "<li><a href='index-2.html'><i class='fab fa-facebook-f'></i></a></li>";
-                            echo "<li><a href='index-2.html'><i class='fab fa-twitter'></i></a></li>";
-                            echo "<li><a href='index-2.html'><i class='fab fa-instagram'></i></a></li>";
-                            echo "<li><a href='index-2.html'><i class='fab fa-linkedin-in'></i></a></li>";
-                            echo "</ul>";
-                            echo "</div>";
-                            echo "</div>";
-                            echo "</div>";
-                            echo "</div>";
-                        }
-                    } else {
-                        echo "0 results";
-                    }
-                }
-
-                // Close connection
-                $conn->close();
-                ?>
-
-
-            </div>
-        </div>
-    </section>
-
+?>
     <!--
                 <div class="team-block-one">
                     <div class="inner-box">
